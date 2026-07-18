@@ -1,0 +1,114 @@
+.footer {
+  background: #111;
+  color: #ccc;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 40px;
+  padding: 48px 40px 36px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    padding: 32px 20px 24px;
+    gap: 28px;
+  }
+}
+
+/* ── العمود الأيمن ── */
+.footer-brand {
+  font-size: 26px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.footer-brand span { color: var(--primary); }
+
+.footer-desc {
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.footer-contact {
+  font-size: 13px;
+  color: #bbb;
+  margin-bottom: 6px;
+}
+
+.footer-contact span { color: #ddd; }
+
+.footer-insta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  font-size: 18px;
+  margin-top: 10px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.footer-insta-btn:hover { background: rgba(255,255,255,0.15); }
+
+/* ── الأعمدة ── */
+.footer-col-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.footer-link {
+  display: block;
+  font-size: 13px;
+  color: #aaa;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: right;
+  padding: 0;
+  margin-bottom: 10px;
+  font-family: 'Cairo', sans-serif;
+  transition: color 0.2s;
+  width: 100%;
+}
+
+.footer-link:hover { color: var(--primary); }
+
+/* ── الشريط السفلي ── */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  font-size: 12px;
+  color: #666;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column-reverse;
+    gap: 6px;
+    padding: 16px 20px;
+    text-align: center;
+  }
+}

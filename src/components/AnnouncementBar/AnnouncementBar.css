@@ -1,0 +1,26 @@
+.announcement-bar {
+  background: #a84848;
+  color: var(--white);
+  padding: 8px 0;
+  overflow: hidden;
+  direction: ltr; /* لضمان اتجاه التمرير من اليمين إلى اليسار */
+}
+
+.announcement-track {
+  display: inline-flex;
+  gap: 80px;
+  white-space: nowrap;
+  animation: scrollAnnouncement 22s linear infinite;
+}
+
+.announcement-track span {
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+@keyframes scrollAnnouncement {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

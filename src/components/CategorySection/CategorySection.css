@@ -1,0 +1,205 @@
+.category-section {
+  padding: 24px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── عناوين القسم ── */
+.category-label {
+  font-family: 'Cairo', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--primary);
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.category-title {
+  font-family: 'Cairo', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text);
+  text-align: center;
+  margin: 0;
+}
+
+.category-sub {
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px;
+  color: var(--text-mid);
+  text-align: center;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .category-section { padding: 32px 40px 20px; gap: 24px; }
+  .category-title   { font-size: 22px; }
+}
+
+/* ── البطاقات الكبيرة — ثلاثة أعمدة دائماً ── */
+.type-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .type-cards { gap: 20px; max-width: 640px; margin: 0 auto; width: 100%; }
+}
+
+/* كل بطاقة نوع */
+.type-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s;
+}
+
+.type-card:hover { transform: translateY(-2px); }
+.type-card:active { transform: scale(0.97); }
+
+/* إطار الصورة */
+.type-card-img-wrap {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2.5px solid var(--pink-light);
+  background: var(--pink-light);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.type-card.active .type-card-img-wrap {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 149, 106, 0.20);
+}
+
+.type-card:hover:not(.active) .type-card-img-wrap {
+  border-color: var(--gold-light);
+}
+
+/* صورة النوع (تأتي من الـ Admin) */
+.type-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* placeholder وردي لما ما في صورة */
+.type-card-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--pink-light) 0%, var(--pink-medium) 100%);
+}
+
+/* اسم النوع تحت الصورة */
+.type-card-label {
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+  transition: color 0.2s;
+}
+
+@media (min-width: 768px) {
+  .type-card-label { font-size: 15px; }
+}
+
+.type-card.active .type-card-label { color: var(--gold-dark); }
+
+/* ── سلايدر الفئات الفرعية ── */
+.cats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px 8px;
+}
+
+@media (min-width: 768px) {
+  .cats-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px 12px;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+.sub-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s;
+}
+
+.sub-category:hover { transform: translateY(-2px); }
+
+.sub-category-img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid var(--pink-medium);
+  display: block;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+@media (min-width: 768px) {
+  .sub-category-img { width: 96px; height: 96px; }
+}
+
+.sub-category.active .sub-category-img {
+  border: 2.5px solid var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 149, 106, 0.20);
+}
+
+.sub-category:hover:not(.active) .sub-category-img {
+  border-color: var(--gold-light);
+}
+
+/* دائرة "الكل" الذهبية */
+.all-circle {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* placeholder دائري وردي */
+.placeholder-circle {
+  background: linear-gradient(135deg, var(--pink-light), var(--pink-medium));
+}
+
+/* اسم الفئة الفرعية */
+.sub-category-name {
+  font-family: 'Cairo', sans-serif;
+  font-size: 12px;
+  color: var(--text-dark);
+  text-align: center;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.sub-category.active .sub-category-name {
+  color: var(--gold-dark);
+  font-weight: 700;
+}

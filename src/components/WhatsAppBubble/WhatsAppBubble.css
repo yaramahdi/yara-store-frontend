@@ -1,0 +1,56 @@
+.wa-bubble {
+  position: fixed;
+  bottom: 24px;
+  left: 20px;
+  z-index: 150;
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  background: #25D366;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px) scale(0.85);
+  transition: opacity 0.3s ease, transform 0.3s ease,
+              background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wa-bubble.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+.wa-bubble:hover {
+  background: #20BA5A;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+}
+
+@media (max-width: 767px) {
+  .wa-bubble {
+    width: 50px;
+    height: 50px;
+    bottom: 86px;
+    left: 16px;
+  }
+
+  .wa-bubble svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .wa-bubble {
+    bottom: 86px;
+  }
+}

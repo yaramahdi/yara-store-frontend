@@ -1,0 +1,77 @@
+:root {
+  /* === يارا ستور — هوية بصرية === */
+  --primary:         #B5547A;
+  --primary-light:   #D4889F;
+  --primary-lighter: #F9EEF3;
+  --primary-dark:    #8B3A5E;
+  --bg:              #FAFAFA;
+  --white:           #FFFFFF;
+  --text:            #1A1A1A;
+  --text-mid:        #555555;
+  --text-light:      #999999;
+  --border:          #E8E8E8;
+  --footer-bg:       #111111;
+  --shadow-sm:       0 1px 4px rgba(0,0,0,0.06);
+  --shadow-lg:       0 8px 40px rgba(0,0,0,0.14);
+
+  /* توافق مع المتغيرات القديمة */
+  --pink-bg:     var(--primary-lighter);
+  --pink-light:  var(--primary-lighter);
+  --pink-medium: var(--primary-light);
+  --gold:        var(--primary);
+  --gold-light:  var(--primary-light);
+  --gold-dark:   var(--primary-dark);
+  --text-dark:   var(--text);
+  --text-medium: var(--text-mid);
+  --shadow:      rgba(0,0,0,0.06);
+  --shadow-md:   rgba(0,0,0,0.10);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+  font-family: 'Cairo', sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--bg);
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--text);
+  text-align: right;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(100%); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+button { cursor: pointer; }
+img    { display: block; max-width: 100%; }
+a      { text-decoration: none; }

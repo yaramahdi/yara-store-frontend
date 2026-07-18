@@ -1,0 +1,246 @@
+.dashboard {}
+
+.dashboard-loading {
+  color: #aaa;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.pg-load-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 0;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.pg-retry-btn {
+  padding: 9px 20px;
+  border: 1.5px solid #ece7eb;
+  border-radius: 10px;
+  background: #fff;
+  color: #111827;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.pg-retry-btn:hover {
+  border-color: var(--gold, #c49b4c);
+  background: #fffbf0;
+}
+
+.dashboard-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.dashboard-kpi-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #ece7eb;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dashboard-kpi-card--revenue {
+  border-color: #bfdbfe;
+  background: #eff6ff;
+}
+
+.dashboard-kpi-card--profit {
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+}
+
+.kpi-label {
+  font-size: 0.78rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.kpi-value {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.dashboard-sales-section {
+  margin-top: 18px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #ece7eb;
+  padding: 14px;
+}
+
+.dashboard-sales-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.dashboard-sales-head h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #111827;
+}
+
+.dashboard-sales-head p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.dashboard-sales-empty {
+  padding: 18px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.dashboard-sales-table-wrap {
+  overflow-x: auto;
+}
+
+.dashboard-sales-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard-sales-table th,
+.dashboard-sales-table td {
+  text-align: right;
+  border-bottom: 1px solid #f3f4f6;
+  padding: 10px 8px;
+  font-size: 0.86rem;
+}
+
+.dashboard-sales-table th {
+  color: #6b7280;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+.dashboard-sales-table tr:last-child td {
+  border-bottom: none;
+}
+
+.profit-cell {
+  color: #047857;
+  font-weight: 700;
+}
+
+/* ── Desktop: row of circles ── */
+.dashboard-circles {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 4px;
+}
+
+.stat-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-circle__ring {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: 2.5px solid var(--stat-color);
+  background: color-mix(in srgb, var(--stat-color) 9%, white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: default;
+}
+
+.stat-circle__ring:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--stat-color) 28%, transparent);
+}
+
+.stat-circle__icon {
+  color: var(--stat-color);
+  display: flex;
+  align-items: center;
+}
+
+.stat-circle__value {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  line-height: 1;
+}
+
+.stat-circle__label {
+  font-size: 0.78rem;
+  color: #999;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+
+/* ── Mobile: compact header strip ── */
+@media (max-width: 768px) {
+  .dashboard-circles {
+    background: white;
+    border-radius: 18px;
+    padding: 14px 6px;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07);
+    gap: 0;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    margin-top: 0;
+  }
+
+  .stat-circle {
+    gap: 5px;
+    flex: 1;
+  }
+
+  .stat-circle__ring {
+    width: 56px;
+    height: 56px;
+    border-width: 2px;
+    gap: 1px;
+  }
+
+  .stat-circle__ring:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .stat-circle__icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .stat-circle__value {
+    font-size: 1rem;
+  }
+
+  .stat-circle__label {
+    font-size: 0.68rem;
+  }
+
+  .dashboard-kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

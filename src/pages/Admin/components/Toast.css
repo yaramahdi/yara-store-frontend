@@ -1,0 +1,23 @@
+.toast {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Cairo', sans-serif;
+  z-index: 9999;
+  animation: slideInLeft 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  max-width: 320px;
+}
+
+.toast.success { background: #48BB78; color: white; }
+.toast.error   { background: #E53E3E; color: white; }
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}

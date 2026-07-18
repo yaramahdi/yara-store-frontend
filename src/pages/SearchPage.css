@@ -1,0 +1,31 @@
+.search-page-header {
+  padding: 20px 20px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-medium);
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.back-link svg { transform: scaleX(-1); }
+
+.back-link:hover { color: var(--gold); }
+
+.search-page-header h1 {
+  font-family: 'Cairo', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.search-page-header h1 span {
+  color: var(--gold-dark);
+}

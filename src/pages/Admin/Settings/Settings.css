@@ -1,0 +1,380 @@
+.settings-page {}
+
+.settings-card {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 520px;
+  box-shadow: 0 2px 12px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.settings-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings-label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  font-family: 'Tajawal', sans-serif;
+}
+
+.settings-hint {
+  font-size: 0.78rem;
+  color: var(--text-medium);
+  margin-top: -4px;
+}
+
+.admin-input-field {
+  padding: 12px 16px;
+  border: 1.5px solid var(--pink-medium);
+  border-radius: 12px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  color: var(--text-dark);
+  background: white;
+}
+.admin-input-field:focus { border-color: var(--gold); }
+
+.hero-preview {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--pink-light);
+}
+
+.hero-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 20px;
+  background: var(--pink-bg);
+  border: 1.5px dashed var(--pink-medium);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: 'Tajawal', sans-serif;
+  color: var(--text-medium);
+  transition: background 0.2s, border-color 0.2s;
+  width: fit-content;
+}
+.hero-upload-btn:hover {
+  background: var(--pink-light);
+  border-color: var(--gold);
+}
+
+.settings-save-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--gold);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  margin-top: 4px;
+}
+.settings-save-btn:hover:not(:disabled) { background: var(--gold-dark); }
+.settings-save-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ── Payment Methods ── */
+.pm-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.pm-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--pink-medium);
+  border-radius: 14px;
+  background: white;
+  transition: border-color 0.2s;
+}
+.pm-item:hover { border-color: var(--gold); }
+
+.pm-item.pm-hidden {
+  opacity: 0.5;
+  background: var(--pink-bg);
+}
+
+.pm-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+.pm-logo {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--pink-light);
+  padding: 3px;
+  background: white;
+  flex-shrink: 0;
+}
+
+.pm-logo-placeholder {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px dashed var(--pink-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.pm-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.pm-name {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.pm-detail {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-medium);
+  direction: ltr;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+.pm-item-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.pm-toggle-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1.5px solid var(--pink-medium);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.pm-toggle-btn.visible { color: var(--gold-dark); border-color: var(--gold); }
+.pm-toggle-btn.hidden  { color: var(--text-medium); }
+.pm-toggle-btn:hover   { background: var(--pink-bg); }
+
+.pm-delete-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1.5px solid transparent;
+  background: none;
+  color: #c53030;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.pm-delete-btn:hover { background: #fff5f5; border-color: #fc8181; }
+
+/* ── Add method button ── */
+.pm-add-btn {
+  width: 100%;
+  padding: 11px;
+  background: var(--pink-bg);
+  border: 1.5px dashed var(--pink-medium);
+  border-radius: 12px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-medium);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.pm-add-btn:hover { background: var(--pink-light); border-color: var(--gold); color: var(--gold-dark); }
+
+/* ── Add method form ── */
+.pm-add-form {
+  padding: 18px;
+  border: 1.5px solid var(--pink-medium);
+  border-radius: 14px;
+  background: var(--pink-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pm-add-title {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.pm-add-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pm-add-field label {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.pm-logo-upload-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pm-preset-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pm-preset-btn {
+  width: 52px;
+  height: 52px;
+  border: 2px solid var(--pink-medium);
+  border-radius: 12px;
+  background: white;
+  padding: 5px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pm-preset-btn img { width: 100%; height: 100%; object-fit: contain; }
+.pm-preset-btn:hover { border-color: var(--gold); }
+.pm-preset-btn.selected {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(196,155,76,0.2);
+}
+
+.pm-preset-upload {
+  width: 52px;
+  height: 52px;
+  border: 2px dashed var(--pink-medium);
+  border-radius: 12px;
+  background: var(--pink-bg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: border-color 0.2s;
+}
+.pm-preset-upload:hover { border-color: var(--gold); }
+.pm-preset-upload.selected { border-color: var(--gold); border-style: solid; }
+
+.pm-logo-chosen {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: #fffbf0;
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+}
+.pm-logo-chosen span {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  flex: 1;
+}
+.pm-logo-clear {
+  background: none;
+  border: none;
+  color: var(--text-medium);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 2px 4px;
+}
+.pm-logo-clear:hover { color: #c53030; }
+
+.pm-logo-preview {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--pink-light);
+  padding: 3px;
+  background: white;
+}
+
+.pm-add-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.pm-cancel-btn {
+  flex: 1;
+  padding: 11px;
+  border: 1.5px solid var(--pink-medium);
+  border-radius: 12px;
+  background: white;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-medium);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.pm-cancel-btn:hover { background: var(--pink-light); }
+
+.pm-confirm-add-btn {
+  flex: 1;
+  padding: 11px;
+  background: var(--gold);
+  border: none;
+  border-radius: 12px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.pm-confirm-add-btn:hover:not(:disabled) { background: var(--gold-dark); }
+.pm-confirm-add-btn:disabled { opacity: 0.5; cursor: not-allowed; }
