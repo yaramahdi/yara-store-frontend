@@ -274,15 +274,19 @@ export default function Products() {
         payload.inStock = payload.stock === null ? true : payload.stock > 0;
       }
 
+      let savedProduct;
       if (editId) {
-        await adminUpdateProduct(editId, payload);
+        const res = await adminUpdateProduct(editId, payload);
+        savedProduct = res.data?.product || res.data || { ...payload, _id: editId };
+        setProducts(prev => prev.map(p => p._id === editId ? { ...p, ...savedProduct } : p));
         showToast('✅ تم تحديث المنتج');
       } else {
-        await adminCreateProduct(payload);
+        const res = await adminCreateProduct(payload);
+        savedProduct = res.data?.product || res.data || { ...payload, _id: res.data?._id || Date.now().toString() };
+        setProducts(prev => [savedProduct, ...prev]);
         showToast('✅ تمت إضافة المنتج');
       }
       setShowModal(false);
-      load();
     } catch (err) {
       const msg = err?.response?.data?.error || err?.response?.data?.message || 'خطأ غير معروف';
       showToast(`❌ ${msg}`, 'error');
@@ -294,27 +298,51 @@ export default function Products() {
   async function handleDelete() {
     try {
       await adminDeleteProduct(deleteId);
+      setProducts(prev => prev.filter(p => p._id !== deleteId));
       showToast('🗑️ تم الحذف');
       setDeleteId(null);
-      load();
     } catch {
       showToast('❌ فشل الحذف', 'error');
     }
   }
 
   async function handleToggleVisibility(id) {
-    try { await adminToggleProduct(id); load(); }
-    catch { showToast('❌ حدث خطأ', 'error'); }
+    try {
+      const res = await adminToggleProduct(id);
+      const updated = res.data?.product || res.data || null;
+      setProducts(prev => prev.map(p => {
+        if (p._id !== id) return p;
+        return updated ? { ...p, ...updated } : { ...p, isVisible: !p.isVisible };
+      }));
+    } catch {
+      showToast('❌ حدث خطأ', 'error');
+    }
   }
 
   async function handleToggleStock(p) {
-    try { await adminUpdateProduct(p._id, { inStock: !p.inStock }); load(); }
-    catch { showToast('❌ حدث خطأ', 'error'); }
+    try {
+      const res = await adminUpdateProduct(p._id, { inStock: !p.inStock });
+      const updated = res.data?.product || res.data || null;
+      setProducts(prev => prev.map(item => {
+        if (item._id !== p._id) return item;
+        return updated ? { ...item, ...updated } : { ...item, inStock: !item.inStock };
+      }));
+    } catch {
+      showToast('❌ حدث خطأ', 'error');
+    }
   }
 
   async function handleToggleLastPiece(p) {
-    try { await adminUpdateProduct(p._id, { hideLastPiece: !p.hideLastPiece }); load(); }
-    catch { showToast('❌ حدث خطأ', 'error'); }
+    try {
+      const res = await adminUpdateProduct(p._id, { hideLastPiece: !p.hideLastPiece });
+      const updated = res.data?.product || res.data || null;
+      setProducts(prev => prev.map(item => {
+        if (item._id !== p._id) return item;
+        return updated ? { ...item, ...updated } : { ...item, hideLastPiece: !item.hideLastPiece };
+      }));
+    } catch {
+      showToast('❌ حدث خطأ', 'error');
+    }
   }
 
   const resolveImg = url =>

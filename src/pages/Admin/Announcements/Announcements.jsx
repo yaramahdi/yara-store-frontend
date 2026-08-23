@@ -37,11 +37,12 @@ export default function Announcements() {
     setSaving(true);
     try {
       // الإعلان يُضاف مخفياً بالأساس
-      await adminCreateAnnouncement({ text: text.trim(), textAr: text.trim(), isActive: false });
+      const res = await adminCreateAnnouncement({ text: text.trim(), textAr: text.trim(), isActive: false });
+      const created = res.data?.announcement || res.data || { _id: Date.now().toString(), textAr: text.trim(), text: text.trim(), isActive: false };
+      setItems(prev => [created, ...prev]);
       showToast('✅ تمت إضافة الإعلان بنجاح');
       setText('');
       setShowForm(false);
-      load();
     } catch {
       showToast('❌ حدث خطأ، حاولي مرة أخرى', 'error');
     } finally {
@@ -51,8 +52,12 @@ export default function Announcements() {
 
   async function handleToggle(id) {
     try {
-      await adminToggleAnnouncement(id);
-      load();
+      const res = await adminToggleAnnouncement(id);
+      const updated = res.data?.announcement || res.data || null;
+      setItems(prev => prev.map(item => {
+        if (item._id !== id) return item;
+        return updated ? { ...item, ...updated } : { ...item, isActive: !item.isActive };
+      }));
     } catch {
       showToast('❌ حدث خطأ', 'error');
     }
@@ -61,9 +66,9 @@ export default function Announcements() {
   async function handleDelete() {
     try {
       await adminDeleteAnnouncement(deleteId);
+      setItems(prev => prev.filter(item => item._id !== deleteId));
       showToast('🗑️ تم الحذف');
       setDeleteId(null);
-      load();
     } catch {
       showToast('❌ فشل الحذف', 'error');
     }

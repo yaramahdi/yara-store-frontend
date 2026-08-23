@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { imgUrl } from '../../services/api';
 import './ProductCard.css';
 
@@ -16,10 +16,42 @@ function readFavIds() {
 
 export default function ProductCard({ product, collectionName }) {
   const navigate = useNavigate();
+  const location = useLocation();
   const [wished, setWished] = useState(() => readFavIds().includes(String(product._id)));
   const images = product.images?.length ? product.images : (product.image ? [product.image] : []);
   const [imgIndex, setImgIndex] = useState(0);
   const touchStartX = useRef(null);
+
+  const openProduct = () => {
+    let currentPageContext = {};
+    try {
+      currentPageContext = JSON.parse(sessionStorage.getItem('yara-page-context') || '{}');
+    } catch {
+      currentPageContext = {};
+    }
+
+    const returnTo = `${location.pathname}${location.search}` || '/';
+    const scrollY = window.scrollY || 0;
+    const returnContext = {
+      pathname: location.pathname || '/',
+      search: location.search || '',
+      categoryId: currentPageContext.categoryId || null,
+      collectionName: currentPageContext.collectionName || null,
+      scrollY,
+    };
+
+    sessionStorage.setItem('yara-return-to', returnTo);
+    sessionStorage.setItem('yara-return-scroll', String(scrollY));
+    sessionStorage.setItem('yara-return-context', JSON.stringify(returnContext));
+
+    navigate(`/product/${product._id}`, {
+      state: {
+        returnTo,
+        returnToScrollY: scrollY,
+        returnContext,
+      },
+    });
+  };
 
   const effectiveQty = product.sizes?.length > 0
     ? product.sizes.reduce((sum, s) => sum + (s.stock === null || s.stock === undefined ? 999 : s.stock), 0)
@@ -36,7 +68,7 @@ export default function ProductCard({ product, collectionName }) {
 
   const handleAddToCart = (e) => {
     e.stopPropagation();
-    navigate(`/product/${product._id}`);
+    openProduct();
   };
 
   const goTo = (e, idx) => { e.stopPropagation(); setImgIndex((idx + images.length) % images.length); };
@@ -80,7 +112,7 @@ export default function ProductCard({ product, collectionName }) {
   };
 
   return (
-    <div className="product-card" onClick={() => navigate(`/product/${product._id}`)} role="button" tabIndex={0}>
+    <div className="product-card" onClick={openProduct} role="button" tabIndex={0}>
 
       <div className="product-img-wrap"
         onTouchStart={images.length > 1 ? onTouchStart : undefined}

@@ -28,6 +28,37 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const context = {
+      pathname: location.pathname,
+      search: location.search,
+      categoryId: activeCategoryId,
+      collectionName: activeCollection,
+      scrollY: window.scrollY || 0,
+    };
+    sessionStorage.setItem('yara-page-context', JSON.stringify(context));
+  }, [location.pathname, location.search, activeCategoryId, activeCollection]);
+
+  useEffect(() => {
+    try {
+      const saved = JSON.parse(sessionStorage.getItem('yara-return-context') || 'null');
+      if (!saved || saved.pathname !== '/') return;
+
+      if (saved.categoryId) setActiveCategoryId(saved.categoryId);
+      if (saved.collectionName) setActiveCollection(saved.collectionName);
+
+      const scrollTarget = Number(saved.scrollY) || 0;
+      const restoreTimer = setTimeout(() => {
+        window.scrollTo({ top: scrollTarget, behavior: 'auto' });
+      }, 120);
+
+      sessionStorage.removeItem('yara-return-context');
+      return () => clearTimeout(restoreTimer);
+    } catch {
+      sessionStorage.removeItem('yara-return-context');
+    }
+  }, []);
+
+  useEffect(() => {
     if (!favoritesOnly) return;
     const id = setTimeout(() => {
       productsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });

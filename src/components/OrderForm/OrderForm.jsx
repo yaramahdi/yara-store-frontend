@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { getSettings, createOrder, formatWhatsappPhone } from '../../services/api';
 import { resolveLogoSrc, resolveCardTheme } from '../../utils/paymentPresets';
 import './OrderForm.css';
@@ -22,6 +22,15 @@ export default function OrderForm({
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const [redirecting, setRedirecting] = useState(false);
+  const redirectTimerRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (redirectTimerRef.current) {
+        clearTimeout(redirectTimerRef.current);
+      }
+    };
+  }, []);
 
   const loadPaymentMethods = async () => {
     setPaymentLoading(true);
@@ -60,7 +69,7 @@ export default function OrderForm({
   const phoneValid = /^\d{10}$/.test(form.phone);
 
   const handleConfirm = async () => {
-    if (submitting) return;
+    if (submitting || redirecting) return;
 
     setSubmitError('');
     setSubmitting(true);
@@ -130,17 +139,22 @@ export default function OrderForm({
     setRedirecting(true);
     onOrderComplete?.();
 
-    setTimeout(() => {
+    if (redirectTimerRef.current) clearTimeout(redirectTimerRef.current);
+    redirectTimerRef.current = setTimeout(() => {
       window.location.href = url;
     }, 1500);
   };
 
   const step1Valid = form.name.trim() && phoneValid && form.address.trim();
+  const handleClose = () => {
+    if (redirecting) return;
+    onClose?.();
+  };
 
   if (!isOpen) return null;
 
   return (
-    <div className="of-overlay" onClick={onClose}>
+    <div className="of-overlay" onClick={handleClose}>
       <div className="of-modal" onClick={e => e.stopPropagation()}>
 
         {/* Header */}
@@ -148,7 +162,7 @@ export default function OrderForm({
           <h2 className="of-title">
             {step === 1 ? 'بيانات الطلب' : 'طريقة الدفع'}
           </h2>
-          <button className="of-close" onClick={onClose}>✕</button>
+          {!redirecting && <button className="of-close" onClick={handleClose}>✕</button>}
         </div>
 
         {/* Step indicator */}

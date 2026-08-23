@@ -47,8 +47,12 @@ export default function Categories() {
 
   async function handleToggleVisibility(c) {
     try {
-      await adminUpdateCategory(c._id, { isVisible: !c.isVisible });
-      load();
+      const res = await adminUpdateCategory(c._id, { isVisible: !c.isVisible });
+      const updated = res.data?.category || res.data || null;
+      setCategories(prev => prev.map(item => {
+        if (item._id !== c._id) return item;
+        return updated ? { ...item, ...updated } : { ...item, isVisible: !item.isVisible };
+      }));
     } catch {
       showToast('❌ حدث خطأ', 'error');
     }
@@ -72,14 +76,17 @@ export default function Categories() {
     if (!form.name) { showToast('❌ اسم الفئة مطلوب', 'error'); return; }
     try {
       if (editId) {
-        await adminUpdateCategory(editId, form);
+        const res = await adminUpdateCategory(editId, form);
+        const updated = res.data?.category || res.data || { ...form, _id: editId };
+        setCategories(prev => prev.map(item => item._id === editId ? { ...item, ...updated } : item));
         showToast('✅ تم تحديث الفئة');
       } else {
-        await adminCreateCategory(form);
+        const res = await adminCreateCategory(form);
+        const created = res.data?.category || res.data || { ...form, _id: Date.now().toString() };
+        setCategories(prev => [created, ...prev]);
         showToast('✅ تمت إضافة الفئة بنجاح');
       }
       setShowForm(false);
-      load();
     } catch {
       showToast('❌ حدث خطأ، حاولي مرة أخرى', 'error');
     }
@@ -88,9 +95,9 @@ export default function Categories() {
   async function handleDelete() {
     try {
       await adminDeleteCategory(deleteId);
+      setCategories(prev => prev.filter(item => item._id !== deleteId));
       showToast('🗑️ تم الحذف');
       setDeleteId(null);
-      load();
     } catch (err) {
       showToast(err?.response?.data?.message || '❌ فشل الحذف', 'error');
     }

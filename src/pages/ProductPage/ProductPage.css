@@ -12,6 +12,27 @@
   }
 }
 
+@media (max-width: 767px) {
+  .product-page-container {
+    padding-top: 12px;
+    padding-bottom: 96px;
+  }
+
+  .product-layout {
+    gap: 18px;
+  }
+
+  .breadcrumb {
+    margin-bottom: 12px;
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  .bc-current {
+    max-width: 150px;
+  }
+}
+
 /* ════════════ زر العودة للرئيسية ════════════ */
 
 .pp-back-btn {
@@ -102,6 +123,15 @@
   overflow: hidden;
   background: var(--pink-bg);
   aspect-ratio: 3 / 4;
+}
+
+@media (max-width: 767px) {
+  .main-img-wrap {
+    aspect-ratio: 5 / 6;
+    max-height: 440px;
+    height: clamp(260px, 42vh, 420px);
+    border-radius: 18px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -216,7 +246,32 @@
 .product-details {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
+}
+
+@media (max-width: 767px) {
+  .product-details {
+    gap: 14px;
+  }
+
+  .price-section {
+    margin-top: -2px;
+  }
+
+  .product-title {
+    font-size: 22px;
+    line-height: 1.35;
+  }
+
+  .product-description-sub {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: -2px;
+  }
+
+  .size-guide-section {
+    margin-top: 2px;
+  }
 }
 
 /* كل عنصر في العمود يدخل بـ fadeInUp مع delay متدرج */
@@ -226,6 +281,13 @@
 }
 
 /* ─── اسم المنتج ─── */
+.product-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .product-title {
   font-family: 'Cairo', sans-serif;
   font-size: 24px;
@@ -235,8 +297,35 @@
   margin: 0;
 }
 
+.product-selected-size {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 12px;
+  min-width: 42px;
+  background: var(--pink-bg);
+  border: 1px solid var(--pink-medium);
+  border-radius: 999px;
+  color: var(--gold-dark);
+  font-family: 'Cairo', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
 @media (min-width: 768px) {
   .product-title { font-size: 28px; }
+}
+
+@media (max-width: 767px) {
+  .product-header {
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .product-selected-size {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
 }
 
 /* ─── السعر ─── */
@@ -453,6 +542,14 @@
   line-height: 1.6;
   color: var(--text-medium);
   margin: -4px 0 0;
+}
+
+@media (max-width: 767px) {
+  .product-description-sub {
+    font-size: 12px;
+    line-height: 1.55;
+    margin-top: 0;
+  }
 }
 
 /* ─── دليل المقاسات ─── */

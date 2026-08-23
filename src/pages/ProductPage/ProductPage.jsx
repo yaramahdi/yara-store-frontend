@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate, Link, useLocation } from 'react-router-dom';
 import { getProduct, imgUrl } from '../../services/api';
 import { useCart } from '../../context/CartContext';
 import CartDrawer from '../../components/CartDrawer/CartDrawer';
@@ -13,7 +13,19 @@ function isSizeSoldOut(size) {
 export default function ProductPage() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const { addToCart } = useCart();
+
+  const savedReturnContext = (() => {
+    try {
+      return JSON.parse(sessionStorage.getItem('yara-return-context') || 'null');
+    } catch {
+      return null;
+    }
+  })();
+
+  const returnTo = location.state?.returnTo || savedReturnContext?.pathname + (savedReturnContext?.search || '') || sessionStorage.getItem('yara-return-to') || '/';
+  const returnToScrollY = Number(location.state?.returnToScrollY ?? savedReturnContext?.scrollY ?? Number(sessionStorage.getItem('yara-return-scroll') || 0));
 
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -63,6 +75,14 @@ export default function ProductPage() {
     return () => controller.abort();
   }, [loadProduct]);
 
+  const goBackToSource = () => {
+    const target = returnTo || '/';
+    navigate(target);
+    setTimeout(() => {
+      window.scrollTo({ top: Number.isFinite(returnToScrollY) ? returnToScrollY : 0, behavior: 'auto' });
+    }, 80);
+  };
+
   const handleAdd = () => {
     if (product.sizes?.length > 0 && (!selectedSize || isSizeSoldOut(selectedSize))) {
       setValidationMsg('الرجاء اختيار مقاس متوفر');
@@ -79,8 +99,13 @@ export default function ProductPage() {
     setAdded(true);
 
     setTimeout(() => {
+      const target = returnTo || '/';
+      navigate(target);
+      setTimeout(() => {
+        window.scrollTo({ top: Number.isFinite(returnToScrollY) ? returnToScrollY : 0, behavior: 'auto' });
+      }, 80);
       setAdded(false);
-    }, 2000);
+    }, 0);
   };
 
   if (loading) {
@@ -188,8 +213,8 @@ export default function ProductPage() {
 
       <div className="product-page-container">
 
-        <button type="button" className="pp-back-btn" onClick={() => navigate('/')}>
-          ← الرئيسية
+        <button type="button" className="pp-back-btn" onClick={goBackToSource}>
+          ← {returnTo === '/' ? 'الرئيسية' : 'عودة'}
         </button>
 
         {/* Breadcrumb */}
@@ -253,15 +278,15 @@ export default function ProductPage() {
           {/* معلومات المنتج */}
           <div className="product-details">
 
-            <h1 className="product-title anim-item" style={{ '--delay': '0s' }}>
-              {product.name}
-            </h1>
+            <div className="product-header anim-item" style={{ '--delay': '0s' }}>
+              <h1 className="product-title">
+                {product.name}
+              </h1>
 
-            {product.description && (
-              <p className="product-description-sub anim-item" style={{ '--delay': '0.02s' }}>
-                {product.description}
-              </p>
-            )}
+              {selectedSize && (
+                <span className="product-selected-size">{selectedSize.label}</span>
+              )}
+            </div>
 
             <div className="price-section anim-item" style={{ '--delay': '0.05s' }}>
               <span className="price-current">
@@ -306,7 +331,18 @@ export default function ProductPage() {
                           type="button"
                           className="color-swatch"
                           title={linkedName}
-                          onClick={() => navigate(`/product/${linkedId}`)}
+                          onClick={() => {
+                            const targetReturnTo = location.state?.returnTo || (savedReturnContext?.pathname || '/') + (savedReturnContext?.search || '');
+                            const targetScrollY = Number(location.state?.returnToScrollY ?? savedReturnContext?.scrollY ?? Number(sessionStorage.getItem('yara-return-scroll') || 0));
+
+                            navigate(`/product/${linkedId}`, {
+                              state: {
+                                returnTo: targetReturnTo,
+                                returnToScrollY: targetScrollY,
+                                returnContext: savedReturnContext,
+                              },
+                            });
+                          }}
                         >
                           {linkedImg ? (
                             <img src={imgUrl(linkedImg)} alt={linkedName} />
@@ -345,6 +381,12 @@ export default function ProductPage() {
                   })}
                 </div>
               </div>
+            )}
+
+            {product.description && (
+              <p className="product-description-sub anim-item" style={{ '--delay': '0.02s' }}>
+                {product.description}
+              </p>
             )}
 
             {product.sizeGuide?.length > 0 && (
