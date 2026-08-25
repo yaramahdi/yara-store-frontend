@@ -290,6 +290,18 @@
   flex-wrap: wrap;
 }
 
+.price-size-inline {
+  display: none;
+  font-size: 10px;
+  line-height: 1;
+  color: var(--text-light);
+  font-weight: 600;
+  background: var(--pink-bg);
+  border: 1px solid var(--pink-light);
+  border-radius: 999px;
+  padding: 4px 7px;
+}
+
 .price-now {
   font-size: 17px;
   font-weight: 900;

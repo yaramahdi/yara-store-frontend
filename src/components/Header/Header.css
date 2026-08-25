@@ -97,6 +97,10 @@
   background: var(--pink-bg);
 }
 
+.cart-btn {
+  display: inline-flex;
+}
+
 .cart-badge {
   position: absolute;
   top: 2px;
@@ -113,6 +117,7 @@
   align-items: center;
   justify-content: center;
   animation: fadeIn 0.2s ease;
+  padding: 0 4px;
 }
 
 /* ── شريط البحث المنسدل ── */

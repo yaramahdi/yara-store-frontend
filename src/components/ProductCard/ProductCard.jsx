@@ -62,6 +62,10 @@ export default function ProductCard({ product, collectionName }) {
   const discount = product.salePrice && product.salePrice > product.price
     ? Math.round((1 - product.price / product.salePrice) * 100) : null;
 
+  const visibleSizeLabel = product.sizes?.find((s) => s.stock === null || s.stock === undefined || Number(s.stock) > 0)?.label
+    || product.sizes?.[0]?.label
+    || null;
+
   const manualLabel = product.label ? String(product.label).trim() : '';
   const labelClass = manualLabel === 'جديد' ? 'new' : manualLabel === 'عرض خاص' ? 'special' : 'custom';
   const catName = product.category?.name || product.category || '';
@@ -178,15 +182,14 @@ export default function ProductCard({ product, collectionName }) {
           <span className={`price-now ${discount ? 'on-sale' : ''}`}>{product.price} ₪</span>
           {product.salePrice && <span className="price-was">{product.salePrice} ₪</span>}
           {discount && <span className="price-save">وفري {discount}%</span>}
+          {visibleSizeLabel && (
+            <span className="price-size-inline">مقاس {visibleSizeLabel}</span>
+          )}
         </div>
       </div>
 
       <button className="product-add-btn" onClick={handleAddToCart} disabled={!product.inStock}>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" />
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-        </svg>
-        أضف للسلة
+        تفاصيل القطعة
       </button>
     </div>
   );
