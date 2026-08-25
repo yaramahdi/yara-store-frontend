@@ -1,16 +1,19 @@
 .features-bar {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
   background: #1A1A1A;
   direction: rtl;
+  overflow: hidden;
 }
 
 .feature-item {
+  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  padding: 22px 20px;
+  gap: 14px;
+  padding: 22px 12px;
   border-left: 1px solid rgba(255,255,255,0.08);
   transition: background 0.2s;
 }
@@ -29,6 +32,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 2px;
+  min-width: 0;
 }
 
 .feature-text strong {
@@ -39,12 +43,14 @@
   color: white;
   letter-spacing: 0.3px;
   line-height: 1.5;
+  white-space: nowrap;
 }
 .feature-text span {
   font-family: 'Cairo', sans-serif;
   font-size: 11px;
   color: rgba(255,255,255,0.45);
   line-height: 1.5;
+  white-space: nowrap;
 }
 
 .return-policy-item .feature-text {
@@ -52,31 +58,36 @@
 }
 
 @media (max-width: 900px) {
-  .features-bar {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .feature-item {
+    padding: 18px 8px;
+    gap: 8px;
   }
-  .feature-item { padding: 18px 12px; gap: 10px; }
   .feature-icon { width: 22px; height: 22px; }
   .feature-text strong { font-size: 12px; }
   .feature-text span   { font-size: 10px; }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 540px) {
   .features-bar {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .feature-item {
-    padding: 14px 10px;
-    gap: 8px;
-    justify-content: flex-start;
-    border-left: none;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 14px 4px;
+    gap: 6px;
+    justify-content: center;
   }
-  .feature-item:last-child { border-bottom: none; }
   .feature-text {
     align-items: flex-start;
     text-align: right;
   }
-  .feature-text strong { font-size: 11px; }
-  .feature-text span   { font-size: 10px; }
+  .feature-text strong {
+    font-size: 9px;
+    white-space: normal;
+    line-height: 1.2;
+  }
+  .feature-text span {
+    font-size: 8px;
+    white-space: normal;
+    line-height: 1.2;
+  }
 }
