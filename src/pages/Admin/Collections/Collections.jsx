@@ -37,6 +37,7 @@ function makeProdEntry(p) {
     category:    p.category?._id || p.category || '',
     colorName:   p.colorName   || '',
     price:       p.price       != null ? String(p.price)     : '',
+    rawCost:     p.rawCost     != null ? String(p.rawCost)   : '',
     salePrice:   p.salePrice   != null ? String(p.salePrice) : '',
     stock:       p.stock       != null ? String(p.stock)     : '',
     sizes:       (p.sizes || []).map(s => ({ label: s.label, stock: s.stock })),
@@ -59,6 +60,7 @@ function makeEmptyProdEntry() {
     category:    '',
     colorName:   '',
     price:       '',
+    rawCost:     '',
     salePrice:   '',
     stock:       '',
     sizes:       [],
@@ -82,6 +84,7 @@ export default function Collections() {
   const [colDate, setColDate]     = useState('');   // datetime-local string
   const [colBanner, setColBanner] = useState(false);
   const [colProds, setColProds]   = useState([]);
+  const [selectedExistingProductId, setSelectedExistingProductId] = useState('');
   const [deleteIdx, setDeleteIdx] = useState(null);
 
   const showToast = (msg, type = 'success') => setToast({ message: msg, type });
@@ -162,6 +165,19 @@ export default function Collections() {
     setColProds(prev => [...prev, makeEmptyProdEntry()]);
   }
 
+  function addExistingProduct() {
+    if (!selectedExistingProductId) return;
+
+    const product = allProducts.find(p => p._id === selectedExistingProductId);
+    if (!product) return;
+
+    setColProds(prev => {
+      if (prev.some(p => p._id === product._id)) return prev;
+      return [...prev, makeProdEntry(product)];
+    });
+    setSelectedExistingProductId('');
+  }
+
   function removeProduct(k) {
     setColProds(prev => {
       const p = prev.find(x => key(x) === k);
@@ -206,6 +222,7 @@ export default function Collections() {
 
     const hasNegative = colProds.some(p =>
       Number(p.price) < 0 ||
+      (p.rawCost !== '' && Number(p.rawCost) < 0) ||
       (p.salePrice !== '' && Number(p.salePrice) < 0) ||
       (p.stock !== '' && Number(p.stock) < 0)
     );
@@ -227,6 +244,7 @@ export default function Collections() {
         const payload = {
           name:        p.name,
           price:       Number(p.price) || 0,
+          rawCost:     p.rawCost === '' ? 0 : Number(p.rawCost),
           salePrice:   p.salePrice ? Number(p.salePrice) : null,
           category:    p.category,
           colorName:   p.colorName || '',
@@ -400,9 +418,33 @@ export default function Collections() {
               <h3 className="col-products-title">
                 منتجات الكولكشن <span>({colProds.length})</span>
               </h3>
-              <button type="button" className="admin-btn admin-btn--primary" onClick={addNewProduct}>
-                + إضافة منتج
-              </button>
+              <div className="col-product-actions">
+                <div className="col-existing-product-picker">
+                  <select
+                    value={selectedExistingProductId}
+                    onChange={e => setSelectedExistingProductId(e.target.value)}
+                    aria-label="اختر منتج موجود"
+                  >
+                    <option value="">اختر منتج موجود</option>
+                    {allProducts
+                      .filter(p => !colProds.some(cp => cp._id === p._id))
+                      .map(p => (
+                        <option key={p._id} value={p._id}>{p.name}</option>
+                      ))}
+                  </select>
+                  <button
+                    type="button"
+                    className="admin-btn admin-btn--secondary"
+                    onClick={addExistingProduct}
+                    disabled={!selectedExistingProductId}
+                  >
+                    + إضافة منتج موجود
+                  </button>
+                </div>
+                <button type="button" className="admin-btn admin-btn--primary" onClick={addNewProduct}>
+                  + إضافة منتج جديد
+                </button>
+              </div>
             </div>
 
             {colProds.length === 0 ? (
@@ -434,6 +476,12 @@ export default function Collections() {
                         {p._modified && p._id && <span className="modified-badge">معدّل</span>}
                       </div>
                       <div className="col-prod-card__hd-right">
+                        <span className="col-prod-card__price">
+                          {Number(p.price || 0).toLocaleString('en-US')} ₪
+                        </span>
+                        <span className="col-prod-card__raw-cost">
+                          خام: {Number(p.rawCost || 0).toLocaleString('en-US')} ₪
+                        </span>
                         <button
                           type="button"
                           className="col-prod-remove"
@@ -479,8 +527,8 @@ export default function Collections() {
                           </div>
                         </div>
 
-                        {/* صف 2: سعر البيع | السعر الأصلي | الكمية */}
-                        <div className="form-row form-row--3">
+                        {/* صف 2: سعر البيع | السعر الخام | السعر الأصلي | الكمية */}
+                        <div className="form-row form-row--4">
                           <div className="form-field">
                             <label>سعر البيع <span className="req">*</span></label>
                             <input
@@ -488,6 +536,15 @@ export default function Collections() {
                               value={p.price}
                               onChange={e => updateProd(key(p), 'price', e.target.value)}
                               placeholder="₪"
+                            />
+                          </div>
+                          <div className="form-field">
+                            <label>السعر الخام</label>
+                            <input
+                              type="number" min="0"
+                              value={p.rawCost}
+                              onChange={e => updateProd(key(p), 'rawCost', e.target.value)}
+                              placeholder="تكلفة القطعة"
                             />
                           </div>
                           <div className="form-field">

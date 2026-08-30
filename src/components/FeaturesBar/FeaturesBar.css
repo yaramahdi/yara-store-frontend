@@ -5,6 +5,7 @@
   background: #1A1A1A;
   direction: rtl;
   overflow: hidden;
+  margin-top: 12px;
 }
 
 .feature-item {

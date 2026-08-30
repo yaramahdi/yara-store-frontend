@@ -30,12 +30,6 @@ export default function HeroSection({ onShopNow }) {
           Yara Store
         </h1>
 
-        <div className="hero-sub-wrap">
-          <p className="hero-sub">
-            أناقة بلا حدود
-          </p>
-        </div>
-
         <p className="hero-desc">
           اكتشفي أجمل موديلاتنا المميزة بألوان مريحة وتصميم أنيق
         </p>
