@@ -120,8 +120,6 @@ export default function ProductGrid({
   const displayed = useMemo(() => sorted.filter(p => {
     if (favoritesOnly && !favoriteIds.includes(String(p._id))) return false;
     const col = collectionMap[String(p._id)];
-    // أخفِ منتجات الكولكشنات المجدولة في المستقبل
-    if (col && !col.launched) return false;
     // إذا كولكشن محددة، اعرض فقط منتجاتها
     if (activeCollection) return col?.name === activeCollection;
     return true;
@@ -263,7 +261,9 @@ export default function ProductGrid({
           <ProductCard
             key={p._id}
             product={p}
-            collectionName={collectionMap[String(p._id)]?.name || null}
+            collectionName={collectionMap[String(p._id)]?.launched
+              ? collectionMap[String(p._id)].name
+              : null}
           />
         ))}
         {loading && Array(4).fill(0).map((_, i) => (
