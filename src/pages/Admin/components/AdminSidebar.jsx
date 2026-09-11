@@ -51,6 +51,15 @@ const IcOrders = () => (
   </svg>
 );
 
+const IcParcels = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8z"/>
+    <path d="M3.27 6.96 12 12l8.73-5.04"/>
+    <line x1="12" y1="22.08" x2="12" y2="12"/>
+    <path d="M7.5 4.27 16.5 9.5"/>
+  </svg>
+);
+
 const IcLogout = () => (
   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
@@ -63,6 +72,7 @@ const navItems = [
   { icon: <IcOrders />,        label: 'الطلبات',      path: '/admin/orders'        },
   { icon: <IcProducts />,      label: 'المنتجات',     path: '/admin/products'      },
   { icon: <IcCollections />,   label: 'الكولكشنات',   path: '/admin/collections'   },
+  { icon: <IcParcels />,       label: 'الطرود',        path: '/admin/parcels'       },
   { icon: <IcCategories />,    label: 'الفئات',       path: '/admin/categories'    },
   { icon: <IcAnnouncements />, label: 'الإعلانات',    path: '/admin/announcements' },
   { icon: <IcSettings />,      label: 'الإعدادات',    path: '/admin/settings'      },

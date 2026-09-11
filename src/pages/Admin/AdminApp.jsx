@@ -8,6 +8,7 @@ import Categories    from './Categories/Categories';
 import Announcements from './Announcements/Announcements';
 import Settings      from './Settings/Settings';
 import Collections   from './Collections/Collections';
+import Parcels       from './Parcels/Parcels';
 import './AdminApp.css';
 
 export default function AdminApp() {
@@ -32,6 +33,7 @@ export default function AdminApp() {
             <Route path="categories"    element={<Categories />}    />
             <Route path="announcements" element={<Announcements />} />
             <Route path="collections"   element={<Collections />}   />
+            <Route path="parcels"       element={<Parcels />}       />
             <Route path="settings"      element={<Settings />}      />
             <Route path="*"             element={<Navigate to="dashboard" replace />} />
           </Routes>

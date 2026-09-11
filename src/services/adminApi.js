@@ -72,6 +72,13 @@ export const adminConfirmOrder  = (id, data = {})  => axios.patch(`${BASE}/order
 export const adminDeleteOrder   = (id)  => axios.delete(`${BASE}/orders/${id}`, authHeaders());
 export const adminGetDashboardStats = () => axios.get(`${BASE}/orders/stats/dashboard`, authHeaders());
 
+// Parcels — طرود التوريد
+export const adminGetParcels   = ()        => axios.get(`${BASE}/parcels`, authHeaders());
+export const adminGetParcel    = (id)      => axios.get(`${BASE}/parcels/${id}`, authHeaders());
+export const adminCreateParcel = (data)    => axios.post(`${BASE}/parcels`, data, authHeaders());
+export const adminUpdateParcel = (id, data) => axios.put(`${BASE}/parcels/${id}`, data, authHeaders());
+export const adminDeleteParcel = (id)      => axios.delete(`${BASE}/parcels/${id}`, authHeaders());
+
 const uploadFile = async (file) => {
   const formData = new FormData();
   formData.append('image', file);
