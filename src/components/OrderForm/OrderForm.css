@@ -546,6 +546,70 @@
   margin-bottom: 8px;
 }
 
+.of-invoice-subtotal {
+  font-size: 12px;
+  color: var(--text-medium);
+  margin-bottom: 4px;
+}
+
+/* ── كود الخصم ── */
+.of-discount-box {
+  margin-bottom: 10px;
+}
+
+.of-discount-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.of-discount-input-row .of-input {
+  flex: 1;
+}
+
+.of-discount-apply-btn {
+  padding: 0 16px;
+  border: none;
+  border-radius: 12px;
+  background: var(--gold);
+  color: #fff;
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.of-discount-apply-btn:hover:not(:disabled) { background: var(--gold-dark); }
+.of-discount-apply-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.of-discount-applied {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #eafaf0;
+  border: 1.5px solid #2e7d50;
+  color: #1f5c38;
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.of-discount-remove {
+  background: none;
+  border: none;
+  color: #b91c1c;
+  font-family: 'Cairo', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  flex-shrink: 0;
+}
+
 /* ── إشعار التحويل لواتساب بعد نجاح الطلب ── */
 .of-redirect-notice {
   display: flex;

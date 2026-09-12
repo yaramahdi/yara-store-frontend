@@ -1,0 +1,61 @@
+.similar-products-section {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border, #eee);
+}
+
+.similar-products-heading {
+  font-family: 'Tajawal', 'Cairo', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-dark, #1a1a1a);
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.similar-products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .similar-products-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .similar-products-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ── Skeleton أثناء التحميل ── */
+.sp-sk-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sp-sk-img,
+.sp-sk-line {
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    var(--pink-light) 25%,
+    var(--pink-bg) 50%,
+    var(--pink-light) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.sp-sk-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 14px;
+}
+
+.sp-sk-line {
+  height: 14px;
+}
+
+.sp-sk-line.w-70 { width: 70%; }
+.sp-sk-line.w-40 { width: 40%; }

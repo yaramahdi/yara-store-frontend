@@ -5,10 +5,12 @@ import { PRESET_LOGOS, resolveLogoSrc } from '../../../utils/paymentPresets';
 import './Settings.css';
 
 const EMPTY_METHOD = { name: '', accountNumber: '', iban: '', accountHolderName: '', logo: '', isVisible: true };
+const EMPTY_DISCOUNT = { code: '', percent: '', isActive: true };
 
 export default function Settings() {
   const [form, setForm] = useState({ whatsapp: '', storeName: '' });
   const [paymentMethods, setPaymentMethods] = useState([]);
+  const [discountCodes, setDiscountCodes] = useState([]);
   const [loading, setLoading]     = useState(true);
   const [saving, setSaving]       = useState(false);
   const [toast, setToast]         = useState(null);
@@ -18,6 +20,10 @@ export default function Settings() {
   const [newMethod, setNewMethod]           = useState(EMPTY_METHOD);
   const [uploadingLogo, setUploadingLogo]   = useState(false);
 
+  // new-discount-code form state
+  const [showAddDiscount, setShowAddDiscount] = useState(false);
+  const [newDiscount, setNewDiscount]         = useState(EMPTY_DISCOUNT);
+
   const showToast = (msg, type = 'success') => setToast({ message: msg, type });
 
   useEffect(() => {
@@ -26,6 +32,7 @@ export default function Settings() {
         const d = res.data || {};
         setForm({ whatsapp: d.whatsappNumber || '', storeName: d.storeName || '' });
         setPaymentMethods(d.paymentMethods || []);
+        setDiscountCodes(d.discountCodes || []);
       })
       .catch(() => showToast('❌ فشل تحميل الإعدادات', 'error'))
       .finally(() => setLoading(false));
@@ -63,6 +70,25 @@ export default function Settings() {
     ));
   }
 
+  function addDiscount() {
+    const code = newDiscount.code.trim().toUpperCase();
+    const percent = Number(newDiscount.percent);
+    if (!code || !percent || percent < 1 || percent > 100) return;
+    setDiscountCodes(ds => [...ds, { code, percent, isActive: true, _id: Date.now().toString() }]);
+    setNewDiscount(EMPTY_DISCOUNT);
+    setShowAddDiscount(false);
+  }
+
+  function deleteDiscount(id) {
+    setDiscountCodes(ds => ds.filter(d => (d._id || d.id) !== id));
+  }
+
+  function toggleDiscount(id) {
+    setDiscountCodes(ds => ds.map(d =>
+      (d._id || d.id) === id ? { ...d, isActive: !d.isActive } : d
+    ));
+  }
+
   async function handleSave(e) {
     e.preventDefault();
     setSaving(true);
@@ -71,6 +97,7 @@ export default function Settings() {
         whatsappNumber: form.whatsapp,
         storeName: form.storeName,
         paymentMethods,
+        discountCodes,
       });
       showToast('✅ تم حفظ الإعدادات بنجاح');
     } catch {
@@ -282,6 +309,119 @@ export default function Settings() {
               onClick={() => setShowAddForm(true)}
             >
               + إضافة طريقة دفع
+            </button>
+          )}
+        </div>
+
+        {/* ── أكواد الخصم ── */}
+        <div className="settings-field">
+          <label className="settings-label">أكواد الخصم</label>
+          <p className="settings-hint">أنشئي كود خصم بنسبة مئوية عن كامل الطلب — تقدري تفعّليه أو تعطّليه بأي وقت</p>
+
+          {discountCodes.length > 0 && (
+            <div className="pm-list">
+              {discountCodes.map(d => {
+                const id = d._id || d.id;
+                return (
+                  <div key={id} className={`pm-item ${!d.isActive ? 'pm-hidden' : ''}`}>
+                    <div className="pm-item-left">
+                      <div className="pm-logo-placeholder">🏷️</div>
+                      <div className="pm-info">
+                        <span className="pm-name" dir="ltr">{d.code}</span>
+                        <span className="pm-detail">خصم {d.percent}%</span>
+                      </div>
+                    </div>
+                    <div className="pm-item-actions">
+                      <button
+                        type="button"
+                        className={`pm-toggle-btn ${d.isActive ? 'visible' : 'hidden'}`}
+                        onClick={() => toggleDiscount(id)}
+                        title={d.isActive ? 'تعطيل' : 'تفعيل'}
+                      >
+                        {d.isActive ? (
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                          </svg>
+                        ) : (
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                            <line x1="1" y1="1" x2="23" y2="23"/>
+                          </svg>
+                        )}
+                      </button>
+                      <button
+                        type="button"
+                        className="pm-delete-btn"
+                        onClick={() => deleteDiscount(id)}
+                        title="حذف"
+                      >
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <polyline points="3 6 5 6 21 6"/>
+                          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+
+          {showAddDiscount ? (
+            <div className="pm-add-form">
+              <h4 className="pm-add-title">إضافة كود خصم جديد</h4>
+
+              <div className="pm-add-field">
+                <label>الكود *</label>
+                <input
+                  className="admin-input-field"
+                  dir="ltr"
+                  value={newDiscount.code}
+                  onChange={e => setNewDiscount(d => ({ ...d, code: e.target.value }))}
+                  placeholder="مثال: Yar22"
+                />
+              </div>
+
+              <div className="pm-add-field">
+                <label>نسبة الخصم (%) *</label>
+                <input
+                  className="admin-input-field"
+                  type="number"
+                  min="1"
+                  max="100"
+                  dir="ltr"
+                  value={newDiscount.percent}
+                  onChange={e => setNewDiscount(d => ({ ...d, percent: e.target.value }))}
+                  placeholder="30"
+                />
+              </div>
+
+              <div className="pm-add-actions">
+                <button
+                  type="button"
+                  className="pm-cancel-btn"
+                  onClick={() => { setShowAddDiscount(false); setNewDiscount(EMPTY_DISCOUNT); }}
+                >
+                  إلغاء
+                </button>
+                <button
+                  type="button"
+                  className="pm-confirm-add-btn"
+                  disabled={!newDiscount.code.trim() || !newDiscount.percent}
+                  onClick={addDiscount}
+                >
+                  إضافة
+                </button>
+              </div>
+            </div>
+          ) : (
+            <button
+              type="button"
+              className="pm-add-btn"
+              onClick={() => setShowAddDiscount(true)}
+            >
+              + إضافة كود خصم
             </button>
           )}
         </div>

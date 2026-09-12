@@ -101,6 +101,17 @@
   display: inline-flex;
 }
 
+/* نبضة لحظة وصول أنيميشن "طيران" القطعة لأيقونة السلة */
+@keyframes cartIconPulse {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(1.35); }
+  60%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+.cart-btn.cart-icon-pulse {
+  animation: cartIconPulse 0.5s ease;
+}
+
 .cart-badge {
   position: absolute;
   top: 2px;

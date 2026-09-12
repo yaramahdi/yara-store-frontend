@@ -16,11 +16,14 @@ export const imgUrl = (path) => {
 export const formatWhatsappPhone = (raw) => (raw || '').replace(/\D/g, '');
 
 export const getProducts      = (params, signal) => api.get('/products', { params, signal });
+export const getSimilarProducts = (categoryId, excludeId, limit = 8, signal) =>
+  api.get('/products', { params: { category: categoryId, excludeId, limit }, signal });
 export const getProductsStockStatus = (ids) => api.post('/products/stock-status', { ids });
 export const getProduct       = (id, signal) => api.get(`/products/${id}`, { signal });
 export const getCategories    = ()       => api.get('/categories');
 export const getAnnouncements = ()       => api.get('/announcements');
 export const getSettings      = ()       => api.get('/settings');
 export const createOrder      = (data)   => api.post('/orders', data);
+export const validateDiscountCode = (code) => api.post('/settings/validate-discount', { code });
 
 export default api;

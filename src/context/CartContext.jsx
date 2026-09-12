@@ -4,8 +4,6 @@ import { getProduct } from '../services/api';
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
-  const closeTimerRef = useRef(null);
-
   const [cartItems, setCartItems] = useState(() => {
     try {
       const saved = JSON.parse(localStorage.getItem('yara-cart')) || [];
@@ -22,14 +20,6 @@ export function CartProvider({ children }) {
     catch { return []; }
   });
   const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    return () => {
-      if (closeTimerRef.current) {
-        clearTimeout(closeTimerRef.current);
-      }
-    };
-  }, []);
 
   // حفظ السلة في localStorage عند كل تغيير
   useEffect(() => {
@@ -53,15 +43,9 @@ export function CartProvider({ children }) {
       }
       return [...prev, { ...product, cartId, selectedColor, selectedSize: sizeLabel, quantity: 1 }];
     });
-
-    if (closeTimerRef.current) {
-      clearTimeout(closeTimerRef.current);
-    }
-
-    setIsOpen(true);
-    closeTimerRef.current = setTimeout(() => {
-      setIsOpen(false);
-    }, 2000);
+    // السلة الجانبية ما بتنفتح تلقائياً هون — التأكيد البصري صار عبر أنيميشن
+    // "طيران القطعة" لأيقونة السلة (ProductPage.jsx)؛ السلة تبقى مسكرة لحد ما
+    // الزبونة تدوس على أيقونتها بنفسها.
   };
 
   // مرجع ثابت لأحدث cartItems حتى يبقى syncCartWithStock بنفس المرجع (useCallback deps: [])

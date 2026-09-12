@@ -1,9 +1,11 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useParams, useNavigate, Link, useLocation } from 'react-router-dom';
 import { getProduct, imgUrl } from '../../services/api';
 import { useCart } from '../../context/CartContext';
 import CartDrawer from '../../components/CartDrawer/CartDrawer';
 import Header from '../../components/Header/Header';
+import SimilarProducts from '../../components/SimilarProducts/SimilarProducts';
+import FlyToCartAnimation from '../../components/FlyToCart/FlyToCartAnimation';
 import './ProductPage.css';
 
 function isSizeSoldOut(size) {
@@ -37,6 +39,9 @@ export default function ProductPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [validationMsg, setValidationMsg] = useState('');
   const [shakeBtn, setShakeBtn] = useState(false);
+  const [flyAnim, setFlyAnim] = useState(null);
+  const similarSectionRef = useRef(null);
+  const mainImgRef = useRef(null);
 
   const loadProduct = useCallback(async (signal) => {
     setLoading(true);
@@ -70,6 +75,11 @@ export default function ProductPage() {
   }, [id]);
 
   useEffect(() => {
+    // منتج جديد (رابط مباشر، بطاقة من "قد يعجبكِ أيضاً"، أو سواتش لون) لازم يبلش
+    // من فوق دايماً — بلا هيك بيورّث سكرول الصفحة السابقة (ممكن يكون نازل
+    // لتحت لقسم المنتجات المشابهة) على الصفحة الجديدة القصيرة.
+    window.scrollTo({ top: 0, behavior: 'auto' });
+
     const controller = new AbortController();
     loadProduct(controller.signal);
     return () => controller.abort();
@@ -98,14 +108,20 @@ export default function ProductPage() {
     setValidationMsg('');
     setAdded(true);
 
-    setTimeout(() => {
-      const target = returnTo || '/';
-      navigate(target);
-      setTimeout(() => {
-        window.scrollTo({ top: Number.isFinite(returnToScrollY) ? returnToScrollY : 0, behavior: 'auto' });
-      }, 80);
-      setAdded(false);
-    }, 0);
+    // أنيميشن "طيران" صورة المنتج لأيقونة السلة — بدل فتح السلة الجانبية تلقائياً
+    const imgEl = mainImgRef.current;
+    if (imgEl) {
+      const rect = imgEl.getBoundingClientRect();
+      setFlyAnim({
+        key: Date.now(),
+        imgSrc: imgEl.src,
+        startRect: { left: rect.left, top: rect.top, width: rect.width, height: rect.height },
+      });
+    }
+
+    similarSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    setTimeout(() => setAdded(false), 2000);
   };
 
   if (loading) {
@@ -241,6 +257,7 @@ export default function ProductPage() {
             >
               {product.images?.[selectedImg] ? (
                 <img
+                  ref={mainImgRef}
                   src={imgUrl(product.images[selectedImg])}
                   alt={product.name}
                   className="main-img"
@@ -428,6 +445,13 @@ export default function ProductPage() {
 
         </div>
 
+        <SimilarProducts
+          categoryId={product.category?._id || product.category}
+          excludeId={product._id}
+          excludeIds={(product.linkedColors || []).map((c) => c.productId?._id || c.productId).filter(Boolean)}
+          sectionRef={similarSectionRef}
+        />
+
       </div>
 
       {lightboxOpen && product.images?.[selectedImg] && (
@@ -442,6 +466,15 @@ export default function ProductPage() {
             ✕
           </button>
         </div>
+      )}
+
+      {flyAnim && (
+        <FlyToCartAnimation
+          key={flyAnim.key}
+          imgSrc={flyAnim.imgSrc}
+          startRect={flyAnim.startRect}
+          onDone={() => setFlyAnim(null)}
+        />
       )}
 
       <CartDrawer />

@@ -62,9 +62,9 @@ export default function ProductCard({ product, collectionName }) {
   const discount = product.salePrice && product.salePrice > product.price
     ? Math.round((1 - product.price / product.salePrice) * 100) : null;
 
-  const visibleSizeLabel = product.sizes?.find((s) => s.stock === null || s.stock === undefined || Number(s.stock) > 0)?.label
-    || product.sizes?.[0]?.label
-    || null;
+  const availableSizes = (product.sizes || [])
+    .filter((s) => s.stock === null || s.stock === undefined || Number(s.stock) > 0)
+    .map((s) => s.label);
 
   const manualLabel = product.label ? String(product.label).trim() : '';
   const labelClass = manualLabel === 'جديد' ? 'new' : manualLabel === 'عرض خاص' ? 'special' : 'custom';
@@ -173,18 +173,18 @@ export default function ProductCard({ product, collectionName }) {
           </button>
         </div>
 
-        <div className="product-rating">
-          <span className="stars-sm">★★★★★</span>
-          <span className="rating-count">({product.reviewCount ?? 0})</span>
-        </div>
+        {availableSizes.length > 0 && (
+          <div className="product-sizes-row">
+            {availableSizes.map((label) => (
+              <span key={label} className="size-chip">{label}</span>
+            ))}
+          </div>
+        )}
 
         <div className="product-price-row">
           <span className={`price-now ${discount ? 'on-sale' : ''}`}>{product.price} ₪</span>
           {product.salePrice && <span className="price-was">{product.salePrice} ₪</span>}
           {discount && <span className="price-save">وفري {discount}%</span>}
-          {visibleSizeLabel && (
-            <span className="price-size-inline">مقاس {visibleSizeLabel}</span>
-          )}
         </div>
       </div>
 

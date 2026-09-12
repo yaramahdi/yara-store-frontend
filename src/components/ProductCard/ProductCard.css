@@ -272,15 +272,24 @@
 .wish-btn:hover  { background: #f0c8d8; transform: scale(1.1); }
 .wish-btn.wished { color: #e0204c; background: #fde8ef; }
 
-.product-rating {
+.product-sizes-row {
   display: flex;
   align-items: center;
   gap: 5px;
+  flex-wrap: wrap;
   margin-bottom: 8px;
 }
 
-.stars-sm  { color: #F5A623; font-size: 12px; letter-spacing: 1px; }
-.rating-count { font-size: 11px; color: var(--text-light); }
+.size-chip {
+  font-size: 10px;
+  line-height: 1;
+  color: var(--text-light);
+  font-weight: 600;
+  background: var(--pink-bg);
+  border: 1px solid var(--primary-light);
+  border-radius: 999px;
+  padding: 4px 8px;
+}
 
 /* ─── PRICE ─────────────────────────────────────────────────────── */
 .product-price-row {
@@ -288,18 +297,6 @@
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
-}
-
-.price-size-inline {
-  display: none;
-  font-size: 10px;
-  line-height: 1;
-  color: var(--text-light);
-  font-weight: 600;
-  background: var(--pink-bg);
-  border: 1px solid var(--pink-light);
-  border-radius: 999px;
-  padding: 4px 7px;
 }
 
 .price-now {
@@ -325,25 +322,6 @@
   padding: 2px 7px;
   border-radius: 2px;
 }
-
-/* ─── SIZES ─────────────────────────────────────────────────────── */
-.size-row { display: flex; gap: 4px; flex-wrap: wrap; direction: rtl; margin-bottom: 10px; }
-.size-chip-wrap { display: inline-flex; flex-direction: column; align-items: center; gap: 2px; }
-.size-chip {
-  padding: 2px 8px;
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  font-family: 'Cairo', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  color: #555;
-  background: none;
-  transition: border-color 0.2s, color 0.2s, background 0.2s;
-  cursor: pointer;
-}
-.size-chip.selected { border-color: var(--primary); background: var(--primary-lighter); color: var(--primary-dark); }
-.size-chip__sold-label { font-size: 9px; font-weight: 700; color: #b91c1c; line-height: 1; }
-.size-chip--sold-out { opacity: 0.4; cursor: not-allowed; text-decoration: line-through; border-color: #ddd; }
 
 /* ─── ADD TO CART BUTTON ────────────────────────────────────────── */
 .product-add-btn {

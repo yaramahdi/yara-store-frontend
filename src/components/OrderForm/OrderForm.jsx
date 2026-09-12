@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { getSettings, createOrder, formatWhatsappPhone } from '../../services/api';
+import { getSettings, createOrder, formatWhatsappPhone, validateDiscountCode } from '../../services/api';
 import { resolveLogoSrc, resolveCardTheme } from '../../utils/paymentPresets';
 import './OrderForm.css';
 
@@ -22,7 +22,45 @@ export default function OrderForm({
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const [redirecting, setRedirecting] = useState(false);
+  const [discountInput, setDiscountInput] = useState('');
+  const [discountChecking, setDiscountChecking] = useState(false);
+  const [discountError, setDiscountError] = useState('');
+  const [appliedDiscount, setAppliedDiscount] = useState(null); // { code, percent }
   const redirectTimerRef = useRef(null);
+
+  const discountedTotal = appliedDiscount
+    ? Math.round(totalPrice * (1 - appliedDiscount.percent / 100) * 100) / 100
+    : totalPrice;
+
+  const handleApplyDiscount = async () => {
+    const code = discountInput.trim();
+    if (!code) return;
+
+    setDiscountChecking(true);
+    setDiscountError('');
+
+    try {
+      const { data } = await validateDiscountCode(code);
+      if (data.valid) {
+        setAppliedDiscount({ code: data.code, percent: data.percent });
+        setDiscountError('');
+      } else {
+        setAppliedDiscount(null);
+        setDiscountError(data.message || 'كود الخصم غير صالح');
+      }
+    } catch {
+      setAppliedDiscount(null);
+      setDiscountError('تعذر التحقق من الكود، حاولي مرة أخرى');
+    } finally {
+      setDiscountChecking(false);
+    }
+  };
+
+  const handleRemoveDiscount = () => {
+    setAppliedDiscount(null);
+    setDiscountInput('');
+    setDiscountError('');
+  };
 
   useEffect(() => {
     return () => {
@@ -56,6 +94,9 @@ export default function OrderForm({
     setRedirecting(false);
     setSelectedPayment(null);
     setForm({ name: '', phone: '', address: '' });
+    setDiscountInput('');
+    setDiscountError('');
+    setAppliedDiscount(null);
     loadPaymentMethods();
   }, [isOpen]);
 
@@ -75,8 +116,46 @@ export default function OrderForm({
     setSubmitting(true);
 
     const ic = String.fromCodePoint;
+    let order;
 
-    const lines = cartItems.map(item => {
+    try {
+      const res = await createOrder({
+        customer: form,
+        items: cartItems.map(item => ({
+          productId:     item._id || '',
+          name:          item.name,
+          price:         item.price,
+          quantity:      item.quantity,
+          selectedColor: item.selectedColor || {},
+          selectedSize:  item.selectedSize  || '',
+          images:        item.images        || [],
+        })),
+        totalPrice,
+        discountCode: appliedDiscount?.code || '',
+        paymentMethod: selectedPayment
+          ? {
+              name: selectedPayment.name,
+              accountNumber: selectedPayment.accountNumber,
+              iban: selectedPayment.iban,
+              accountHolderName: selectedPayment.accountHolderName || '',
+            }
+          : {},
+      });
+      order = res.data;
+    } catch (error) {
+      const apiMessage = error?.response?.data?.message;
+      const apiCode = error?.response?.data?.code;
+      if (apiCode === 'OUT_OF_STOCK') {
+        await onStockConflict?.();
+      }
+      setSubmitError(apiMessage || 'تعذر إتمام الطلب حالياً. الرجاء المحاولة مرة أخرى.');
+      setSubmitting(false);
+      return;
+    }
+
+    // نبني رسالة واتساب من بيانات الطلب المرجعة من الباك اند (المصدر الموثوق
+    // للسعر بعد الخصم)، مش من حساب محلي — حتى ما يصير فرق تقريب أو خصم غير متزامن
+    const lines = order.items.map(item => {
       const parts = [`- ${item.name}`];
       if (item.selectedColor?.name) parts.push(`اللون: ${item.selectedColor.name}`);
       if (item.selectedSize) parts.push(`المقاس: ${item.selectedSize}`);
@@ -90,43 +169,17 @@ export default function OrderForm({
     msg += `${ic(0x1F4DE)} الهاتف: ${form.phone}\n`;
     msg += `${ic(0x1F4CD)} العنوان: ${form.address}\n\n`;
     msg += `المنتجات:\n${lines.join('\n')}\n\n`;
-    msg += `المجموع الكلي: ${totalPrice} شيكل`;
+
+    if (order.discountCode) {
+      msg += `المجموع قبل الخصم: ${order.subtotal} شيكل\n`;
+      msg += `كود الخصم: ${order.discountCode} (خصم ${order.discountPercent}%)\n`;
+      msg += `المجموع النهائي: ${order.totalPrice} شيكل`;
+    } else {
+      msg += `المجموع الكلي: ${order.totalPrice} شيكل`;
+    }
 
     if (selectedPayment) {
       msg += `\n\n${ic(0x1F4B3)} طريقة الدفع: ${selectedPayment.name}`;
-    }
-
-    try {
-      await createOrder({
-        customer: form,
-        items: cartItems.map(item => ({
-          productId:     item._id || '',
-          name:          item.name,
-          price:         item.price,
-          quantity:      item.quantity,
-          selectedColor: item.selectedColor || {},
-          selectedSize:  item.selectedSize  || '',
-          images:        item.images        || [],
-        })),
-        totalPrice,
-        paymentMethod: selectedPayment
-          ? {
-              name: selectedPayment.name,
-              accountNumber: selectedPayment.accountNumber,
-              iban: selectedPayment.iban,
-              accountHolderName: selectedPayment.accountHolderName || '',
-            }
-          : {},
-      });
-    } catch (error) {
-      const apiMessage = error?.response?.data?.message;
-      const apiCode = error?.response?.data?.code;
-      if (apiCode === 'OUT_OF_STOCK') {
-        await onStockConflict?.();
-      }
-      setSubmitError(apiMessage || 'تعذر إتمام الطلب حالياً. الرجاء المحاولة مرة أخرى.');
-      setSubmitting(false);
-      return;
     }
 
     const num = formatWhatsappPhone(whatsappNumber);
@@ -265,9 +318,46 @@ export default function OrderForm({
               </tbody>
             </table>
 
+            {/* كود الخصم */}
+            <div className="of-discount-box">
+              {appliedDiscount ? (
+                <div className="of-discount-applied">
+                  <span>✓ تم تطبيق كود "{appliedDiscount.code}" (خصم {appliedDiscount.percent}%)</span>
+                  <button type="button" className="of-discount-remove" onClick={handleRemoveDiscount}>إزالة</button>
+                </div>
+              ) : (
+                <div className="of-discount-input-row">
+                  <input
+                    className="of-input"
+                    dir="ltr"
+                    value={discountInput}
+                    onChange={e => setDiscountInput(e.target.value)}
+                    placeholder="كود الخصم (إن وجد)"
+                    onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); handleApplyDiscount(); } }}
+                  />
+                  <button
+                    type="button"
+                    className="of-discount-apply-btn"
+                    onClick={handleApplyDiscount}
+                    disabled={!discountInput.trim() || discountChecking}
+                  >
+                    {discountChecking ? 'جارٍ التحقق...' : 'تطبيق'}
+                  </button>
+                </div>
+              )}
+              {discountError && <p className="of-field-error">{discountError}</p>}
+            </div>
+
             {/* Total */}
             <div className="of-invoice-total">
-              <strong>الإجمالي: {totalPrice} ₪</strong>
+              {appliedDiscount ? (
+                <>
+                  <div className="of-invoice-subtotal">المجموع قبل الخصم: <s>{totalPrice} ₪</s></div>
+                  <strong>الإجمالي بعد الخصم: {discountedTotal} ₪</strong>
+                </>
+              ) : (
+                <strong>الإجمالي: {totalPrice} ₪</strong>
+              )}
             </div>
 
             {/* Actions */}
