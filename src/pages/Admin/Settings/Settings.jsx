@@ -5,7 +5,7 @@ import { PRESET_LOGOS, resolveLogoSrc } from '../../../utils/paymentPresets';
 import './Settings.css';
 
 const EMPTY_METHOD = { name: '', accountNumber: '', iban: '', accountHolderName: '', logo: '', isVisible: true };
-const EMPTY_DISCOUNT = { code: '', percent: '', isActive: true };
+const EMPTY_DISCOUNT = { code: '', percent: '', minOrderTotal: '', isActive: true };
 
 export default function Settings() {
   const [form, setForm] = useState({ whatsapp: '', storeName: '' });
@@ -73,8 +73,9 @@ export default function Settings() {
   function addDiscount() {
     const code = newDiscount.code.trim().toUpperCase();
     const percent = Number(newDiscount.percent);
-    if (!code || !percent || percent < 1 || percent > 100) return;
-    setDiscountCodes(ds => [...ds, { code, percent, isActive: true, _id: Date.now().toString() }]);
+    const minOrderTotal = Number(newDiscount.minOrderTotal);
+    if (!code || !percent || percent < 1 || percent > 100 || !Number.isFinite(minOrderTotal) || minOrderTotal < 0) return;
+    setDiscountCodes(ds => [...ds, { code, percent, minOrderTotal, isActive: true, _id: Date.now().toString() }]);
     setNewDiscount(EMPTY_DISCOUNT);
     setShowAddDiscount(false);
   }
@@ -329,6 +330,9 @@ export default function Settings() {
                       <div className="pm-info">
                         <span className="pm-name" dir="ltr">{d.code}</span>
                         <span className="pm-detail">خصم {d.percent}%</span>
+                        {Number(d.minOrderTotal || 0) > 0 && (
+                          <span className="pm-detail">للطلبات من {Number(d.minOrderTotal)} شيكل</span>
+                        )}
                       </div>
                     </div>
                     <div className="pm-item-actions">
@@ -397,6 +401,21 @@ export default function Settings() {
                 />
               </div>
 
+              <div className="pm-add-field">
+                <label>الحد الأدنى لقيمة الطلب (شيكل) *</label>
+                <input
+                  className="admin-input-field"
+                  type="number"
+                  min="0"
+                  step="0.01"
+                  dir="ltr"
+                  value={newDiscount.minOrderTotal}
+                  onChange={e => setNewDiscount(d => ({ ...d, minOrderTotal: e.target.value }))}
+                  placeholder="200"
+                />
+                <p className="settings-hint">سيُحسب على قيمة القطع قبل الخصم</p>
+              </div>
+
               <div className="pm-add-actions">
                 <button
                   type="button"
@@ -408,7 +427,7 @@ export default function Settings() {
                 <button
                   type="button"
                   className="pm-confirm-add-btn"
-                  disabled={!newDiscount.code.trim() || !newDiscount.percent}
+                  disabled={!newDiscount.code.trim() || !newDiscount.percent || newDiscount.minOrderTotal === ''}
                   onClick={addDiscount}
                 >
                   إضافة

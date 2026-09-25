@@ -3,7 +3,10 @@ import axios from 'axios';
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 const IMG_BASE = import.meta.env.VITE_BASE_URL || 'http://localhost:5000';
 
-const api = axios.create({ baseURL: API_BASE, timeout: 15000 });
+// Render's free instances may need tens of seconds to wake after inactivity.
+// Keep the request alive while the UI shows its loading skeleton instead of
+// turning a normal cold start into a misleading network error.
+const api = axios.create({ baseURL: API_BASE, timeout: 60000 });
 
 // تحويل مسار الصورة إلى URL كامل
 export const imgUrl = (path) => {
@@ -24,6 +27,7 @@ export const getCategories    = ()       => api.get('/categories');
 export const getAnnouncements = ()       => api.get('/announcements');
 export const getSettings      = ()       => api.get('/settings');
 export const createOrder      = (data)   => api.post('/orders', data);
-export const validateDiscountCode = (code) => api.post('/settings/validate-discount', { code });
+export const validateDiscountCode = (code, orderTotal) =>
+  api.post('/settings/validate-discount', { code, orderTotal });
 
 export default api;

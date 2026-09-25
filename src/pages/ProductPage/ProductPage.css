@@ -283,9 +283,21 @@
 /* ─── اسم المنتج ─── */
 .product-header {
   display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-title-row {
+  display: flex;
   align-items: center;
   gap: 10px;
-  flex-wrap: wrap;
+  width: 100%;
+  min-width: 0;
+}
+
+.product-title-row .product-title {
+  min-width: 0;
 }
 
 .product-title {
@@ -295,6 +307,29 @@
   color: var(--text-dark);
   line-height: 1.3;
   margin: 0;
+}
+
+.product-share-btn {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 1px solid var(--pink-medium);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--text-medium);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.product-share-btn:hover {
+  color: var(--gold-dark);
+  border-color: var(--gold);
+  background: var(--pink-bg);
+  transform: translateY(-1px);
 }
 
 .product-selected-size {
@@ -322,10 +357,109 @@
     align-items: flex-start;
   }
 
+  .product-title-row {
+    gap: 8px;
+  }
+
   .product-selected-size {
     padding: 4px 10px;
     font-size: 11px;
   }
+}
+
+/* ─── نافذة نسخ الرابط ─── */
+.share-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(34, 28, 31, 0.42);
+  animation: shareModalFadeIn 0.2s ease both;
+}
+
+.share-modal {
+  position: relative;
+  width: min(100%, 340px);
+  padding: 30px 24px 22px;
+  border: 1px solid var(--pink-medium);
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: 0 16px 40px rgba(92, 48, 67, 0.2);
+  text-align: center;
+  font-family: 'Cairo', sans-serif;
+  animation: shareModalSlideIn 0.25s ease both;
+}
+
+.share-modal-close {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  color: var(--text-medium);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.share-modal h2 {
+  margin: 0 0 8px;
+  color: var(--text-dark);
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.share-modal p {
+  margin: 0 0 20px;
+  color: var(--text-medium);
+  font-size: 12px;
+}
+
+.share-copy-btn,
+.share-cancel-btn {
+  width: 100%;
+  min-height: 42px;
+  border-radius: 10px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.share-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: var(--white);
+}
+
+.share-copy-btn:hover {
+  background: var(--gold-dark);
+}
+
+.share-cancel-btn {
+  margin-top: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--text-medium);
+}
+
+@keyframes shareModalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shareModalSlideIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 /* ─── السعر ─── */

@@ -148,7 +148,53 @@
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
   border-radius: 16px;
-  aspect-ratio: 1;
+}
+
+.pg-skeleton-header {
+  direction: rtl;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.pg-skeleton-line,
+.pg-skeleton-sort,
+.product-card-skeleton__button {
+  display: block;
+}
+
+.pg-skeleton-line--title { width: 132px; height: 22px; }
+.pg-skeleton-sort { width: 70px; height: 34px; border-radius: 10px; }
+
+.product-card-skeleton {
+  overflow: hidden;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.product-card-skeleton__image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 0;
+}
+
+.product-card-skeleton__info {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 14px;
+}
+
+.pg-skeleton-line--category { width: 38%; height: 10px; }
+.pg-skeleton-line--name { width: 78%; height: 15px; }
+.pg-skeleton-line--price { width: 48%; height: 17px; }
+
+.product-card-skeleton__button {
+  width: 100%;
+  height: 42px;
+  border-radius: 0;
 }
 
 /* حالة فارغة */

@@ -36,6 +36,8 @@ export default function ProductPage() {
   const [selectedImg, setSelectedImg] = useState(0);
   const [selectedSize, setSelectedSize] = useState(null);
   const [added, setAdded] = useState(false);
+  const [shareModalOpen, setShareModalOpen] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [validationMsg, setValidationMsg] = useState('');
   const [shakeBtn, setShakeBtn] = useState(false);
@@ -122,6 +124,39 @@ export default function ProductPage() {
     similarSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     setTimeout(() => setAdded(false), 2000);
+  };
+
+  const openShareModal = () => {
+    setLinkCopied(false);
+    setShareModalOpen(true);
+  };
+
+  const handleCopyLink = async () => {
+    const productUrl = window.location.href;
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(productUrl);
+      } else {
+        const textArea = document.createElement('textarea');
+        textArea.value = productUrl;
+        textArea.setAttribute('readonly', '');
+        textArea.style.position = 'fixed';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        textArea.remove();
+      }
+
+      setLinkCopied(true);
+      setTimeout(() => {
+        setLinkCopied(false);
+        setShareModalOpen(false);
+      }, 1400);
+    } catch {
+      setLinkCopied(false);
+    }
   };
 
   if (loading) {
@@ -296,9 +331,25 @@ export default function ProductPage() {
           <div className="product-details">
 
             <div className="product-header anim-item" style={{ '--delay': '0s' }}>
-              <h1 className="product-title">
-                {product.name}
-              </h1>
+              <div className="product-title-row">
+                <h1 className="product-title">
+                  {product.name}
+                </h1>
+
+                <button
+                  type="button"
+                  className="product-share-btn"
+                  onClick={openShareModal}
+                  aria-label="مشاركة المنتج"
+                  title="مشاركة المنتج"
+                >
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 16V3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                    <path d="m7 8 5-5 5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
+                </button>
+              </div>
 
               {selectedSize && (
                 <span className="product-selected-size">{selectedSize.label}</span>
@@ -453,6 +504,45 @@ export default function ProductPage() {
         />
 
       </div>
+
+      {shareModalOpen && (
+        <div className="share-modal-backdrop" onClick={() => setShareModalOpen(false)}>
+          <div
+            className="share-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="share-modal-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="share-modal-close"
+              onClick={() => setShareModalOpen(false)}
+              aria-label="إغلاق"
+            >
+              ×
+            </button>
+            <h2 id="share-modal-title">هل تريدين نسخ رابط القطعة؟</h2>
+            <p>يمكنك مشاركة رابط المنتج مع صديقاتك بسهولة.</p>
+            <button type="button" className="share-copy-btn" onClick={handleCopyLink}>
+              {linkCopied ? (
+                <span>✓ تم نسخ الرابط</span>
+              ) : (
+                <>
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" strokeWidth="2" />
+                    <path d="M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3" stroke="currentColor" strokeWidth="2" />
+                  </svg>
+                  <span>نسخ الرابط</span>
+                </>
+              )}
+            </button>
+            <button type="button" className="share-cancel-btn" onClick={() => setShareModalOpen(false)}>
+              ليس الآن
+            </button>
+          </div>
+        </div>
+      )}
 
       {lightboxOpen && product.images?.[selectedImg] && (
         <div className="lightbox-overlay" onClick={() => setLightboxOpen(false)}>

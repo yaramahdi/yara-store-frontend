@@ -40,9 +40,13 @@ export default function OrderForm({
     setDiscountError('');
 
     try {
-      const { data } = await validateDiscountCode(code);
+      const { data } = await validateDiscountCode(code, totalPrice);
       if (data.valid) {
-        setAppliedDiscount({ code: data.code, percent: data.percent });
+        setAppliedDiscount({
+          code: data.code,
+          percent: data.percent,
+          minOrderTotal: data.minOrderTotal || 0,
+        });
         setDiscountError('');
       } else {
         setAppliedDiscount(null);

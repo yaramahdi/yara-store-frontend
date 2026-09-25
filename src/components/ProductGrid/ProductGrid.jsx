@@ -33,6 +33,30 @@ function buildCollectionMap(collections = []) {
   return map;
 }
 
+function ProductGridSkeleton() {
+  return (
+    <section className="product-grid-section" aria-busy="true" aria-label="جاري تحميل المنتجات">
+      <div className="pg-skeleton-header">
+        <span className="pg-skeleton-line pg-skeleton-line--title" />
+        <span className="pg-skeleton-sort" />
+      </div>
+      <div className="products-grid">
+        {Array.from({ length: 8 }, (_, i) => (
+          <div key={i} className="product-card-skeleton" aria-hidden="true">
+            <div className="skeleton product-card-skeleton__image" />
+            <div className="product-card-skeleton__info">
+              <span className="skeleton pg-skeleton-line pg-skeleton-line--category" />
+              <span className="skeleton pg-skeleton-line pg-skeleton-line--name" />
+              <span className="skeleton pg-skeleton-line pg-skeleton-line--price" />
+            </div>
+            <span className="skeleton product-card-skeleton__button" />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export default function ProductGrid({
   categoryId,
   searchQuery,
@@ -173,13 +197,7 @@ export default function ProductGrid({
   );
 
   if (loading && products.length === 0) {
-    return (
-      <section className="product-grid-section">
-        <div className="products-grid">
-          {Array(8).fill(0).map((_, i) => <div key={i} className="skeleton" />)}
-        </div>
-      </section>
-    );
+    return <ProductGridSkeleton />;
   }
 
   if (!loading && loadError && products.length === 0) {
