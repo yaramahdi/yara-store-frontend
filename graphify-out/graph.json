@@ -370,7 +370,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "cartdrawer_cartdrawer_cartdrawer",
-      "community": 2,
+      "community": 0,
       "norm_label": "cartdrawer()"
     },
     {
@@ -430,7 +430,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "errorboundary_errorboundary",
-      "community": 10,
+      "community": 2,
       "norm_label": "errorboundary.jsx"
     },
     {
@@ -440,7 +440,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "errorboundary_errorboundary_errorboundary",
-      "community": 10,
+      "community": 2,
       "norm_label": "errorboundary"
     },
     {
@@ -450,7 +450,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "errorboundary_errorboundary_errorboundary_constructor",
-      "community": 10,
+      "community": 2,
       "norm_label": ".constructor()"
     },
     {
@@ -460,7 +460,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "errorboundary_errorboundary_errorboundary_getderivedstatefromerror",
-      "community": 10,
+      "community": 2,
       "norm_label": ".getderivedstatefromerror()"
     },
     {
@@ -470,7 +470,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "errorboundary_errorboundary_errorboundary_componentdidcatch",
-      "community": 10,
+      "community": 2,
       "norm_label": ".componentdidcatch()"
     },
     {
@@ -480,7 +480,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "errorboundary_errorboundary_errorboundary_render",
-      "community": 10,
+      "community": 2,
       "norm_label": ".render()"
     },
     {
@@ -490,7 +490,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "featuresbar_featuresbar",
-      "community": 0,
+      "community": 14,
       "norm_label": "featuresbar.jsx"
     },
     {
@@ -500,8 +500,28 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "featuresbar_featuresbar_featuresbar",
-      "community": 0,
+      "community": 14,
       "norm_label": "featuresbar()"
+    },
+    {
+      "label": "FlyToCartAnimation.jsx",
+      "file_type": "code",
+      "source_file": "src/components/FlyToCart/FlyToCartAnimation.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "flytocart_flytocartanimation",
+      "community": 0,
+      "norm_label": "flytocartanimation.jsx"
+    },
+    {
+      "label": "FlyToCartAnimation()",
+      "file_type": "code",
+      "source_file": "src/components/FlyToCart/FlyToCartAnimation.jsx",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "flytocart_flytocartanimation_flytocartanimation",
+      "community": 0,
+      "norm_label": "flytocartanimation()"
     },
     {
       "label": "Footer.jsx",
@@ -510,7 +530,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "footer_footer",
-      "community": 0,
+      "community": 14,
       "norm_label": "footer.jsx"
     },
     {
@@ -520,7 +540,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "footer_footer_footer",
-      "community": 0,
+      "community": 14,
       "norm_label": "footer()"
     },
     {
@@ -530,7 +550,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "header_header",
-      "community": 2,
+      "community": 0,
       "norm_label": "header.jsx"
     },
     {
@@ -540,7 +560,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "header_header_header",
-      "community": 2,
+      "community": 0,
       "norm_label": "header()"
     },
     {
@@ -550,7 +570,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "herosection_herosection",
-      "community": 0,
+      "community": 14,
       "norm_label": "herosection.jsx"
     },
     {
@@ -560,7 +580,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "herosection_herosection_herosection",
-      "community": 0,
+      "community": 14,
       "norm_label": "herosection()"
     },
     {
@@ -570,7 +590,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "orderform_orderform",
-      "community": 0,
+      "community": 6,
       "norm_label": "orderform.jsx"
     },
     {
@@ -580,7 +600,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "orderform_orderform_orderform",
-      "community": 0,
+      "community": 6,
       "norm_label": "orderform()"
     },
     {
@@ -590,7 +610,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "productcard_productcard",
-      "community": 5,
+      "community": 0,
       "norm_label": "productcard.jsx"
     },
     {
@@ -600,7 +620,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "productcard_productcard_readfavids",
-      "community": 5,
+      "community": 0,
       "norm_label": "readfavids()"
     },
     {
@@ -610,7 +630,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "productcard_productcard_productcard",
-      "community": 5,
+      "community": 0,
       "norm_label": "productcard()"
     },
     {
@@ -654,14 +674,44 @@
       "norm_label": "buildcollectionmap()"
     },
     {
-      "label": "ProductGrid()",
+      "label": "ProductGridSkeleton()",
       "file_type": "code",
       "source_file": "src/components/ProductGrid/ProductGrid.jsx",
       "source_location": "L36",
       "_origin": "ast",
+      "id": "productgrid_productgrid_productgridskeleton",
+      "community": 0,
+      "norm_label": "productgridskeleton()"
+    },
+    {
+      "label": "ProductGrid()",
+      "file_type": "code",
+      "source_file": "src/components/ProductGrid/ProductGrid.jsx",
+      "source_location": "L60",
+      "_origin": "ast",
       "id": "productgrid_productgrid_productgrid",
       "community": 0,
       "norm_label": "productgrid()"
+    },
+    {
+      "label": "SimilarProducts.jsx",
+      "file_type": "code",
+      "source_file": "src/components/SimilarProducts/SimilarProducts.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "similarproducts_similarproducts",
+      "community": 0,
+      "norm_label": "similarproducts.jsx"
+    },
+    {
+      "label": "SimilarProducts()",
+      "file_type": "code",
+      "source_file": "src/components/SimilarProducts/SimilarProducts.jsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "similarproducts_similarproducts_similarproducts",
+      "community": 0,
+      "norm_label": "similarproducts()"
     },
     {
       "label": "WhatsAppBubble.jsx",
@@ -670,7 +720,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "whatsappbubble_whatsappbubble",
-      "community": 0,
+      "community": 14,
       "norm_label": "whatsappbubble.jsx"
     },
     {
@@ -680,7 +730,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "whatsappbubble_whatsappbubble_whatsappbubble",
-      "community": 0,
+      "community": 14,
       "norm_label": "whatsappbubble()"
     },
     {
@@ -690,7 +740,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "context_cartcontext",
-      "community": 2,
+      "community": 0,
       "norm_label": "cartcontext.jsx"
     },
     {
@@ -700,7 +750,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "context_cartcontext_cartcontext",
-      "community": 2,
+      "community": 0,
       "norm_label": "cartcontext"
     },
     {
@@ -717,10 +767,10 @@
       "label": "useCart()",
       "file_type": "code",
       "source_file": "src/context/CartContext.jsx",
-      "source_location": "L162",
+      "source_location": "L146",
       "_origin": "ast",
       "id": "context_cartcontext_usecart",
-      "community": 2,
+      "community": 0,
       "norm_label": "usecart()"
     },
     {
@@ -730,7 +780,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main",
-      "community": 10,
+      "community": 2,
       "norm_label": "main.jsx"
     },
     {
@@ -747,7 +797,7 @@
       "label": "AdminApp()",
       "file_type": "code",
       "source_file": "src/pages/Admin/AdminApp.jsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "admin_adminapp_adminapp",
       "community": 9,
@@ -810,7 +860,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "collections_collections",
-      "community": 8,
+      "community": 6,
       "norm_label": "collections.jsx"
     },
     {
@@ -820,7 +870,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "collections_collections_quick_sizes",
-      "community": 8,
+      "community": 6,
       "norm_label": "quick_sizes"
     },
     {
@@ -830,7 +880,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "collections_collections_formatlaunch",
-      "community": 8,
+      "community": 6,
       "norm_label": "formatlaunch()"
     },
     {
@@ -840,7 +890,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "collections_collections_resolveimg",
-      "community": 8,
+      "community": 6,
       "norm_label": "resolveimg()"
     },
     {
@@ -850,7 +900,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "collections_collections_makeprodentry",
-      "community": 8,
+      "community": 6,
       "norm_label": "makeprodentry()"
     },
     {
@@ -860,7 +910,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "collections_collections_makeemptyprodentry",
-      "community": 8,
+      "community": 6,
       "norm_label": "makeemptyprodentry()"
     },
     {
@@ -870,7 +920,7 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "collections_collections_collections",
-      "community": 8,
+      "community": 6,
       "norm_label": "collections()"
     },
     {
@@ -930,7 +980,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "orders_orders",
-      "community": 5,
+      "community": 4,
       "norm_label": "orders.jsx"
     },
     {
@@ -940,7 +990,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "orders_orders_status",
-      "community": 5,
+      "community": 4,
       "norm_label": "status"
     },
     {
@@ -950,7 +1000,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "orders_orders_invoicemodal",
-      "community": 5,
+      "community": 4,
       "norm_label": "invoicemodal()"
     },
     {
@@ -960,7 +1010,7 @@
       "source_location": "L133",
       "_origin": "ast",
       "id": "orders_orders_confirmordermodal",
-      "community": 5,
+      "community": 4,
       "norm_label": "confirmordermodal()"
     },
     {
@@ -970,8 +1020,78 @@
       "source_location": "L230",
       "_origin": "ast",
       "id": "orders_orders_orders",
-      "community": 5,
+      "community": 4,
       "norm_label": "orders()"
+    },
+    {
+      "label": "Parcels.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "parcels_parcels",
+      "community": 5,
+      "norm_label": "parcels.jsx"
+    },
+    {
+      "label": "QUICK_SIZES",
+      "file_type": "code",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "parcels_parcels_quick_sizes",
+      "community": 5,
+      "norm_label": "quick_sizes"
+    },
+    {
+      "label": "resolveImg()",
+      "file_type": "code",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "parcels_parcels_resolveimg",
+      "community": 5,
+      "norm_label": "resolveimg()"
+    },
+    {
+      "label": "fmt()",
+      "file_type": "code",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "parcels_parcels_fmt",
+      "community": 5,
+      "norm_label": "fmt()"
+    },
+    {
+      "label": "makeProdEntry()",
+      "file_type": "code",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "parcels_parcels_makeprodentry",
+      "community": 5,
+      "norm_label": "makeprodentry()"
+    },
+    {
+      "label": "makeEmptyProdEntry()",
+      "file_type": "code",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "parcels_parcels_makeemptyprodentry",
+      "community": 5,
+      "norm_label": "makeemptyprodentry()"
+    },
+    {
+      "label": "Parcels()",
+      "file_type": "code",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "parcels_parcels_parcels",
+      "community": 5,
+      "norm_label": "parcels()"
     },
     {
       "label": "Products.jsx",
@@ -1044,10 +1164,20 @@
       "norm_label": "empty_method"
     },
     {
+      "label": "EMPTY_DISCOUNT",
+      "file_type": "code",
+      "source_file": "src/pages/Admin/Settings/Settings.jsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "settings_settings_empty_discount",
+      "community": 6,
+      "norm_label": "empty_discount"
+    },
+    {
       "label": "Settings()",
       "file_type": "code",
       "source_file": "src/pages/Admin/Settings/Settings.jsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "settings_settings_settings",
       "community": 6,
@@ -1124,10 +1254,20 @@
       "norm_label": "icorders()"
     },
     {
-      "label": "IcLogout()",
+      "label": "IcParcels()",
       "file_type": "code",
       "source_file": "src/pages/Admin/components/AdminSidebar.jsx",
       "source_location": "L54",
+      "_origin": "ast",
+      "id": "components_adminsidebar_icparcels",
+      "community": 4,
+      "norm_label": "icparcels()"
+    },
+    {
+      "label": "IcLogout()",
+      "file_type": "code",
+      "source_file": "src/pages/Admin/components/AdminSidebar.jsx",
+      "source_location": "L63",
       "_origin": "ast",
       "id": "components_adminsidebar_iclogout",
       "community": 4,
@@ -1137,7 +1277,7 @@
       "label": "navItems",
       "file_type": "code",
       "source_file": "src/pages/Admin/components/AdminSidebar.jsx",
-      "source_location": "L62",
+      "source_location": "L71",
       "_origin": "ast",
       "id": "components_adminsidebar_navitems",
       "community": 4,
@@ -1147,7 +1287,7 @@
       "label": "AdminSidebar()",
       "file_type": "code",
       "source_file": "src/pages/Admin/components/AdminSidebar.jsx",
-      "source_location": "L71",
+      "source_location": "L81",
       "_origin": "ast",
       "id": "components_adminsidebar_adminsidebar",
       "community": 4,
@@ -1160,7 +1300,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_modal",
-      "community": 7,
+      "community": 3,
       "norm_label": "modal.jsx"
     },
     {
@@ -1170,7 +1310,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "components_modal_modal",
-      "community": 7,
+      "community": 3,
       "norm_label": "modal()"
     },
     {
@@ -1180,7 +1320,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_toast",
-      "community": 7,
+      "community": 6,
       "norm_label": "toast.jsx"
     },
     {
@@ -1190,7 +1330,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "components_toast_toast",
-      "community": 7,
+      "community": 6,
       "norm_label": "toast()"
     },
     {
@@ -1200,7 +1340,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "pages_home",
-      "community": 0,
+      "community": 14,
       "norm_label": "home.jsx"
     },
     {
@@ -1210,7 +1350,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "pages_home_home",
-      "community": 0,
+      "community": 14,
       "norm_label": "home()"
     },
     {
@@ -1220,27 +1360,27 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "productpage_productpage",
-      "community": 2,
+      "community": 0,
       "norm_label": "productpage.jsx"
     },
     {
       "label": "isSizeSoldOut()",
       "file_type": "code",
       "source_file": "src/pages/ProductPage/ProductPage.jsx",
-      "source_location": "L9",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "productpage_productpage_issizesoldout",
-      "community": 2,
+      "community": 0,
       "norm_label": "issizesoldout()"
     },
     {
       "label": "ProductPage()",
       "file_type": "code",
       "source_file": "src/pages/ProductPage/ProductPage.jsx",
-      "source_location": "L13",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "productpage_productpage_productpage",
-      "community": 2,
+      "community": 0,
       "norm_label": "productpage()"
     },
     {
@@ -1270,7 +1410,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_adminapi",
-      "community": 12,
+      "community": 7,
       "norm_label": "adminapi.js"
     },
     {
@@ -1280,7 +1420,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "services_adminapi_authheaders",
-      "community": 3,
+      "community": 7,
       "norm_label": "authheaders()"
     },
     {
@@ -1320,7 +1460,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "services_adminapi_adminupdateproduct",
-      "community": 8,
+      "community": 11,
       "norm_label": "adminupdateproduct()"
     },
     {
@@ -1330,7 +1470,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "services_adminapi_admindeleteproduct",
-      "community": 3,
+      "community": 11,
       "norm_label": "admindeleteproduct()"
     },
     {
@@ -1350,7 +1490,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "services_adminapi_admingetcategories",
-      "community": 3,
+      "community": 9,
       "norm_label": "admingetcategories()"
     },
     {
@@ -1390,7 +1530,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "services_adminapi_admingetannouncements",
-      "community": 9,
+      "community": 7,
       "norm_label": "admingetannouncements()"
     },
     {
@@ -1440,7 +1580,7 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "services_adminapi_adminupdatesettings",
-      "community": 8,
+      "community": 6,
       "norm_label": "adminupdatesettings()"
     },
     {
@@ -1450,7 +1590,7 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "services_adminapi_admingetorders",
-      "community": 5,
+      "community": 4,
       "norm_label": "admingetorders()"
     },
     {
@@ -1460,7 +1600,7 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "services_adminapi_adminconfirmorder",
-      "community": 3,
+      "community": 7,
       "norm_label": "adminconfirmorder()"
     },
     {
@@ -1470,7 +1610,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "services_adminapi_admindeleteorder",
-      "community": 3,
+      "community": 7,
       "norm_label": "admindeleteorder()"
     },
     {
@@ -1484,10 +1624,60 @@
       "norm_label": "admingetdashboardstats()"
     },
     {
+      "label": "adminGetParcels()",
+      "file_type": "code",
+      "source_file": "src/services/adminApi.js",
+      "source_location": "L76",
+      "_origin": "ast",
+      "id": "services_adminapi_admingetparcels",
+      "community": 5,
+      "norm_label": "admingetparcels()"
+    },
+    {
+      "label": "adminGetParcel()",
+      "file_type": "code",
+      "source_file": "src/services/adminApi.js",
+      "source_location": "L77",
+      "_origin": "ast",
+      "id": "services_adminapi_admingetparcel",
+      "community": 7,
+      "norm_label": "admingetparcel()"
+    },
+    {
+      "label": "adminCreateParcel()",
+      "file_type": "code",
+      "source_file": "src/services/adminApi.js",
+      "source_location": "L78",
+      "_origin": "ast",
+      "id": "services_adminapi_admincreateparcel",
+      "community": 7,
+      "norm_label": "admincreateparcel()"
+    },
+    {
+      "label": "adminUpdateParcel()",
+      "file_type": "code",
+      "source_file": "src/services/adminApi.js",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "services_adminapi_adminupdateparcel",
+      "community": 5,
+      "norm_label": "adminupdateparcel()"
+    },
+    {
+      "label": "adminDeleteParcel()",
+      "file_type": "code",
+      "source_file": "src/services/adminApi.js",
+      "source_location": "L80",
+      "_origin": "ast",
+      "id": "services_adminapi_admindeleteparcel",
+      "community": 5,
+      "norm_label": "admindeleteparcel()"
+    },
+    {
       "label": "uploadFile()",
       "file_type": "code",
       "source_file": "src/services/adminApi.js",
-      "source_location": "L75",
+      "source_location": "L82",
       "_origin": "ast",
       "id": "services_adminapi_uploadfile",
       "community": 12,
@@ -1497,7 +1687,7 @@
       "label": "uploadImage()",
       "file_type": "code",
       "source_file": "src/services/adminApi.js",
-      "source_location": "L88",
+      "source_location": "L95",
       "_origin": "ast",
       "id": "services_adminapi_uploadimage",
       "community": 12,
@@ -1507,7 +1697,7 @@
       "label": "uploadProductImage()",
       "file_type": "code",
       "source_file": "src/services/adminApi.js",
-      "source_location": "L90",
+      "source_location": "L97",
       "_origin": "ast",
       "id": "services_adminapi_uploadproductimage",
       "community": 12,
@@ -1527,7 +1717,7 @@
       "label": "api",
       "file_type": "code",
       "source_file": "src/services/api.js",
-      "source_location": "L6",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "services_api_api",
       "community": 0,
@@ -1537,37 +1727,47 @@
       "label": "imgUrl()",
       "file_type": "code",
       "source_file": "src/services/api.js",
-      "source_location": "L9",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "services_api_imgurl",
-      "community": 5,
+      "community": 0,
       "norm_label": "imgurl()"
     },
     {
       "label": "formatWhatsappPhone()",
       "file_type": "code",
       "source_file": "src/services/api.js",
-      "source_location": "L16",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "services_api_formatwhatsappphone",
-      "community": 0,
+      "community": 14,
       "norm_label": "formatwhatsappphone()"
     },
     {
       "label": "getProducts()",
       "file_type": "code",
       "source_file": "src/services/api.js",
-      "source_location": "L18",
+      "source_location": "L21",
       "_origin": "ast",
       "id": "services_api_getproducts",
       "community": 0,
       "norm_label": "getproducts()"
     },
     {
+      "label": "getSimilarProducts()",
+      "file_type": "code",
+      "source_file": "src/services/api.js",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "services_api_getsimilarproducts",
+      "community": 0,
+      "norm_label": "getsimilarproducts()"
+    },
+    {
       "label": "getProductsStockStatus()",
       "file_type": "code",
       "source_file": "src/services/api.js",
-      "source_location": "L19",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "services_api_getproductsstockstatus",
       "community": 0,
@@ -1577,17 +1777,17 @@
       "label": "getProduct()",
       "file_type": "code",
       "source_file": "src/services/api.js",
-      "source_location": "L20",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "services_api_getproduct",
-      "community": 2,
+      "community": 0,
       "norm_label": "getproduct()"
     },
     {
       "label": "getCategories()",
       "file_type": "code",
       "source_file": "src/services/api.js",
-      "source_location": "L21",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "services_api_getcategories",
       "community": 0,
@@ -1597,7 +1797,7 @@
       "label": "getAnnouncements()",
       "file_type": "code",
       "source_file": "src/services/api.js",
-      "source_location": "L22",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "services_api_getannouncements",
       "community": 0,
@@ -1607,21 +1807,31 @@
       "label": "getSettings()",
       "file_type": "code",
       "source_file": "src/services/api.js",
-      "source_location": "L23",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "services_api_getsettings",
-      "community": 0,
+      "community": 14,
       "norm_label": "getsettings()"
     },
     {
       "label": "createOrder()",
       "file_type": "code",
       "source_file": "src/services/api.js",
-      "source_location": "L24",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "services_api_createorder",
-      "community": 0,
+      "community": 6,
       "norm_label": "createorder()"
+    },
+    {
+      "label": "validateDiscountCode()",
+      "file_type": "code",
+      "source_file": "src/services/api.js",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "services_api_validatediscountcode",
+      "community": 6,
+      "norm_label": "validatediscountcode()"
     },
     {
       "label": "compressBeforeUpload.js",
@@ -1781,9 +1991,9 @@
       "source_file": "package.json",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_dependencies",
-      "confidence_score": 1.0
+      "target": "package_dependencies"
     },
     {
       "relation": "contains",
@@ -1791,9 +2001,9 @@
       "source_file": "package.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_devdependencies",
-      "confidence_score": 1.0
+      "target": "package_devdependencies"
     },
     {
       "relation": "contains",
@@ -1801,9 +2011,9 @@
       "source_file": "package.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_name",
-      "confidence_score": 1.0
+      "target": "package_name"
     },
     {
       "relation": "contains",
@@ -1811,9 +2021,9 @@
       "source_file": "package.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_private",
-      "confidence_score": 1.0
+      "target": "package_private"
     },
     {
       "relation": "contains",
@@ -1821,9 +2031,9 @@
       "source_file": "package.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_scripts",
-      "confidence_score": 1.0
+      "target": "package_scripts"
     },
     {
       "relation": "contains",
@@ -1831,9 +2041,9 @@
       "source_file": "package.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_type",
-      "confidence_score": 1.0
+      "target": "package_type"
     },
     {
       "relation": "contains",
@@ -1841,9 +2051,9 @@
       "source_file": "package.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_version",
-      "confidence_score": 1.0
+      "target": "package_version"
     },
     {
       "relation": "contains",
@@ -1851,9 +2061,9 @@
       "source_file": "package.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_build",
-      "confidence_score": 1.0
+      "target": "package_scripts_build"
     },
     {
       "relation": "contains",
@@ -1861,9 +2071,9 @@
       "source_file": "package.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_dev",
-      "confidence_score": 1.0
+      "target": "package_scripts_dev"
     },
     {
       "relation": "contains",
@@ -1871,9 +2081,9 @@
       "source_file": "package.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_lint",
-      "confidence_score": 1.0
+      "target": "package_scripts_lint"
     },
     {
       "relation": "contains",
@@ -1881,9 +2091,9 @@
       "source_file": "package.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_preview",
-      "confidence_score": 1.0
+      "target": "package_scripts_preview"
     },
     {
       "relation": "contains",
@@ -1891,9 +2101,9 @@
       "source_file": "package.json",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_dependencies",
-      "target": "package_dependencies_axios",
-      "confidence_score": 1.0
+      "target": "package_dependencies_axios"
     },
     {
       "relation": "contains",
@@ -1901,9 +2111,9 @@
       "source_file": "package.json",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_dependencies",
-      "target": "package_dependencies_browser_image_compression",
-      "confidence_score": 1.0
+      "target": "package_dependencies_browser_image_compression"
     },
     {
       "relation": "contains",
@@ -1911,9 +2121,9 @@
       "source_file": "package.json",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_dependencies",
-      "target": "package_dependencies_react",
-      "confidence_score": 1.0
+      "target": "package_dependencies_react"
     },
     {
       "relation": "contains",
@@ -1921,9 +2131,9 @@
       "source_file": "package.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_dependencies",
-      "target": "package_dependencies_react_dom",
-      "confidence_score": 1.0
+      "target": "package_dependencies_react_dom"
     },
     {
       "relation": "contains",
@@ -1931,9 +2141,9 @@
       "source_file": "package.json",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_dependencies",
-      "target": "package_dependencies_react_router_dom",
-      "confidence_score": 1.0
+      "target": "package_dependencies_react_router_dom"
     },
     {
       "relation": "contains",
@@ -1941,9 +2151,9 @@
       "source_file": "package.json",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_eslint"
     },
     {
       "relation": "contains",
@@ -1951,9 +2161,9 @@
       "source_file": "package.json",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint_js",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_eslint_js"
     },
     {
       "relation": "contains",
@@ -1961,9 +2171,9 @@
       "source_file": "package.json",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint_plugin_react_hooks",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_eslint_plugin_react_hooks"
     },
     {
       "relation": "contains",
@@ -1971,9 +2181,9 @@
       "source_file": "package.json",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint_plugin_react_refresh",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_eslint_plugin_react_refresh"
     },
     {
       "relation": "contains",
@@ -1981,9 +2191,9 @@
       "source_file": "package.json",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_globals",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_globals"
     },
     {
       "relation": "contains",
@@ -1991,9 +2201,9 @@
       "source_file": "package.json",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_types_react"
     },
     {
       "relation": "contains",
@@ -2001,9 +2211,9 @@
       "source_file": "package.json",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react_dom",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_types_react_dom"
     },
     {
       "relation": "contains",
@@ -2011,9 +2221,9 @@
       "source_file": "package.json",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_vite",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_vite"
     },
     {
       "relation": "contains",
@@ -2021,9 +2231,9 @@
       "source_file": "package.json",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_vitejs_plugin_react",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_vitejs_plugin_react"
     },
     {
       "relation": "imports_from",
@@ -2032,9 +2242,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app",
-      "target": "context_cartcontext",
-      "confidence_score": 1.0
+      "target": "context_cartcontext"
     },
     {
       "relation": "imports",
@@ -2043,9 +2253,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app",
-      "target": "context_cartcontext_cartprovider",
-      "confidence_score": 1.0
+      "target": "context_cartcontext_cartprovider"
     },
     {
       "relation": "imports_from",
@@ -2054,9 +2264,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app",
-      "target": "pages_home",
-      "confidence_score": 1.0
+      "target": "pages_home"
     },
     {
       "relation": "imports_from",
@@ -2065,9 +2275,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app",
-      "target": "productpage_productpage",
-      "confidence_score": 1.0
+      "target": "productpage_productpage"
     },
     {
       "relation": "contains",
@@ -2075,9 +2285,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app",
-      "target": "src_app_adminapp",
-      "confidence_score": 1.0
+      "target": "src_app_adminapp"
     },
     {
       "relation": "contains",
@@ -2085,9 +2295,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app",
-      "target": "src_app_app",
-      "confidence_score": 1.0
+      "target": "src_app_app"
     },
     {
       "relation": "contains",
@@ -2095,9 +2305,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app",
-      "target": "src_app_login",
-      "confidence_score": 1.0
+      "target": "src_app_login"
     },
     {
       "relation": "contains",
@@ -2105,9 +2315,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app",
-      "target": "src_app_notfound",
-      "confidence_score": 1.0
+      "target": "src_app_notfound"
     },
     {
       "relation": "contains",
@@ -2115,9 +2325,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app",
-      "target": "src_app_searchpage",
-      "confidence_score": 1.0
+      "target": "src_app_searchpage"
     },
     {
       "relation": "imports_from",
@@ -2126,9 +2336,9 @@
       "source_file": "src/main.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "src_app",
-      "confidence_score": 1.0
+      "target": "src_app"
     },
     {
       "relation": "contains",
@@ -2136,9 +2346,9 @@
       "source_file": "src/components/AnnouncementBar/AnnouncementBar.jsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "announcementbar_announcementbar",
-      "target": "announcementbar_announcementbar_announcementbar",
-      "confidence_score": 1.0
+      "target": "announcementbar_announcementbar_announcementbar"
     },
     {
       "relation": "imports_from",
@@ -2147,9 +2357,9 @@
       "source_file": "src/components/AnnouncementBar/AnnouncementBar.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "announcementbar_announcementbar",
-      "target": "services_api",
-      "confidence_score": 1.0
+      "target": "services_api"
     },
     {
       "relation": "imports",
@@ -2158,9 +2368,9 @@
       "source_file": "src/components/AnnouncementBar/AnnouncementBar.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "announcementbar_announcementbar",
-      "target": "services_api_getannouncements",
-      "confidence_score": 1.0
+      "target": "services_api_getannouncements"
     },
     {
       "relation": "imports_from",
@@ -2169,9 +2379,9 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_home",
-      "target": "announcementbar_announcementbar",
-      "confidence_score": 1.0
+      "target": "announcementbar_announcementbar"
     },
     {
       "relation": "contains",
@@ -2179,9 +2389,9 @@
       "source_file": "src/components/CartDrawer/CartDrawer.jsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "cartdrawer_cartdrawer",
-      "target": "cartdrawer_cartdrawer_cartdrawer",
-      "confidence_score": 1.0
+      "target": "cartdrawer_cartdrawer_cartdrawer"
     },
     {
       "relation": "imports_from",
@@ -2190,9 +2400,9 @@
       "source_file": "src/components/CartDrawer/CartDrawer.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "cartdrawer_cartdrawer",
-      "target": "context_cartcontext",
-      "confidence_score": 1.0
+      "target": "context_cartcontext"
     },
     {
       "relation": "imports",
@@ -2201,9 +2411,9 @@
       "source_file": "src/components/CartDrawer/CartDrawer.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "cartdrawer_cartdrawer",
-      "target": "context_cartcontext_usecart",
-      "confidence_score": 1.0
+      "target": "context_cartcontext_usecart"
     },
     {
       "relation": "imports_from",
@@ -2212,9 +2422,9 @@
       "source_file": "src/components/CartDrawer/CartDrawer.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "cartdrawer_cartdrawer",
-      "target": "orderform_orderform",
-      "confidence_score": 1.0
+      "target": "orderform_orderform"
     },
     {
       "relation": "imports_from",
@@ -2223,9 +2433,9 @@
       "source_file": "src/components/CartDrawer/CartDrawer.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "cartdrawer_cartdrawer",
-      "target": "services_api",
-      "confidence_score": 1.0
+      "target": "services_api"
     },
     {
       "relation": "imports",
@@ -2234,9 +2444,9 @@
       "source_file": "src/components/CartDrawer/CartDrawer.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "cartdrawer_cartdrawer",
-      "target": "services_api_getsettings",
-      "confidence_score": 1.0
+      "target": "services_api_getsettings"
     },
     {
       "relation": "imports",
@@ -2245,9 +2455,9 @@
       "source_file": "src/components/CartDrawer/CartDrawer.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "cartdrawer_cartdrawer",
-      "target": "services_api_imgurl",
-      "confidence_score": 1.0
+      "target": "services_api_imgurl"
     },
     {
       "relation": "imports_from",
@@ -2256,9 +2466,9 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_home",
-      "target": "cartdrawer_cartdrawer",
-      "confidence_score": 1.0
+      "target": "cartdrawer_cartdrawer"
     },
     {
       "relation": "imports_from",
@@ -2267,9 +2477,9 @@
       "source_file": "src/pages/SearchPage.jsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_searchpage",
-      "target": "cartdrawer_cartdrawer",
-      "confidence_score": 1.0
+      "target": "cartdrawer_cartdrawer"
     },
     {
       "relation": "imports_from",
@@ -2278,9 +2488,9 @@
       "source_file": "src/pages/ProductPage/ProductPage.jsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productpage_productpage",
-      "target": "cartdrawer_cartdrawer",
-      "confidence_score": 1.0
+      "target": "cartdrawer_cartdrawer"
     },
     {
       "relation": "calls",
@@ -2299,9 +2509,9 @@
       "source_file": "src/components/CategorySection/CategorySection.jsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "categorysection_categorysection",
-      "target": "categorysection_categorysection_categorysection",
-      "confidence_score": 1.0
+      "target": "categorysection_categorysection_categorysection"
     },
     {
       "relation": "imports_from",
@@ -2310,9 +2520,9 @@
       "source_file": "src/components/CategorySection/CategorySection.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "categorysection_categorysection",
-      "target": "services_api",
-      "confidence_score": 1.0
+      "target": "services_api"
     },
     {
       "relation": "imports",
@@ -2321,9 +2531,9 @@
       "source_file": "src/components/CategorySection/CategorySection.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "categorysection_categorysection",
-      "target": "services_api_getcategories",
-      "confidence_score": 1.0
+      "target": "services_api_getcategories"
     },
     {
       "relation": "imports",
@@ -2332,9 +2542,9 @@
       "source_file": "src/components/CategorySection/CategorySection.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "categorysection_categorysection",
-      "target": "services_api_imgurl",
-      "confidence_score": 1.0
+      "target": "services_api_imgurl"
     },
     {
       "relation": "imports_from",
@@ -2343,9 +2553,9 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_home",
-      "target": "categorysection_categorysection",
-      "confidence_score": 1.0
+      "target": "categorysection_categorysection"
     },
     {
       "relation": "contains",
@@ -2353,9 +2563,9 @@
       "source_file": "src/components/CollectionBanner/CollectionBanner.jsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collectionbanner_collectionbanner",
-      "target": "collectionbanner_collectionbanner_collectionbanner",
-      "confidence_score": 1.0
+      "target": "collectionbanner_collectionbanner_collectionbanner"
     },
     {
       "relation": "contains",
@@ -2363,9 +2573,9 @@
       "source_file": "src/components/CollectionBanner/CollectionBanner.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collectionbanner_collectionbanner",
-      "target": "collectionbanner_collectionbanner_getcountdown",
-      "confidence_score": 1.0
+      "target": "collectionbanner_collectionbanner_getcountdown"
     },
     {
       "relation": "imports_from",
@@ -2374,9 +2584,9 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_home",
-      "target": "collectionbanner_collectionbanner",
-      "confidence_score": 1.0
+      "target": "collectionbanner_collectionbanner"
     },
     {
       "relation": "calls",
@@ -2385,9 +2595,9 @@
       "source_file": "src/components/CollectionBanner/CollectionBanner.jsx",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collectionbanner_collectionbanner_collectionbanner",
-      "target": "collectionbanner_collectionbanner_getcountdown",
-      "confidence_score": 1.0
+      "target": "collectionbanner_collectionbanner_getcountdown"
     },
     {
       "relation": "contains",
@@ -2395,9 +2605,9 @@
       "source_file": "src/components/ErrorBoundary/ErrorBoundary.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "errorboundary_errorboundary",
-      "target": "errorboundary_errorboundary_errorboundary",
-      "confidence_score": 1.0
+      "target": "errorboundary_errorboundary_errorboundary"
     },
     {
       "relation": "imports_from",
@@ -2406,9 +2616,9 @@
       "source_file": "src/main.jsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_main",
-      "target": "errorboundary_errorboundary",
-      "confidence_score": 1.0
+      "target": "errorboundary_errorboundary"
     },
     {
       "relation": "method",
@@ -2416,9 +2626,9 @@
       "source_file": "src/components/ErrorBoundary/ErrorBoundary.jsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "errorboundary_errorboundary_errorboundary",
-      "target": "errorboundary_errorboundary_errorboundary_componentdidcatch",
-      "confidence_score": 1.0
+      "target": "errorboundary_errorboundary_errorboundary_componentdidcatch"
     },
     {
       "relation": "method",
@@ -2426,9 +2636,9 @@
       "source_file": "src/components/ErrorBoundary/ErrorBoundary.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "errorboundary_errorboundary_errorboundary",
-      "target": "errorboundary_errorboundary_errorboundary_constructor",
-      "confidence_score": 1.0
+      "target": "errorboundary_errorboundary_errorboundary_constructor"
     },
     {
       "relation": "method",
@@ -2436,9 +2646,9 @@
       "source_file": "src/components/ErrorBoundary/ErrorBoundary.jsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "errorboundary_errorboundary_errorboundary",
-      "target": "errorboundary_errorboundary_errorboundary_getderivedstatefromerror",
-      "confidence_score": 1.0
+      "target": "errorboundary_errorboundary_errorboundary_getderivedstatefromerror"
     },
     {
       "relation": "method",
@@ -2446,9 +2656,9 @@
       "source_file": "src/components/ErrorBoundary/ErrorBoundary.jsx",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "errorboundary_errorboundary_errorboundary",
-      "target": "errorboundary_errorboundary_errorboundary_render",
-      "confidence_score": 1.0
+      "target": "errorboundary_errorboundary_errorboundary_render"
     },
     {
       "relation": "contains",
@@ -2456,9 +2666,9 @@
       "source_file": "src/components/FeaturesBar/FeaturesBar.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "featuresbar_featuresbar",
-      "target": "featuresbar_featuresbar_featuresbar",
-      "confidence_score": 1.0
+      "target": "featuresbar_featuresbar_featuresbar"
     },
     {
       "relation": "imports_from",
@@ -2467,8 +2677,29 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_home",
-      "target": "featuresbar_featuresbar",
+      "target": "featuresbar_featuresbar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/FlyToCart/FlyToCartAnimation.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "flytocart_flytocartanimation",
+      "target": "flytocart_flytocartanimation_flytocartanimation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ProductPage/ProductPage.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "productpage_productpage",
+      "target": "flytocart_flytocartanimation",
       "confidence_score": 1.0
     },
     {
@@ -2477,9 +2708,9 @@
       "source_file": "src/components/Footer/Footer.jsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "footer_footer",
-      "target": "footer_footer_footer",
-      "confidence_score": 1.0
+      "target": "footer_footer_footer"
     },
     {
       "relation": "imports_from",
@@ -2488,9 +2719,9 @@
       "source_file": "src/components/Footer/Footer.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "footer_footer",
-      "target": "services_api",
-      "confidence_score": 1.0
+      "target": "services_api"
     },
     {
       "relation": "imports",
@@ -2499,9 +2730,9 @@
       "source_file": "src/components/Footer/Footer.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "footer_footer",
-      "target": "services_api_formatwhatsappphone",
-      "confidence_score": 1.0
+      "target": "services_api_formatwhatsappphone"
     },
     {
       "relation": "imports",
@@ -2510,9 +2741,9 @@
       "source_file": "src/components/Footer/Footer.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "footer_footer",
-      "target": "services_api_getsettings",
-      "confidence_score": 1.0
+      "target": "services_api_getsettings"
     },
     {
       "relation": "imports_from",
@@ -2521,9 +2752,9 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_home",
-      "target": "footer_footer",
-      "confidence_score": 1.0
+      "target": "footer_footer"
     },
     {
       "relation": "calls",
@@ -2543,9 +2774,9 @@
       "source_file": "src/components/Header/Header.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "header_header",
-      "target": "context_cartcontext",
-      "confidence_score": 1.0
+      "target": "context_cartcontext"
     },
     {
       "relation": "imports",
@@ -2554,9 +2785,9 @@
       "source_file": "src/components/Header/Header.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "header_header",
-      "target": "context_cartcontext_usecart",
-      "confidence_score": 1.0
+      "target": "context_cartcontext_usecart"
     },
     {
       "relation": "contains",
@@ -2564,9 +2795,9 @@
       "source_file": "src/components/Header/Header.jsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "header_header",
-      "target": "header_header_header",
-      "confidence_score": 1.0
+      "target": "header_header_header"
     },
     {
       "relation": "imports_from",
@@ -2575,9 +2806,9 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_home",
-      "target": "header_header",
-      "confidence_score": 1.0
+      "target": "header_header"
     },
     {
       "relation": "imports_from",
@@ -2586,9 +2817,9 @@
       "source_file": "src/pages/SearchPage.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_searchpage",
-      "target": "header_header",
-      "confidence_score": 1.0
+      "target": "header_header"
     },
     {
       "relation": "imports_from",
@@ -2597,9 +2828,9 @@
       "source_file": "src/pages/ProductPage/ProductPage.jsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productpage_productpage",
-      "target": "header_header",
-      "confidence_score": 1.0
+      "target": "header_header"
     },
     {
       "relation": "calls",
@@ -2618,9 +2849,9 @@
       "source_file": "src/components/HeroSection/HeroSection.jsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "herosection_herosection",
-      "target": "herosection_herosection_herosection",
-      "confidence_score": 1.0
+      "target": "herosection_herosection_herosection"
     },
     {
       "relation": "imports_from",
@@ -2629,9 +2860,9 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_home",
-      "target": "herosection_herosection",
-      "confidence_score": 1.0
+      "target": "herosection_herosection"
     },
     {
       "relation": "contains",
@@ -2639,9 +2870,9 @@
       "source_file": "src/components/OrderForm/OrderForm.jsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orderform_orderform",
-      "target": "orderform_orderform_orderform",
-      "confidence_score": 1.0
+      "target": "orderform_orderform_orderform"
     },
     {
       "relation": "imports_from",
@@ -2650,9 +2881,42 @@
       "source_file": "src/components/OrderForm/OrderForm.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orderform_orderform",
-      "target": "services_api",
-      "confidence_score": 1.0
+      "target": "services_api"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/OrderForm/OrderForm.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "orderform_orderform",
+      "target": "services_api_createorder"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/OrderForm/OrderForm.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "orderform_orderform",
+      "target": "services_api_formatwhatsappphone"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/OrderForm/OrderForm.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "orderform_orderform",
+      "target": "services_api_getsettings"
     },
     {
       "relation": "imports",
@@ -2662,29 +2926,7 @@
       "source_location": "L2",
       "weight": 1.0,
       "source": "orderform_orderform",
-      "target": "services_api_createorder",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/OrderForm/OrderForm.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "orderform_orderform",
-      "target": "services_api_formatwhatsappphone",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/OrderForm/OrderForm.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "orderform_orderform",
-      "target": "services_api_getsettings",
+      "target": "services_api_validatediscountcode",
       "confidence_score": 1.0
     },
     {
@@ -2694,9 +2936,9 @@
       "source_file": "src/components/OrderForm/OrderForm.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orderform_orderform",
-      "target": "utils_paymentpresets",
-      "confidence_score": 1.0
+      "target": "utils_paymentpresets"
     },
     {
       "relation": "imports",
@@ -2705,9 +2947,9 @@
       "source_file": "src/components/OrderForm/OrderForm.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orderform_orderform",
-      "target": "utils_paymentpresets_resolvecardtheme",
-      "confidence_score": 1.0
+      "target": "utils_paymentpresets_resolvecardtheme"
     },
     {
       "relation": "imports",
@@ -2716,9 +2958,9 @@
       "source_file": "src/components/OrderForm/OrderForm.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orderform_orderform",
-      "target": "utils_paymentpresets_resolvelogosrc",
-      "confidence_score": 1.0
+      "target": "utils_paymentpresets_resolvelogosrc"
     },
     {
       "relation": "contains",
@@ -2726,9 +2968,9 @@
       "source_file": "src/components/ProductCard/ProductCard.jsx",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productcard_productcard",
-      "target": "productcard_productcard_productcard",
-      "confidence_score": 1.0
+      "target": "productcard_productcard_productcard"
     },
     {
       "relation": "contains",
@@ -2736,9 +2978,9 @@
       "source_file": "src/components/ProductCard/ProductCard.jsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productcard_productcard",
-      "target": "productcard_productcard_readfavids",
-      "confidence_score": 1.0
+      "target": "productcard_productcard_readfavids"
     },
     {
       "relation": "imports_from",
@@ -2747,9 +2989,9 @@
       "source_file": "src/components/ProductCard/ProductCard.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productcard_productcard",
-      "target": "services_api",
-      "confidence_score": 1.0
+      "target": "services_api"
     },
     {
       "relation": "imports",
@@ -2758,9 +3000,9 @@
       "source_file": "src/components/ProductCard/ProductCard.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productcard_productcard",
-      "target": "services_api_imgurl",
-      "confidence_score": 1.0
+      "target": "services_api_imgurl"
     },
     {
       "relation": "imports_from",
@@ -2769,7 +3011,18 @@
       "source_file": "src/components/ProductGrid/ProductGrid.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productgrid_productgrid",
+      "target": "productcard_productcard"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SimilarProducts/SimilarProducts.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "similarproducts_similarproducts",
       "target": "productcard_productcard",
       "confidence_score": 1.0
     },
@@ -2791,9 +3044,9 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_home",
-      "target": "productgrid_productgrid",
-      "confidence_score": 1.0
+      "target": "productgrid_productgrid"
     },
     {
       "relation": "imports_from",
@@ -2802,9 +3055,9 @@
       "source_file": "src/pages/SearchPage.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_searchpage",
-      "target": "productgrid_productgrid",
-      "confidence_score": 1.0
+      "target": "productgrid_productgrid"
     },
     {
       "relation": "contains",
@@ -2812,9 +3065,19 @@
       "source_file": "src/components/ProductGrid/ProductGrid.jsx",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productgrid_productgrid",
-      "target": "productgrid_productgrid_buildcollectionmap",
-      "confidence_score": 1.0
+      "target": "productgrid_productgrid_buildcollectionmap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ProductGrid/ProductGrid.jsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "productgrid_productgrid",
+      "target": "productgrid_productgrid_productgrid"
     },
     {
       "relation": "contains",
@@ -2823,7 +3086,7 @@
       "source_location": "L36",
       "weight": 1.0,
       "source": "productgrid_productgrid",
-      "target": "productgrid_productgrid_productgrid",
+      "target": "productgrid_productgrid_productgridskeleton",
       "confidence_score": 1.0
     },
     {
@@ -2832,9 +3095,9 @@
       "source_file": "src/components/ProductGrid/ProductGrid.jsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productgrid_productgrid",
-      "target": "productgrid_productgrid_readfavids",
-      "confidence_score": 1.0
+      "target": "productgrid_productgrid_readfavids"
     },
     {
       "relation": "contains",
@@ -2842,9 +3105,9 @@
       "source_file": "src/components/ProductGrid/ProductGrid.jsx",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productgrid_productgrid",
-      "target": "productgrid_productgrid_sort_options",
-      "confidence_score": 1.0
+      "target": "productgrid_productgrid_sort_options"
     },
     {
       "relation": "imports_from",
@@ -2853,7 +3116,51 @@
       "source_file": "src/components/ProductGrid/ProductGrid.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productgrid_productgrid",
+      "target": "services_api"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ProductGrid/ProductGrid.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "productgrid_productgrid",
+      "target": "services_api_getproducts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ProductGrid/ProductGrid.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "productgrid_productgrid",
+      "target": "services_api_getproductsstockstatus"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ProductPage/ProductPage.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "productpage_productpage",
+      "target": "similarproducts_similarproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SimilarProducts/SimilarProducts.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "similarproducts_similarproducts",
       "target": "services_api",
       "confidence_score": 1.0
     },
@@ -2861,22 +3168,21 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/ProductGrid/ProductGrid.jsx",
+      "source_file": "src/components/SimilarProducts/SimilarProducts.jsx",
       "source_location": "L2",
       "weight": 1.0,
-      "source": "productgrid_productgrid",
-      "target": "services_api_getproducts",
+      "source": "similarproducts_similarproducts",
+      "target": "services_api_getsimilarproducts",
       "confidence_score": 1.0
     },
     {
-      "relation": "imports",
-      "context": "import",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/ProductGrid/ProductGrid.jsx",
-      "source_location": "L2",
+      "source_file": "src/components/SimilarProducts/SimilarProducts.jsx",
+      "source_location": "L8",
       "weight": 1.0,
-      "source": "productgrid_productgrid",
-      "target": "services_api_getproductsstockstatus",
+      "source": "similarproducts_similarproducts",
+      "target": "similarproducts_similarproducts_similarproducts",
       "confidence_score": 1.0
     },
     {
@@ -2886,9 +3192,9 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_home",
-      "target": "whatsappbubble_whatsappbubble",
-      "confidence_score": 1.0
+      "target": "whatsappbubble_whatsappbubble"
     },
     {
       "relation": "imports_from",
@@ -2897,9 +3203,9 @@
       "source_file": "src/components/WhatsAppBubble/WhatsAppBubble.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "whatsappbubble_whatsappbubble",
-      "target": "services_api",
-      "confidence_score": 1.0
+      "target": "services_api"
     },
     {
       "relation": "imports",
@@ -2908,9 +3214,9 @@
       "source_file": "src/components/WhatsAppBubble/WhatsAppBubble.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "whatsappbubble_whatsappbubble",
-      "target": "services_api_formatwhatsappphone",
-      "confidence_score": 1.0
+      "target": "services_api_formatwhatsappphone"
     },
     {
       "relation": "imports",
@@ -2919,9 +3225,9 @@
       "source_file": "src/components/WhatsAppBubble/WhatsAppBubble.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "whatsappbubble_whatsappbubble",
-      "target": "services_api_getsettings",
-      "confidence_score": 1.0
+      "target": "services_api_getsettings"
     },
     {
       "relation": "contains",
@@ -2929,9 +3235,9 @@
       "source_file": "src/components/WhatsAppBubble/WhatsAppBubble.jsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "whatsappbubble_whatsappbubble",
-      "target": "whatsappbubble_whatsappbubble_whatsappbubble",
-      "confidence_score": 1.0
+      "target": "whatsappbubble_whatsappbubble_whatsappbubble"
     },
     {
       "relation": "contains",
@@ -2939,9 +3245,9 @@
       "source_file": "src/context/CartContext.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "context_cartcontext",
-      "target": "context_cartcontext_cartcontext",
-      "confidence_score": 1.0
+      "target": "context_cartcontext_cartcontext"
     },
     {
       "relation": "contains",
@@ -2949,9 +3255,9 @@
       "source_file": "src/context/CartContext.jsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "context_cartcontext",
-      "target": "context_cartcontext_cartprovider",
-      "confidence_score": 1.0
+      "target": "context_cartcontext_cartprovider"
     },
     {
       "relation": "contains",
@@ -2959,9 +3265,9 @@
       "source_file": "src/context/CartContext.jsx",
       "source_location": "L162",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "context_cartcontext",
-      "target": "context_cartcontext_usecart",
-      "confidence_score": 1.0
+      "target": "context_cartcontext_usecart"
     },
     {
       "relation": "imports_from",
@@ -2970,9 +3276,9 @@
       "source_file": "src/context/CartContext.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "context_cartcontext",
-      "target": "services_api",
-      "confidence_score": 1.0
+      "target": "services_api"
     },
     {
       "relation": "imports",
@@ -2981,9 +3287,9 @@
       "source_file": "src/context/CartContext.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "context_cartcontext",
-      "target": "services_api_getproduct",
-      "confidence_score": 1.0
+      "target": "services_api_getproduct"
     },
     {
       "relation": "imports_from",
@@ -2992,9 +3298,9 @@
       "source_file": "src/pages/ProductPage/ProductPage.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productpage_productpage",
-      "target": "context_cartcontext",
-      "confidence_score": 1.0
+      "target": "context_cartcontext"
     },
     {
       "relation": "imports",
@@ -3003,9 +3309,9 @@
       "source_file": "src/pages/ProductPage/ProductPage.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productpage_productpage",
-      "target": "context_cartcontext_usecart",
-      "confidence_score": 1.0
+      "target": "context_cartcontext_usecart"
     },
     {
       "relation": "calls",
@@ -3024,9 +3330,9 @@
       "source_file": "src/pages/Admin/AdminApp.jsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_adminapp",
-      "target": "admin_adminapp_adminapp",
-      "confidence_score": 1.0
+      "target": "admin_adminapp_adminapp"
     },
     {
       "relation": "imports_from",
@@ -3035,9 +3341,9 @@
       "source_file": "src/pages/Admin/AdminApp.jsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_adminapp",
-      "target": "announcements_announcements",
-      "confidence_score": 1.0
+      "target": "announcements_announcements"
     },
     {
       "relation": "imports_from",
@@ -3046,9 +3352,9 @@
       "source_file": "src/pages/Admin/AdminApp.jsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_adminapp",
-      "target": "categories_categories",
-      "confidence_score": 1.0
+      "target": "categories_categories"
     },
     {
       "relation": "imports_from",
@@ -3057,9 +3363,9 @@
       "source_file": "src/pages/Admin/AdminApp.jsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_adminapp",
-      "target": "collections_collections",
-      "confidence_score": 1.0
+      "target": "collections_collections"
     },
     {
       "relation": "imports_from",
@@ -3068,9 +3374,9 @@
       "source_file": "src/pages/Admin/AdminApp.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_adminapp",
-      "target": "components_adminsidebar",
-      "confidence_score": 1.0
+      "target": "components_adminsidebar"
     },
     {
       "relation": "imports_from",
@@ -3079,9 +3385,9 @@
       "source_file": "src/pages/Admin/AdminApp.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_adminapp",
-      "target": "dashboard_dashboard",
-      "confidence_score": 1.0
+      "target": "dashboard_dashboard"
     },
     {
       "relation": "imports_from",
@@ -3090,8 +3396,19 @@
       "source_file": "src/pages/Admin/AdminApp.jsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_adminapp",
-      "target": "orders_orders",
+      "target": "orders_orders"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/AdminApp.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "admin_adminapp",
+      "target": "parcels_parcels",
       "confidence_score": 1.0
     },
     {
@@ -3101,9 +3418,9 @@
       "source_file": "src/pages/Admin/AdminApp.jsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_adminapp",
-      "target": "products_products",
-      "confidence_score": 1.0
+      "target": "products_products"
     },
     {
       "relation": "imports_from",
@@ -3112,9 +3429,9 @@
       "source_file": "src/pages/Admin/AdminApp.jsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "admin_adminapp",
-      "target": "settings_settings",
-      "confidence_score": 1.0
+      "target": "settings_settings"
     },
     {
       "relation": "contains",
@@ -3122,9 +3439,9 @@
       "source_file": "src/pages/Admin/Announcements/Announcements.jsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "announcements_announcements",
-      "target": "announcements_announcements_announcements",
-      "confidence_score": 1.0
+      "target": "announcements_announcements_announcements"
     },
     {
       "relation": "imports_from",
@@ -3133,9 +3450,9 @@
       "source_file": "src/pages/Admin/Announcements/Announcements.jsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "announcements_announcements",
-      "target": "components_modal",
-      "confidence_score": 1.0
+      "target": "components_modal"
     },
     {
       "relation": "imports_from",
@@ -3144,9 +3461,9 @@
       "source_file": "src/pages/Admin/Announcements/Announcements.jsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "announcements_announcements",
-      "target": "components_toast",
-      "confidence_score": 1.0
+      "target": "components_toast"
     },
     {
       "relation": "imports_from",
@@ -3155,9 +3472,9 @@
       "source_file": "src/pages/Admin/Announcements/Announcements.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "announcements_announcements",
-      "target": "services_adminapi",
-      "confidence_score": 1.0
+      "target": "services_adminapi"
     },
     {
       "relation": "imports",
@@ -3166,9 +3483,9 @@
       "source_file": "src/pages/Admin/Announcements/Announcements.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "announcements_announcements",
-      "target": "services_adminapi_admincreateannouncement",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admincreateannouncement"
     },
     {
       "relation": "imports",
@@ -3177,9 +3494,9 @@
       "source_file": "src/pages/Admin/Announcements/Announcements.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "announcements_announcements",
-      "target": "services_adminapi_admindeleteannouncement",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admindeleteannouncement"
     },
     {
       "relation": "imports",
@@ -3188,9 +3505,9 @@
       "source_file": "src/pages/Admin/Announcements/Announcements.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "announcements_announcements",
-      "target": "services_adminapi_admingetannouncements",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetannouncements"
     },
     {
       "relation": "imports",
@@ -3199,9 +3516,9 @@
       "source_file": "src/pages/Admin/Announcements/Announcements.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "announcements_announcements",
-      "target": "services_adminapi_admintoggleannouncement",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admintoggleannouncement"
     },
     {
       "relation": "contains",
@@ -3209,9 +3526,9 @@
       "source_file": "src/pages/Admin/Categories/Categories.jsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "categories_categories",
-      "target": "categories_categories_categories",
-      "confidence_score": 1.0
+      "target": "categories_categories_categories"
     },
     {
       "relation": "contains",
@@ -3219,9 +3536,9 @@
       "source_file": "src/pages/Admin/Categories/Categories.jsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "categories_categories",
-      "target": "categories_categories_empty",
-      "confidence_score": 1.0
+      "target": "categories_categories_empty"
     },
     {
       "relation": "imports_from",
@@ -3230,9 +3547,9 @@
       "source_file": "src/pages/Admin/Categories/Categories.jsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "categories_categories",
-      "target": "components_modal",
-      "confidence_score": 1.0
+      "target": "components_modal"
     },
     {
       "relation": "imports_from",
@@ -3241,9 +3558,9 @@
       "source_file": "src/pages/Admin/Categories/Categories.jsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "categories_categories",
-      "target": "components_toast",
-      "confidence_score": 1.0
+      "target": "components_toast"
     },
     {
       "relation": "imports_from",
@@ -3252,9 +3569,9 @@
       "source_file": "src/pages/Admin/Categories/Categories.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "categories_categories",
-      "target": "services_adminapi",
-      "confidence_score": 1.0
+      "target": "services_adminapi"
     },
     {
       "relation": "imports",
@@ -3263,9 +3580,9 @@
       "source_file": "src/pages/Admin/Categories/Categories.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "categories_categories",
-      "target": "services_adminapi_admincreatecategory",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admincreatecategory"
     },
     {
       "relation": "imports",
@@ -3274,9 +3591,9 @@
       "source_file": "src/pages/Admin/Categories/Categories.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "categories_categories",
-      "target": "services_adminapi_admindeletecategory",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admindeletecategory"
     },
     {
       "relation": "imports",
@@ -3285,9 +3602,9 @@
       "source_file": "src/pages/Admin/Categories/Categories.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "categories_categories",
-      "target": "services_adminapi_admingetcategories",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetcategories"
     },
     {
       "relation": "imports",
@@ -3296,9 +3613,9 @@
       "source_file": "src/pages/Admin/Categories/Categories.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "categories_categories",
-      "target": "services_adminapi_adminupdatecategory",
-      "confidence_score": 1.0
+      "target": "services_adminapi_adminupdatecategory"
     },
     {
       "relation": "imports",
@@ -3307,9 +3624,9 @@
       "source_file": "src/pages/Admin/Categories/Categories.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "categories_categories",
-      "target": "services_adminapi_uploadproductimage",
-      "confidence_score": 1.0
+      "target": "services_adminapi_uploadproductimage"
     },
     {
       "relation": "contains",
@@ -3317,9 +3634,9 @@
       "source_file": "src/pages/Admin/Collections/Collections.jsx",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collections_collections",
-      "target": "collections_collections_collections",
-      "confidence_score": 1.0
+      "target": "collections_collections_collections"
     },
     {
       "relation": "contains",
@@ -3327,9 +3644,9 @@
       "source_file": "src/pages/Admin/Collections/Collections.jsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collections_collections",
-      "target": "collections_collections_formatlaunch",
-      "confidence_score": 1.0
+      "target": "collections_collections_formatlaunch"
     },
     {
       "relation": "contains",
@@ -3337,9 +3654,9 @@
       "source_file": "src/pages/Admin/Collections/Collections.jsx",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collections_collections",
-      "target": "collections_collections_makeemptyprodentry",
-      "confidence_score": 1.0
+      "target": "collections_collections_makeemptyprodentry"
     },
     {
       "relation": "contains",
@@ -3347,9 +3664,9 @@
       "source_file": "src/pages/Admin/Collections/Collections.jsx",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collections_collections",
-      "target": "collections_collections_makeprodentry",
-      "confidence_score": 1.0
+      "target": "collections_collections_makeprodentry"
     },
     {
       "relation": "contains",
@@ -3357,9 +3674,9 @@
       "source_file": "src/pages/Admin/Collections/Collections.jsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collections_collections",
-      "target": "collections_collections_quick_sizes",
-      "confidence_score": 1.0
+      "target": "collections_collections_quick_sizes"
     },
     {
       "relation": "contains",
@@ -3367,9 +3684,9 @@
       "source_file": "src/pages/Admin/Collections/Collections.jsx",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collections_collections",
-      "target": "collections_collections_resolveimg",
-      "confidence_score": 1.0
+      "target": "collections_collections_resolveimg"
     },
     {
       "relation": "imports_from",
@@ -3378,9 +3695,9 @@
       "source_file": "src/pages/Admin/Collections/Collections.jsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collections_collections",
-      "target": "components_toast",
-      "confidence_score": 1.0
+      "target": "components_toast"
     },
     {
       "relation": "imports_from",
@@ -3389,9 +3706,9 @@
       "source_file": "src/pages/Admin/Collections/Collections.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collections_collections",
-      "target": "services_adminapi",
-      "confidence_score": 1.0
+      "target": "services_adminapi"
     },
     {
       "relation": "imports",
@@ -3400,9 +3717,9 @@
       "source_file": "src/pages/Admin/Collections/Collections.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collections_collections",
-      "target": "services_adminapi_admincreateproduct",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admincreateproduct"
     },
     {
       "relation": "imports",
@@ -3411,9 +3728,9 @@
       "source_file": "src/pages/Admin/Collections/Collections.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collections_collections",
-      "target": "services_adminapi_admingetcategories",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetcategories"
     },
     {
       "relation": "imports",
@@ -3422,9 +3739,9 @@
       "source_file": "src/pages/Admin/Collections/Collections.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collections_collections",
-      "target": "services_adminapi_admingetproducts",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetproducts"
     },
     {
       "relation": "imports",
@@ -3433,9 +3750,9 @@
       "source_file": "src/pages/Admin/Collections/Collections.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collections_collections",
-      "target": "services_adminapi_admingetsettings",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetsettings"
     },
     {
       "relation": "imports",
@@ -3444,9 +3761,9 @@
       "source_file": "src/pages/Admin/Collections/Collections.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collections_collections",
-      "target": "services_adminapi_adminupdateproduct",
-      "confidence_score": 1.0
+      "target": "services_adminapi_adminupdateproduct"
     },
     {
       "relation": "imports",
@@ -3455,9 +3772,9 @@
       "source_file": "src/pages/Admin/Collections/Collections.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collections_collections",
-      "target": "services_adminapi_adminupdatesettings",
-      "confidence_score": 1.0
+      "target": "services_adminapi_adminupdatesettings"
     },
     {
       "relation": "imports",
@@ -3466,9 +3783,9 @@
       "source_file": "src/pages/Admin/Collections/Collections.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "collections_collections",
-      "target": "services_adminapi_uploadproductimage",
-      "confidence_score": 1.0
+      "target": "services_adminapi_uploadproductimage"
     },
     {
       "relation": "contains",
@@ -3476,9 +3793,9 @@
       "source_file": "src/pages/Admin/Dashboard/Dashboard.jsx",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_dashboard",
-      "target": "dashboard_dashboard_dashboard",
-      "confidence_score": 1.0
+      "target": "dashboard_dashboard_dashboard"
     },
     {
       "relation": "contains",
@@ -3486,9 +3803,9 @@
       "source_file": "src/pages/Admin/Dashboard/Dashboard.jsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_dashboard",
-      "target": "dashboard_dashboard_staticon",
-      "confidence_score": 1.0
+      "target": "dashboard_dashboard_staticon"
     },
     {
       "relation": "imports_from",
@@ -3497,9 +3814,9 @@
       "source_file": "src/pages/Admin/Dashboard/Dashboard.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_dashboard",
-      "target": "services_adminapi",
-      "confidence_score": 1.0
+      "target": "services_adminapi"
     },
     {
       "relation": "imports",
@@ -3508,9 +3825,9 @@
       "source_file": "src/pages/Admin/Dashboard/Dashboard.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_dashboard",
-      "target": "services_adminapi_admingetannouncements",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetannouncements"
     },
     {
       "relation": "imports",
@@ -3519,9 +3836,9 @@
       "source_file": "src/pages/Admin/Dashboard/Dashboard.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_dashboard",
-      "target": "services_adminapi_admingetcategories",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetcategories"
     },
     {
       "relation": "imports",
@@ -3530,9 +3847,9 @@
       "source_file": "src/pages/Admin/Dashboard/Dashboard.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_dashboard",
-      "target": "services_adminapi_admingetdashboardstats",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetdashboardstats"
     },
     {
       "relation": "imports",
@@ -3541,9 +3858,9 @@
       "source_file": "src/pages/Admin/Dashboard/Dashboard.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "dashboard_dashboard",
-      "target": "services_adminapi_admingetproducts",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetproducts"
     },
     {
       "relation": "contains",
@@ -3551,9 +3868,9 @@
       "source_file": "src/pages/Admin/Login/Login.jsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "login_login",
-      "target": "login_login_login",
-      "confidence_score": 1.0
+      "target": "login_login_login"
     },
     {
       "relation": "imports_from",
@@ -3562,9 +3879,9 @@
       "source_file": "src/pages/Admin/Login/Login.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "login_login",
-      "target": "services_adminapi",
-      "confidence_score": 1.0
+      "target": "services_adminapi"
     },
     {
       "relation": "imports",
@@ -3573,9 +3890,9 @@
       "source_file": "src/pages/Admin/Login/Login.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "login_login",
-      "target": "services_adminapi_adminlogin",
-      "confidence_score": 1.0
+      "target": "services_adminapi_adminlogin"
     },
     {
       "relation": "imports_from",
@@ -3584,9 +3901,9 @@
       "source_file": "src/pages/Admin/Orders/Orders.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orders_orders",
-      "target": "components_toast",
-      "confidence_score": 1.0
+      "target": "components_toast"
     },
     {
       "relation": "contains",
@@ -3594,9 +3911,9 @@
       "source_file": "src/pages/Admin/Orders/Orders.jsx",
       "source_location": "L133",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orders_orders",
-      "target": "orders_orders_confirmordermodal",
-      "confidence_score": 1.0
+      "target": "orders_orders_confirmordermodal"
     },
     {
       "relation": "contains",
@@ -3604,9 +3921,9 @@
       "source_file": "src/pages/Admin/Orders/Orders.jsx",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orders_orders",
-      "target": "orders_orders_invoicemodal",
-      "confidence_score": 1.0
+      "target": "orders_orders_invoicemodal"
     },
     {
       "relation": "contains",
@@ -3614,9 +3931,9 @@
       "source_file": "src/pages/Admin/Orders/Orders.jsx",
       "source_location": "L230",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orders_orders",
-      "target": "orders_orders_orders",
-      "confidence_score": 1.0
+      "target": "orders_orders_orders"
     },
     {
       "relation": "contains",
@@ -3624,9 +3941,9 @@
       "source_file": "src/pages/Admin/Orders/Orders.jsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orders_orders",
-      "target": "orders_orders_status",
-      "confidence_score": 1.0
+      "target": "orders_orders_status"
     },
     {
       "relation": "imports_from",
@@ -3635,9 +3952,9 @@
       "source_file": "src/pages/Admin/Orders/Orders.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orders_orders",
-      "target": "services_adminapi",
-      "confidence_score": 1.0
+      "target": "services_adminapi"
     },
     {
       "relation": "imports",
@@ -3646,9 +3963,9 @@
       "source_file": "src/pages/Admin/Orders/Orders.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orders_orders",
-      "target": "services_adminapi_adminconfirmorder",
-      "confidence_score": 1.0
+      "target": "services_adminapi_adminconfirmorder"
     },
     {
       "relation": "imports",
@@ -3657,9 +3974,9 @@
       "source_file": "src/pages/Admin/Orders/Orders.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orders_orders",
-      "target": "services_adminapi_admindeleteorder",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admindeleteorder"
     },
     {
       "relation": "imports",
@@ -3668,9 +3985,9 @@
       "source_file": "src/pages/Admin/Orders/Orders.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orders_orders",
-      "target": "services_adminapi_admingetorders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetorders"
     },
     {
       "relation": "imports_from",
@@ -3679,9 +3996,9 @@
       "source_file": "src/pages/Admin/Orders/Orders.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orders_orders",
-      "target": "services_api",
-      "confidence_score": 1.0
+      "target": "services_api"
     },
     {
       "relation": "imports",
@@ -3690,9 +4007,9 @@
       "source_file": "src/pages/Admin/Orders/Orders.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orders_orders",
-      "target": "services_api_imgurl",
-      "confidence_score": 1.0
+      "target": "services_api_imgurl"
     },
     {
       "relation": "calls",
@@ -3701,8 +4018,211 @@
       "source_file": "src/pages/Admin/Orders/Orders.jsx",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "orders_orders_invoicemodal",
-      "target": "services_api_imgurl",
+      "target": "services_api_imgurl"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "components_toast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "parcels_parcels_fmt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "parcels_parcels_makeemptyprodentry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "parcels_parcels_makeprodentry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "parcels_parcels_parcels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "parcels_parcels_quick_sizes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "parcels_parcels_resolveimg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "services_adminapi",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "services_adminapi_admincreateparcel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "services_adminapi_admincreateproduct",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "services_adminapi_admindeleteparcel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "services_adminapi_admingetcategories",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "services_adminapi_admingetparcel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "services_adminapi_admingetparcels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "services_adminapi_admingetproducts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "services_adminapi_adminupdateparcel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "services_adminapi_adminupdateproduct",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "parcels_parcels",
+      "target": "services_adminapi_uploadproductimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Parcels/Parcels.jsx",
+      "source_location": "L618",
+      "weight": 1.0,
+      "source": "parcels_parcels_parcels",
+      "target": "parcels_parcels_fmt",
       "confidence_score": 1.0
     },
     {
@@ -3712,9 +4232,9 @@
       "source_file": "src/pages/Admin/Products/Products.jsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "products_products",
-      "target": "components_modal",
-      "confidence_score": 1.0
+      "target": "components_modal"
     },
     {
       "relation": "imports_from",
@@ -3723,9 +4243,9 @@
       "source_file": "src/pages/Admin/Products/Products.jsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "products_products",
-      "target": "components_toast",
-      "confidence_score": 1.0
+      "target": "components_toast"
     },
     {
       "relation": "contains",
@@ -3733,9 +4253,9 @@
       "source_file": "src/pages/Admin/Products/Products.jsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "products_products",
-      "target": "products_products_empty_form",
-      "confidence_score": 1.0
+      "target": "products_products_empty_form"
     },
     {
       "relation": "contains",
@@ -3743,9 +4263,9 @@
       "source_file": "src/pages/Admin/Products/Products.jsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "products_products",
-      "target": "products_products_preset_labels",
-      "confidence_score": 1.0
+      "target": "products_products_preset_labels"
     },
     {
       "relation": "contains",
@@ -3753,9 +4273,9 @@
       "source_file": "src/pages/Admin/Products/Products.jsx",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "products_products",
-      "target": "products_products_products",
-      "confidence_score": 1.0
+      "target": "products_products_products"
     },
     {
       "relation": "contains",
@@ -3763,9 +4283,9 @@
       "source_file": "src/pages/Admin/Products/Products.jsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "products_products",
-      "target": "products_products_quick_sizes",
-      "confidence_score": 1.0
+      "target": "products_products_quick_sizes"
     },
     {
       "relation": "imports_from",
@@ -3774,9 +4294,9 @@
       "source_file": "src/pages/Admin/Products/Products.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "products_products",
-      "target": "services_adminapi",
-      "confidence_score": 1.0
+      "target": "services_adminapi"
     },
     {
       "relation": "imports",
@@ -3785,9 +4305,9 @@
       "source_file": "src/pages/Admin/Products/Products.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "products_products",
-      "target": "services_adminapi_admincreateproduct",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admincreateproduct"
     },
     {
       "relation": "imports",
@@ -3796,9 +4316,9 @@
       "source_file": "src/pages/Admin/Products/Products.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "products_products",
-      "target": "services_adminapi_admindeleteproduct",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admindeleteproduct"
     },
     {
       "relation": "imports",
@@ -3807,9 +4327,9 @@
       "source_file": "src/pages/Admin/Products/Products.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "products_products",
-      "target": "services_adminapi_admingetcategories",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetcategories"
     },
     {
       "relation": "imports",
@@ -3818,9 +4338,9 @@
       "source_file": "src/pages/Admin/Products/Products.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "products_products",
-      "target": "services_adminapi_admingetproducts",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetproducts"
     },
     {
       "relation": "imports",
@@ -3829,9 +4349,9 @@
       "source_file": "src/pages/Admin/Products/Products.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "products_products",
-      "target": "services_adminapi_admintoggleproduct",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admintoggleproduct"
     },
     {
       "relation": "imports",
@@ -3840,9 +4360,9 @@
       "source_file": "src/pages/Admin/Products/Products.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "products_products",
-      "target": "services_adminapi_adminupdateproduct",
-      "confidence_score": 1.0
+      "target": "services_adminapi_adminupdateproduct"
     },
     {
       "relation": "imports",
@@ -3851,9 +4371,9 @@
       "source_file": "src/pages/Admin/Products/Products.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "products_products",
-      "target": "services_adminapi_uploadproductimage",
-      "confidence_score": 1.0
+      "target": "services_adminapi_uploadproductimage"
     },
     {
       "relation": "imports_from",
@@ -3862,9 +4382,9 @@
       "source_file": "src/pages/Admin/Settings/Settings.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "settings_settings",
-      "target": "components_toast",
-      "confidence_score": 1.0
+      "target": "components_toast"
     },
     {
       "relation": "imports_from",
@@ -3873,9 +4393,9 @@
       "source_file": "src/pages/Admin/Settings/Settings.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "settings_settings",
-      "target": "services_adminapi",
-      "confidence_score": 1.0
+      "target": "services_adminapi"
     },
     {
       "relation": "imports",
@@ -3884,9 +4404,9 @@
       "source_file": "src/pages/Admin/Settings/Settings.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "settings_settings",
-      "target": "services_adminapi_admingetsettings",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetsettings"
     },
     {
       "relation": "imports",
@@ -3895,9 +4415,9 @@
       "source_file": "src/pages/Admin/Settings/Settings.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "settings_settings",
-      "target": "services_adminapi_adminupdatesettings",
-      "confidence_score": 1.0
+      "target": "services_adminapi_adminupdatesettings"
     },
     {
       "relation": "imports",
@@ -3906,8 +4426,18 @@
       "source_file": "src/pages/Admin/Settings/Settings.jsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "settings_settings",
-      "target": "services_adminapi_uploadproductimage",
+      "target": "services_adminapi_uploadproductimage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/Settings/Settings.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "settings_settings",
+      "target": "settings_settings_empty_discount",
       "confidence_score": 1.0
     },
     {
@@ -3916,9 +4446,9 @@
       "source_file": "src/pages/Admin/Settings/Settings.jsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "settings_settings",
-      "target": "settings_settings_empty_method",
-      "confidence_score": 1.0
+      "target": "settings_settings_empty_method"
     },
     {
       "relation": "contains",
@@ -3926,9 +4456,9 @@
       "source_file": "src/pages/Admin/Settings/Settings.jsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "settings_settings",
-      "target": "settings_settings_settings",
-      "confidence_score": 1.0
+      "target": "settings_settings_settings"
     },
     {
       "relation": "imports_from",
@@ -3937,9 +4467,9 @@
       "source_file": "src/pages/Admin/Settings/Settings.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "settings_settings",
-      "target": "utils_paymentpresets",
-      "confidence_score": 1.0
+      "target": "utils_paymentpresets"
     },
     {
       "relation": "imports",
@@ -3948,9 +4478,9 @@
       "source_file": "src/pages/Admin/Settings/Settings.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "settings_settings",
-      "target": "utils_paymentpresets_preset_logos",
-      "confidence_score": 1.0
+      "target": "utils_paymentpresets_preset_logos"
     },
     {
       "relation": "imports",
@@ -3959,9 +4489,9 @@
       "source_file": "src/pages/Admin/Settings/Settings.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "settings_settings",
-      "target": "utils_paymentpresets_resolvelogosrc",
-      "confidence_score": 1.0
+      "target": "utils_paymentpresets_resolvelogosrc"
     },
     {
       "relation": "calls",
@@ -3980,9 +4510,9 @@
       "source_file": "src/pages/Admin/components/AdminSidebar.jsx",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_adminsidebar",
-      "target": "components_adminsidebar_adminsidebar",
-      "confidence_score": 1.0
+      "target": "components_adminsidebar_adminsidebar"
     },
     {
       "relation": "contains",
@@ -3990,9 +4520,9 @@
       "source_file": "src/pages/Admin/components/AdminSidebar.jsx",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_adminsidebar",
-      "target": "components_adminsidebar_icannouncements",
-      "confidence_score": 1.0
+      "target": "components_adminsidebar_icannouncements"
     },
     {
       "relation": "contains",
@@ -4000,9 +4530,9 @@
       "source_file": "src/pages/Admin/components/AdminSidebar.jsx",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_adminsidebar",
-      "target": "components_adminsidebar_iccategories",
-      "confidence_score": 1.0
+      "target": "components_adminsidebar_iccategories"
     },
     {
       "relation": "contains",
@@ -4010,9 +4540,29 @@
       "source_file": "src/pages/Admin/components/AdminSidebar.jsx",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_adminsidebar",
-      "target": "components_adminsidebar_iccollections",
-      "confidence_score": 1.0
+      "target": "components_adminsidebar_iccollections"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/components/AdminSidebar.jsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_adminsidebar",
+      "target": "components_adminsidebar_iclogout"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Admin/components/AdminSidebar.jsx",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_adminsidebar",
+      "target": "components_adminsidebar_icorders"
     },
     {
       "relation": "contains",
@@ -4021,17 +4571,7 @@
       "source_location": "L54",
       "weight": 1.0,
       "source": "components_adminsidebar",
-      "target": "components_adminsidebar_iclogout",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/Admin/components/AdminSidebar.jsx",
-      "source_location": "L46",
-      "weight": 1.0,
-      "source": "components_adminsidebar",
-      "target": "components_adminsidebar_icorders",
+      "target": "components_adminsidebar_icparcels",
       "confidence_score": 1.0
     },
     {
@@ -4040,9 +4580,9 @@
       "source_file": "src/pages/Admin/components/AdminSidebar.jsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_adminsidebar",
-      "target": "components_adminsidebar_icproducts",
-      "confidence_score": 1.0
+      "target": "components_adminsidebar_icproducts"
     },
     {
       "relation": "contains",
@@ -4050,9 +4590,9 @@
       "source_file": "src/pages/Admin/components/AdminSidebar.jsx",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_adminsidebar",
-      "target": "components_adminsidebar_icsettings",
-      "confidence_score": 1.0
+      "target": "components_adminsidebar_icsettings"
     },
     {
       "relation": "contains",
@@ -4060,9 +4600,9 @@
       "source_file": "src/pages/Admin/components/AdminSidebar.jsx",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_adminsidebar",
-      "target": "components_adminsidebar_navitems",
-      "confidence_score": 1.0
+      "target": "components_adminsidebar_navitems"
     },
     {
       "relation": "imports_from",
@@ -4071,9 +4611,9 @@
       "source_file": "src/pages/Admin/components/AdminSidebar.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_adminsidebar",
-      "target": "services_adminapi",
-      "confidence_score": 1.0
+      "target": "services_adminapi"
     },
     {
       "relation": "imports",
@@ -4082,9 +4622,9 @@
       "source_file": "src/pages/Admin/components/AdminSidebar.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_adminsidebar",
-      "target": "services_adminapi_admingetorders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetorders"
     },
     {
       "relation": "contains",
@@ -4092,9 +4632,9 @@
       "source_file": "src/pages/Admin/components/Modal.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_modal",
-      "target": "components_modal_modal",
-      "confidence_score": 1.0
+      "target": "components_modal_modal"
     },
     {
       "relation": "contains",
@@ -4102,9 +4642,9 @@
       "source_file": "src/pages/Admin/components/Toast.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_toast",
-      "target": "components_toast_toast",
-      "confidence_score": 1.0
+      "target": "components_toast_toast"
     },
     {
       "relation": "contains",
@@ -4112,9 +4652,9 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_home",
-      "target": "pages_home_home",
-      "confidence_score": 1.0
+      "target": "pages_home_home"
     },
     {
       "relation": "imports_from",
@@ -4123,9 +4663,9 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_home",
-      "target": "services_api",
-      "confidence_score": 1.0
+      "target": "services_api"
     },
     {
       "relation": "imports",
@@ -4134,9 +4674,9 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_home",
-      "target": "services_api_getsettings",
-      "confidence_score": 1.0
+      "target": "services_api_getsettings"
     },
     {
       "relation": "contains",
@@ -4144,9 +4684,9 @@
       "source_file": "src/pages/ProductPage/ProductPage.jsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productpage_productpage",
-      "target": "productpage_productpage_issizesoldout",
-      "confidence_score": 1.0
+      "target": "productpage_productpage_issizesoldout"
     },
     {
       "relation": "contains",
@@ -4154,9 +4694,9 @@
       "source_file": "src/pages/ProductPage/ProductPage.jsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productpage_productpage",
-      "target": "productpage_productpage_productpage",
-      "confidence_score": 1.0
+      "target": "productpage_productpage_productpage"
     },
     {
       "relation": "imports_from",
@@ -4165,9 +4705,9 @@
       "source_file": "src/pages/ProductPage/ProductPage.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productpage_productpage",
-      "target": "services_api",
-      "confidence_score": 1.0
+      "target": "services_api"
     },
     {
       "relation": "imports",
@@ -4176,9 +4716,9 @@
       "source_file": "src/pages/ProductPage/ProductPage.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productpage_productpage",
-      "target": "services_api_getproduct",
-      "confidence_score": 1.0
+      "target": "services_api_getproduct"
     },
     {
       "relation": "imports",
@@ -4187,9 +4727,9 @@
       "source_file": "src/pages/ProductPage/ProductPage.jsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "productpage_productpage",
-      "target": "services_api_imgurl",
-      "confidence_score": 1.0
+      "target": "services_api_imgurl"
     },
     {
       "relation": "calls",
@@ -4208,9 +4748,9 @@
       "source_file": "src/pages/SearchPage.jsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "pages_searchpage",
-      "target": "pages_searchpage_searchpage",
-      "confidence_score": 1.0
+      "target": "pages_searchpage_searchpage"
     },
     {
       "relation": "contains",
@@ -4218,9 +4758,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_adminconfirmorder",
-      "confidence_score": 1.0
+      "target": "services_adminapi_adminconfirmorder"
     },
     {
       "relation": "contains",
@@ -4228,9 +4768,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_admincreateannouncement",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admincreateannouncement"
     },
     {
       "relation": "contains",
@@ -4238,8 +4778,18 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_admincreatecategory",
+      "target": "services_adminapi_admincreatecategory"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/adminApi.js",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "services_adminapi",
+      "target": "services_adminapi_admincreateparcel",
       "confidence_score": 1.0
     },
     {
@@ -4248,9 +4798,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_admincreateproduct",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admincreateproduct"
     },
     {
       "relation": "contains",
@@ -4258,9 +4808,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_admindeleteannouncement",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admindeleteannouncement"
     },
     {
       "relation": "contains",
@@ -4268,9 +4818,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_admindeletecategory",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admindeletecategory"
     },
     {
       "relation": "contains",
@@ -4278,8 +4828,18 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_admindeleteorder",
+      "target": "services_adminapi_admindeleteorder"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/adminApi.js",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "services_adminapi",
+      "target": "services_adminapi_admindeleteparcel",
       "confidence_score": 1.0
     },
     {
@@ -4288,9 +4848,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_admindeleteproduct",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admindeleteproduct"
     },
     {
       "relation": "contains",
@@ -4298,9 +4858,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_admingetannouncements",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetannouncements"
     },
     {
       "relation": "contains",
@@ -4308,9 +4868,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_admingetcategories",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetcategories"
     },
     {
       "relation": "contains",
@@ -4318,9 +4878,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_admingetdashboardstats",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetdashboardstats"
     },
     {
       "relation": "contains",
@@ -4328,8 +4888,28 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_admingetorders",
+      "target": "services_adminapi_admingetorders"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/adminApi.js",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "services_adminapi",
+      "target": "services_adminapi_admingetparcel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/adminApi.js",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "services_adminapi",
+      "target": "services_adminapi_admingetparcels",
       "confidence_score": 1.0
     },
     {
@@ -4338,9 +4918,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_admingetproducts",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetproducts"
     },
     {
       "relation": "contains",
@@ -4348,9 +4928,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_admingetsettings",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admingetsettings"
     },
     {
       "relation": "contains",
@@ -4358,9 +4938,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_adminlogin",
-      "confidence_score": 1.0
+      "target": "services_adminapi_adminlogin"
     },
     {
       "relation": "contains",
@@ -4368,9 +4948,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_admintoggleannouncement",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admintoggleannouncement"
     },
     {
       "relation": "contains",
@@ -4378,9 +4958,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_admintoggleproduct",
-      "confidence_score": 1.0
+      "target": "services_adminapi_admintoggleproduct"
     },
     {
       "relation": "contains",
@@ -4388,8 +4968,18 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_adminupdatecategory",
+      "target": "services_adminapi_adminupdatecategory"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/adminApi.js",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "services_adminapi",
+      "target": "services_adminapi_adminupdateparcel",
       "confidence_score": 1.0
     },
     {
@@ -4398,9 +4988,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_adminupdateproduct",
-      "confidence_score": 1.0
+      "target": "services_adminapi_adminupdateproduct"
     },
     {
       "relation": "contains",
@@ -4408,9 +4998,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_adminupdatesettings",
-      "confidence_score": 1.0
+      "target": "services_adminapi_adminupdatesettings"
     },
     {
       "relation": "contains",
@@ -4418,9 +5008,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_authheaders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_authheaders"
     },
     {
       "relation": "contains",
@@ -4428,9 +5018,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_uploadfile",
-      "confidence_score": 1.0
+      "target": "services_adminapi_uploadfile"
     },
     {
       "relation": "contains",
@@ -4438,9 +5028,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L88",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_uploadimage",
-      "confidence_score": 1.0
+      "target": "services_adminapi_uploadimage"
     },
     {
       "relation": "contains",
@@ -4448,9 +5038,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L90",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "services_adminapi_uploadproductimage",
-      "confidence_score": 1.0
+      "target": "services_adminapi_uploadproductimage"
     },
     {
       "relation": "imports_from",
@@ -4459,9 +5049,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "utils_compressbeforeupload",
-      "confidence_score": 1.0
+      "target": "utils_compressbeforeupload"
     },
     {
       "relation": "imports",
@@ -4470,9 +5060,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi",
-      "target": "utils_compressbeforeupload_compressbeforeupload",
-      "confidence_score": 1.0
+      "target": "utils_compressbeforeupload_compressbeforeupload"
     },
     {
       "relation": "calls",
@@ -4481,9 +5071,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_adminconfirmorder",
-      "target": "services_adminapi_authheaders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_authheaders"
     },
     {
       "relation": "calls",
@@ -4492,9 +5082,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_admincreateannouncement",
-      "target": "services_adminapi_authheaders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_authheaders"
     },
     {
       "relation": "calls",
@@ -4503,7 +5093,18 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_admincreatecategory",
+      "target": "services_adminapi_authheaders"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/adminApi.js",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "services_adminapi_admincreateparcel",
       "target": "services_adminapi_authheaders",
       "confidence_score": 1.0
     },
@@ -4514,9 +5115,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_admincreateproduct",
-      "target": "services_adminapi_authheaders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_authheaders"
     },
     {
       "relation": "calls",
@@ -4525,9 +5126,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_admindeleteannouncement",
-      "target": "services_adminapi_authheaders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_authheaders"
     },
     {
       "relation": "calls",
@@ -4536,9 +5137,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_admindeletecategory",
-      "target": "services_adminapi_authheaders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_authheaders"
     },
     {
       "relation": "calls",
@@ -4547,7 +5148,18 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_admindeleteorder",
+      "target": "services_adminapi_authheaders"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/adminApi.js",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "services_adminapi_admindeleteparcel",
       "target": "services_adminapi_authheaders",
       "confidence_score": 1.0
     },
@@ -4558,9 +5170,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_admindeleteproduct",
-      "target": "services_adminapi_authheaders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_authheaders"
     },
     {
       "relation": "calls",
@@ -4569,9 +5181,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_admingetannouncements",
-      "target": "services_adminapi_authheaders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_authheaders"
     },
     {
       "relation": "calls",
@@ -4580,9 +5192,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_admingetcategories",
-      "target": "services_adminapi_authheaders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_authheaders"
     },
     {
       "relation": "calls",
@@ -4591,9 +5203,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_admingetdashboardstats",
-      "target": "services_adminapi_authheaders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_authheaders"
     },
     {
       "relation": "calls",
@@ -4602,7 +5214,29 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_admingetorders",
+      "target": "services_adminapi_authheaders"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/adminApi.js",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "services_adminapi_admingetparcel",
+      "target": "services_adminapi_authheaders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/adminApi.js",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "services_adminapi_admingetparcels",
       "target": "services_adminapi_authheaders",
       "confidence_score": 1.0
     },
@@ -4613,9 +5247,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_admingetproducts",
-      "target": "services_adminapi_authheaders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_authheaders"
     },
     {
       "relation": "calls",
@@ -4624,9 +5258,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_admingetsettings",
-      "target": "services_adminapi_authheaders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_authheaders"
     },
     {
       "relation": "calls",
@@ -4635,9 +5269,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_admintoggleannouncement",
-      "target": "services_adminapi_authheaders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_authheaders"
     },
     {
       "relation": "calls",
@@ -4646,9 +5280,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_admintoggleproduct",
-      "target": "services_adminapi_authheaders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_authheaders"
     },
     {
       "relation": "calls",
@@ -4657,7 +5291,18 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L49",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_adminupdatecategory",
+      "target": "services_adminapi_authheaders"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/adminApi.js",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "services_adminapi_adminupdateparcel",
       "target": "services_adminapi_authheaders",
       "confidence_score": 1.0
     },
@@ -4668,9 +5313,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_adminupdateproduct",
-      "target": "services_adminapi_authheaders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_authheaders"
     },
     {
       "relation": "calls",
@@ -4679,9 +5324,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_adminupdatesettings",
-      "target": "services_adminapi_authheaders",
-      "confidence_score": 1.0
+      "target": "services_adminapi_authheaders"
     },
     {
       "relation": "calls",
@@ -4690,9 +5335,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L88",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_uploadimage",
-      "target": "services_adminapi_uploadfile",
-      "confidence_score": 1.0
+      "target": "services_adminapi_uploadfile"
     },
     {
       "relation": "calls",
@@ -4701,9 +5346,9 @@
       "source_file": "src/services/adminApi.js",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_adminapi_uploadproductimage",
-      "target": "services_adminapi_uploadfile",
-      "confidence_score": 1.0
+      "target": "services_adminapi_uploadfile"
     },
     {
       "relation": "calls",
@@ -4722,9 +5367,9 @@
       "source_file": "src/services/api.js",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_api",
-      "target": "services_api_api",
-      "confidence_score": 1.0
+      "target": "services_api_api"
     },
     {
       "relation": "contains",
@@ -4732,9 +5377,9 @@
       "source_file": "src/services/api.js",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_api",
-      "target": "services_api_createorder",
-      "confidence_score": 1.0
+      "target": "services_api_createorder"
     },
     {
       "relation": "contains",
@@ -4742,9 +5387,69 @@
       "source_file": "src/services/api.js",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_api",
-      "target": "services_api_formatwhatsappphone",
-      "confidence_score": 1.0
+      "target": "services_api_formatwhatsappphone"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/api.js",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_api",
+      "target": "services_api_getannouncements"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/api.js",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_api",
+      "target": "services_api_getcategories"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/api.js",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_api",
+      "target": "services_api_getproduct"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/api.js",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_api",
+      "target": "services_api_getproducts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/api.js",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_api",
+      "target": "services_api_getproductsstockstatus"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/api.js",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "services_api",
+      "target": "services_api_getsettings"
     },
     {
       "relation": "contains",
@@ -4753,57 +5458,7 @@
       "source_location": "L22",
       "weight": 1.0,
       "source": "services_api",
-      "target": "services_api_getannouncements",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/api.js",
-      "source_location": "L21",
-      "weight": 1.0,
-      "source": "services_api",
-      "target": "services_api_getcategories",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/api.js",
-      "source_location": "L20",
-      "weight": 1.0,
-      "source": "services_api",
-      "target": "services_api_getproduct",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/api.js",
-      "source_location": "L18",
-      "weight": 1.0,
-      "source": "services_api",
-      "target": "services_api_getproducts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/api.js",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "services_api",
-      "target": "services_api_getproductsstockstatus",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/services/api.js",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "services_api",
-      "target": "services_api_getsettings",
+      "target": "services_api_getsimilarproducts",
       "confidence_score": 1.0
     },
     {
@@ -4812,8 +5467,18 @@
       "source_file": "src/services/api.js",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_api",
-      "target": "services_api_imgurl",
+      "target": "services_api_imgurl"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/services/api.js",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "services_api",
+      "target": "services_api_validatediscountcode",
       "confidence_score": 1.0
     },
     {
@@ -4822,9 +5487,9 @@
       "source_file": "src/utils/compressBeforeUpload.js",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "utils_compressbeforeupload",
-      "target": "utils_compressbeforeupload_compressbeforeupload",
-      "confidence_score": 1.0
+      "target": "utils_compressbeforeupload_compressbeforeupload"
     },
     {
       "relation": "contains",
@@ -4832,9 +5497,9 @@
       "source_file": "src/utils/paymentPresets.js",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "utils_paymentpresets",
-      "target": "utils_paymentpresets_preset_logos",
-      "confidence_score": 1.0
+      "target": "utils_paymentpresets_preset_logos"
     },
     {
       "relation": "contains",
@@ -4842,9 +5507,9 @@
       "source_file": "src/utils/paymentPresets.js",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "utils_paymentpresets",
-      "target": "utils_paymentpresets_preset_map",
-      "confidence_score": 1.0
+      "target": "utils_paymentpresets_preset_map"
     },
     {
       "relation": "contains",
@@ -4852,9 +5517,9 @@
       "source_file": "src/utils/paymentPresets.js",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "utils_paymentpresets",
-      "target": "utils_paymentpresets_resolvecardtheme",
-      "confidence_score": 1.0
+      "target": "utils_paymentpresets_resolvecardtheme"
     },
     {
       "relation": "contains",
@@ -4862,9 +5527,9 @@
       "source_file": "src/utils/paymentPresets.js",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "utils_paymentpresets",
-      "target": "utils_paymentpresets_resolvelogosrc",
-      "confidence_score": 1.0
+      "target": "utils_paymentpresets_resolvelogosrc"
     },
     {
       "relation": "contains",
@@ -4872,9 +5537,9 @@
       "source_file": "src/utils/paymentPresets.js",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "utils_paymentpresets",
-      "target": "utils_paymentpresets_theme_map",
-      "confidence_score": 1.0
+      "target": "utils_paymentpresets_theme_map"
     },
     {
       "relation": "contains",
@@ -4882,9 +5547,9 @@
       "source_file": "vercel.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vercel",
-      "target": "vercel_rewrites",
-      "confidence_score": 1.0
+      "target": "vercel_rewrites"
     },
     {
       "relation": "contains",
@@ -4892,9 +5557,9 @@
       "source_file": "README.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme",
-      "target": "readme_react_vite",
-      "confidence_score": 1.0
+      "target": "readme_react_vite"
     },
     {
       "relation": "contains",
@@ -4902,9 +5567,9 @@
       "source_file": "README.md",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_react_vite",
-      "target": "readme_expanding_the_eslint_configuration",
-      "confidence_score": 1.0
+      "target": "readme_expanding_the_eslint_configuration"
     },
     {
       "relation": "contains",
@@ -4912,11 +5577,11 @@
       "source_file": "README.md",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_react_vite",
-      "target": "readme_react_compiler",
-      "confidence_score": 1.0
+      "target": "readme_react_compiler"
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "6b844b9e491b119f66af36e372ec775179c625d3"
+  "built_at_commit": "cf8e39d32301c2b411f343bc6070c0fe3c60f522"
 }

@@ -2,6 +2,7 @@
   margin-top: 48px;
   padding-top: 32px;
   border-top: 1px solid var(--border, #eee);
+  scroll-margin-top: 58px;
 }
 
 .similar-products-heading {
