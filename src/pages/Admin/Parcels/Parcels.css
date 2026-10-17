@@ -72,6 +72,36 @@
 .pcl-net-profit.pos { background: rgba(46, 122, 80, 0.1);  color: #2D7A50; }
 .pcl-net-profit.neg { background: rgba(185, 28, 28, 0.1);  color: #b91c1c; }
 
+.pcl-net-pending {
+  color: #92400e;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.pcl-actual-profit {
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #2D7A50;
+}
+
+.pcl-actual-revenue {
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #1d4ed8;
+}
+
+.pcl-cost-note {
+  display: block;
+  margin-top: 6px;
+  color: #92400e;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
 .pcl-card__actions {
   display: flex;
   gap: 6px;

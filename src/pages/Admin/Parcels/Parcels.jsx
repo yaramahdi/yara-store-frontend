@@ -26,6 +26,7 @@ function makeProdEntry(p) {
     _newImageFile:    null,
     _newImagePreview: null,
     _soldQty:         p.soldQty ?? null,
+    _soldRevenue:     p.soldRevenue ?? null,
     _soldProfit:      p.soldProfit ?? null,
     name:        p.name        || '',
     category:    p.category?._id || p.category || '',
@@ -51,6 +52,7 @@ function makeEmptyProdEntry() {
     _newImageFile:    null,
     _newImagePreview: null,
     _soldQty:         null,
+    _soldRevenue:     null,
     _soldProfit:      null,
     name:        '',
     category:    '',
@@ -77,7 +79,7 @@ export default function Parcels() {
 
   const [editId, setEditId]       = useState(null);
   const [parName, setParName]     = useState('');
-  const [styleCost, setStyleCost] = useState('');
+  const [totalCost, setTotalCost] = useState('');
   const [parProds, setParProds]   = useState([]);
   const [selectedExistingProductId, setSelectedExistingProductId] = useState('');
   const [deleteId, setDeleteId]   = useState(null);
@@ -109,7 +111,7 @@ export default function Parcels() {
   function openCreate() {
     setEditId(null);
     setParName('');
-    setStyleCost('');
+    setTotalCost('');
     setParProds([]);
     setSelectedExistingProductId('');
     setView('form');
@@ -122,7 +124,7 @@ export default function Parcels() {
       const parcel = res.data;
       setEditId(parcel._id);
       setParName(parcel.name || '');
-      setStyleCost(parcel.styleCost != null ? String(parcel.styleCost) : '');
+      setTotalCost(parcel.totalCost != null ? String(parcel.totalCost) : '');
       setParProds((parcel.products || []).map(makeProdEntry));
       setSelectedExistingProductId('');
       setView('form');
@@ -203,6 +205,10 @@ export default function Parcels() {
   // ── SAVE ──
   async function handleSave() {
     if (!parName.trim()) { showToast('❌ اسم الطرد مطلوب', 'error'); return; }
+    if (totalCost === '' || !Number.isFinite(Number(totalCost)) || Number(totalCost) < 0) {
+      showToast('❌ أدخلي إجمالي تكلفة الطرد كاملة، بما فيها تكلفة المنتجات والتنسيق/الشحن', 'error');
+      return;
+    }
 
     const hasNegative = parProds.some(p =>
       Number(p.price) < 0 ||
@@ -210,7 +216,7 @@ export default function Parcels() {
       (p.salePrice !== '' && Number(p.salePrice) < 0) ||
       (p.stock !== '' && Number(p.stock) < 0)
     );
-    if (hasNegative || Number(styleCost) < 0) {
+    if (hasNegative) {
       showToast('❌ لا يمكن إدخال قيم سالبة للأسعار أو الكميات', 'error');
       return;
     }
@@ -257,21 +263,26 @@ export default function Parcels() {
 
       const payload = {
         name: parName.trim(),
-        styleCost: styleCost === '' ? 0 : Number(styleCost),
+        totalCost: Number(totalCost),
         products: validIds,
       };
 
+      let savedParcel;
       if (editId) {
-        await adminUpdateParcel(editId, payload);
+        savedParcel = await adminUpdateParcel(editId, payload);
       } else {
-        await adminCreateParcel(payload);
+        savedParcel = await adminCreateParcel(payload);
+      }
+
+      if (Number(savedParcel.data.totalCost) !== payload.totalCost) {
+        throw new Error('الخادم لم يحفظ إجمالي التكلفة. أعيدي تشغيل أو تحديث الخادم الخلفي ثم حاولي مرة أخرى.');
       }
 
       showToast('✅ تم حفظ الطرد');
       setView('list');
       await load();
     } catch (err) {
-      showToast(`❌ ${err?.response?.data?.message || 'خطأ غير معروف'}`, 'error');
+      showToast(`❌ ${err?.response?.data?.message || err?.message || 'خطأ غير معروف'}`, 'error');
     } finally {
       setSaving(false);
     }
@@ -279,8 +290,8 @@ export default function Parcels() {
 
   // ── مجاميع لحظية لشريط الحفظ (تُحسب من بيانات المنتجات المحمّلة وقت الفتح) ──
   const liveSoldQty    = parProds.reduce((s, p) => s + (p._soldQty || 0), 0);
-  const liveSoldProfit = parProds.reduce((s, p) => s + (p._soldProfit || 0), 0);
-  const liveNetProfit  = liveSoldProfit - (Number(styleCost) || 0);
+  const liveSoldRevenue = parProds.reduce((s, p) => s + (p._soldRevenue || 0), 0);
+  const liveNetProfit  = liveSoldRevenue - (Number(totalCost) || 0);
 
   // ─────────────────────────────────────────
   return (
@@ -314,14 +325,26 @@ export default function Parcels() {
                     <h3 className="pcl-card__name">{parcel.name}</h3>
                     <div className="pcl-card__meta">
                       <span>📦 {parcel.productsCount || 0} منتج</span>
-                      <span>🧵 تنسيق: {fmt(parcel.styleCost)} ₪</span>
-                      <span>🛒 مباع: {parcel.soldQty || 0} قطعة</span>
+                      <span>
+                        💸 إجمالي المصروف: {parcel.totalCost == null ? 'بحاجة لإدخال التكلفة' : `${fmt(parcel.totalCost)} ₪`}
+                      </span>
+                      <span>🛒 إجمالي القطع المباعة: {parcel.soldQty || 0} قطعة</span>
                     </div>
                   </div>
                   <div className="pcl-card__footer">
-                    <span className={`pcl-net-profit ${parcel.netProfit >= 0 ? 'pos' : 'neg'}`}>
-                      {parcel.netProfit >= 0 ? '✅ ربح' : '⚠️ خسارة'}: {fmt(Math.abs(parcel.netProfit))} ₪
+                    <span className="pcl-actual-revenue">
+                      🧾 إجمالي البيع الحالي: {fmt(parcel.actualRevenue)} ₪
                     </span>
+                    <span className="pcl-actual-profit">
+                      💰 إجمالي ربح القطع: {fmt(parcel.actualProfit)} ₪
+                    </span>
+                    {parcel.netProfit == null ? (
+                      <span className="pcl-net-pending">أدخلي إجمالي التكلفة لحساب الصافي</span>
+                    ) : (
+                      <span className={`pcl-net-profit ${parcel.netProfit >= 0 ? 'pos' : 'neg'}`}>
+                        {parcel.netProfit >= 0 ? '✅ ربح' : '⚠️ خسارة'}: {fmt(Math.abs(parcel.netProfit))} ₪
+                      </span>
+                    )}
                     <div className="pcl-card__actions">
                       <button className="action-btn" onClick={() => openEdit(parcel._id)}>✏️</button>
                       <button className="action-btn action-btn--delete" onClick={() => setDeleteId(parcel._id)}>🗑️</button>
@@ -371,13 +394,18 @@ export default function Parcels() {
                 />
               </div>
               <div className="form-field">
-                <label>تكلفة التنسيق/الشحن (₪)</label>
+                <label>إجمالي تكلفة الطرد مع التنسيق/الشحن (₪)</label>
                 <input
-                  type="number" min="0"
-                  value={styleCost}
-                  onChange={e => setStyleCost(e.target.value)}
-                  placeholder="0"
+                  type="number" min="0" step="0.01" required
+                  value={totalCost}
+                  onChange={e => setTotalCost(e.target.value)}
+                  placeholder="أدخلي إجمالي المبلغ المصروف"
                 />
+                {editId && totalCost === '' && (
+                  <small className="pcl-cost-note">
+                    هذا الطرد محفوظ بالطريقة القديمة؛ أدخلي إجمالي ما صُرف عليه، شاملًا تكلفة المنتجات والتنسيق/الشحن.
+                  </small>
+                )}
               </div>
             </div>
           </div>
@@ -615,7 +643,10 @@ export default function Parcels() {
               {parProds.length} منتج إجمالاً
               {editId && (
                 <span className="pcl-save-bar__profit">
-                  {' · '}مباع: {liveSoldQty} قطعة · صافي {liveNetProfit >= 0 ? 'ربح' : 'خسارة'}: {fmt(Math.abs(liveNetProfit))} ₪
+                  {' · '}مباع: {liveSoldQty} قطعة
+                  {totalCost !== '' && (
+                    <> · صافي {liveNetProfit >= 0 ? 'ربح' : 'خسارة'}: {fmt(Math.abs(liveNetProfit))} ₪</>
+                  )}
                 </span>
               )}
             </span>
