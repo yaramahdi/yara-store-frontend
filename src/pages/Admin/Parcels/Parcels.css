@@ -70,7 +70,7 @@
   white-space: nowrap;
 }
 .pcl-net-profit.pos { background: rgba(46, 122, 80, 0.1);  color: #2D7A50; }
-.pcl-net-profit.neg { background: rgba(185, 28, 28, 0.1);  color: #b91c1c; }
+.pcl-net-profit.remaining { background: rgba(37, 99, 235, 0.1); color: #2563eb; }
 
 .pcl-net-pending {
   color: #92400e;

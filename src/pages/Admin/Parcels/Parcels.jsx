@@ -341,8 +341,8 @@ export default function Parcels() {
                     {parcel.netProfit == null ? (
                       <span className="pcl-net-pending">أدخلي إجمالي التكلفة لحساب الصافي</span>
                     ) : (
-                      <span className={`pcl-net-profit ${parcel.netProfit >= 0 ? 'pos' : 'neg'}`}>
-                        {parcel.netProfit >= 0 ? '✅ ربح' : '⚠️ خسارة'}: {fmt(Math.abs(parcel.netProfit))} ₪
+                      <span className={`pcl-net-profit ${parcel.netProfit >= 0 ? 'pos' : 'remaining'}`}>
+                        {parcel.netProfit >= 0 ? '✅ ربح' : '⏳ المتبقي'}: {fmt(Math.abs(parcel.netProfit))} ₪
                       </span>
                     )}
                     <div className="pcl-card__actions">
@@ -645,7 +645,7 @@ export default function Parcels() {
                 <span className="pcl-save-bar__profit">
                   {' · '}مباع: {liveSoldQty} قطعة
                   {totalCost !== '' && (
-                    <> · صافي {liveNetProfit >= 0 ? 'ربح' : 'خسارة'}: {fmt(Math.abs(liveNetProfit))} ₪</>
+                    <> · صافي {liveNetProfit >= 0 ? 'ربح' : 'المتبقي'}: {fmt(Math.abs(liveNetProfit))} ₪</>
                   )}
                 </span>
               )}
