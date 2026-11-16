@@ -217,6 +217,18 @@
   margin-bottom: 4px;
 }
 
+.of-payment-note {
+  margin: 0 0 12px;
+  padding: 9px 12px;
+  border: 1px solid var(--pink-light);
+  border-radius: 10px;
+  background: #fff8fb;
+  color: var(--text-dark);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
 .of-no-payment {
   text-align: center;
   color: var(--text-medium);
@@ -264,8 +276,9 @@
 /* ── Payment card ── */
 .of-payment-card {
   border: 2px solid var(--pink-medium);
-  border-radius: 16px;
-  padding: 14px 16px;
+  border-radius: 12px;
+  padding: 9px 12px;
+  margin-bottom: 8px;
   cursor: pointer;
   background: #fff;
   transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
@@ -308,13 +321,13 @@
 .of-payment-top {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 8px;
+  margin-bottom: 5px;
 }
 
 .of-payment-logo {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
   border-radius: 8px;
   border: 1px solid var(--pink-light);
@@ -325,7 +338,7 @@
 
 .of-payment-name {
   flex: 1;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--text-dark);
 }
@@ -353,7 +366,7 @@
   background: #fff;
 }
 
-/* ── Payment info rows: التسمية بسطر، والقيمة + زر النسخ بسطر كامل تحتها ── */
+/* ── Compact payment number row ── */
 .of-payment-row {
   display: flex;
   flex-direction: column;
@@ -363,8 +376,15 @@
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
+.of-payment-row--compact {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0 0;
+}
+
 .of-payment-row-label {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: var(--text-medium);
 }
@@ -372,13 +392,13 @@
 .of-payment-row-val {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   width: 100%;
   justify-content: space-between;
 }
 
 .of-payment-row-val span {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-dark);
   font-weight: 600;
   overflow-wrap: break-word;
@@ -392,7 +412,7 @@
 }
 
 .of-copy-btn {
-  padding: 4px 10px;
+  padding: 3px 8px;
   border: 1.5px solid var(--pink-medium);
   border-radius: 8px;
   background: #fff;

@@ -122,9 +122,11 @@ export default function ProductCard({ product, collectionName }) {
         onTouchStart={images.length > 1 ? onTouchStart : undefined}
         onTouchEnd={images.length > 1 ? onTouchEnd : undefined}
       >
-        {manualLabel && (
+        {(manualLabel || !product.inStock) && (
           <div className="product-badges">
-            <span className={`product-badge ${labelClass}`}>{manualLabel}</span>
+            <span className={`product-badge ${!product.inStock ? 'out-of-stock' : labelClass}`}>
+              {!product.inStock ? 'نفد المخزون' : manualLabel}
+            </span>
           </div>
         )}
         {isLastPiece && <div className="last-piece-ribbon">آخر قطعة</div>}
@@ -155,7 +157,7 @@ export default function ProductCard({ product, collectionName }) {
           <div className="placeholder-img" />
         )}
 
-        {!product.inStock && <div className="out-of-stock-overlay">نفد المخزون</div>}
+        {!product.inStock && <div className="out-of-stock-overlay" />}
       </div>
 
       <div className="product-info" onClick={e => e.stopPropagation()}>
@@ -189,7 +191,7 @@ export default function ProductCard({ product, collectionName }) {
       </div>
 
       <button className="product-add-btn" onClick={handleAddToCart} disabled={!product.inStock}>
-        تفاصيل القطعة
+        {product.inStock ? 'تفاصيل القطعة' : 'انتهت الكمية'}
       </button>
     </div>
   );

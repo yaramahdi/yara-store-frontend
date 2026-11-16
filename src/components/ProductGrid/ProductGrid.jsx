@@ -135,6 +135,8 @@ export default function ProductGrid({
 
   // ── الترتيب ──
   const sorted = useMemo(() => [...products].sort((a, b) => {
+    const stockPriority = Number(b.inStock !== false) - Number(a.inStock !== false);
+    if (stockPriority !== 0) return stockPriority;
     if (sort === 'low')  return a.price - b.price;
     if (sort === 'high') return b.price - a.price;
     return 0;

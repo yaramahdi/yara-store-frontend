@@ -133,25 +133,43 @@ function InvoiceModal({ order, onClose, onConfirm, onDelete }) {
 function ConfirmOrderModal({ order, onClose, onSubmit, submitting }) {
   const [mode, setMode] = useState('catalog');
   const [customSalePrices, setCustomSalePrices] = useState([]);
+  const [itemQuantities, setItemQuantities] = useState([]);
   const orderId = order?._id;
 
   useEffect(() => {
     if (!order) return;
     setMode('catalog');
     setCustomSalePrices(Array.from({ length: order.items?.length || 0 }, () => ''));
+    setItemQuantities((order.items || []).map(item => Number(item.quantity || 1)));
   }, [orderId]);
 
   if (!order) return null;
 
   const items = order.items || [];
-  const customValid = customSalePrices.length === items.length
-    && customSalePrices.every((price) => price !== '' && Number(price) >= 0);
-  const disabled = submitting || (mode === 'custom' && !customValid);
+  const activeItems = items
+    .map((item, index) => ({
+      item,
+      index,
+      quantity: itemQuantities[index] ?? Number(item.quantity || 1),
+    }))
+    .filter(({ quantity }) => quantity > 0);
+  const customValid = activeItems.every(({ index }) => (
+    customSalePrices[index] !== '' && Number(customSalePrices[index]) >= 0
+  ));
+  const disabled = submitting || activeItems.length === 0 || (mode === 'custom' && !customValid);
 
   function updateCustomPrice(index, value) {
     setCustomSalePrices(prev => {
       const next = [...prev];
       next[index] = value;
+      return next;
+    });
+  }
+
+  function removeOneItem(index) {
+    setItemQuantities(prev => {
+      const next = [...prev];
+      next[index] = Math.max(0, (next[index] ?? Number(items[index]?.quantity || 1)) - 1);
       return next;
     });
   }
@@ -182,31 +200,39 @@ function ConfirmOrderModal({ order, onClose, onSubmit, submitting }) {
           <span>سعر آخر (لكل قطعة)</span>
         </label>
 
-        {mode === 'custom' && (
-          <div className="confirm-items-list">
-            {items.map((item, index) => (
+        <div className="confirm-items-list">
+          {activeItems.map(({ item, index, quantity }) => (
               <div key={`${item.productId || index}-${index}`} className="confirm-item-row">
                 <div className="confirm-item-row__head">
                   <strong className="confirm-item-row__name">{item.name}</strong>
                   <span className="confirm-item-row__meta">
-                    الكمية: {item.quantity || 1}
+                    الكمية: {quantity}
                     {item.selectedSize ? ` • المقاس: ${item.selectedSize}` : ''}
                   </span>
+                  <button
+                    type="button"
+                    className="confirm-item-row__remove"
+                    onClick={() => removeOneItem(index)}
+                    disabled={submitting || activeItems.reduce((sum, current) => sum + current.quantity, 0) <= 1}
+                  >
+                    حذف قطعة
+                  </button>
                 </div>
-                <div className="confirm-item-row__price">
-                  <span>سعر البيع لهذا القطعة</span>
-                  <input
-                    type="number"
-                    min="0"
-                    value={customSalePrices[index] ?? ''}
-                    onChange={(e) => updateCustomPrice(index, e.target.value)}
-                    placeholder="مثال: 120"
-                  />
-                </div>
+                {mode === 'custom' && (
+                  <div className="confirm-item-row__price">
+                    <span>سعر البيع لهذه القطعة</span>
+                    <input
+                      type="number"
+                      min="0"
+                      value={customSalePrices[index] ?? ''}
+                      onChange={(e) => updateCustomPrice(index, e.target.value)}
+                      placeholder="مثال: 120"
+                    />
+                  </div>
+                )}
               </div>
-            ))}
-          </div>
-        )}
+          ))}
+        </div>
 
         <div className="confirm-modal-actions">
           <button className="inv-btn inv-btn--delete" onClick={onClose} disabled={submitting}>إلغاء</button>
@@ -215,7 +241,10 @@ function ConfirmOrderModal({ order, onClose, onSubmit, submitting }) {
             disabled={disabled}
             onClick={() => onSubmit({
               priceMode: mode,
-              ...(mode === 'custom' ? { customSalePrices: customSalePrices.map(Number) } : {}),
+              itemsToConfirm: activeItems.map(({ index, quantity }) => ({ index, quantity })),
+              ...(mode === 'custom'
+                ? { customSalePrices: activeItems.map(({ index }) => Number(customSalePrices[index])) }
+                : {}),
             })}
           >
             {submitting ? 'جاري التأكيد...' : 'تأكيد'}
@@ -229,11 +258,16 @@ function ConfirmOrderModal({ order, onClose, onSubmit, submitting }) {
 /* ── Main Orders Page ── */
 export default function Orders() {
   const [orders, setOrders] = useState([]);
+  const [activeStatus, setActiveStatus] = useState('pending');
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState(null);
   const [toast, setToast] = useState(null);
   const [confirmTarget, setConfirmTarget] = useState(null);
   const [confirming, setConfirming] = useState(false);
+
+  const pendingOrders = orders.filter(order => order.status === 'pending');
+  const completedOrders = orders.filter(order => order.status === 'confirmed');
+  const visibleOrders = activeStatus === 'pending' ? pendingOrders : completedOrders;
 
   const showToast = (msg, type = 'success') => setToast({ message: msg, type });
 
@@ -310,6 +344,25 @@ export default function Orders() {
         <button className="admin-btn admin-btn--primary" onClick={fetchOrders}>تحديث</button>
       </div>
 
+      <div className="orders-status-tabs" role="group" aria-label="تصنيف الطلبات">
+        <button
+          type="button"
+          aria-pressed={activeStatus === 'pending'}
+          className={`orders-status-tab ${activeStatus === 'pending' ? 'active' : ''}`}
+          onClick={() => setActiveStatus('pending')}
+        >
+          قيد الانتظار <span>{pendingOrders.length}</span>
+        </button>
+        <button
+          type="button"
+          aria-pressed={activeStatus === 'confirmed'}
+          className={`orders-status-tab ${activeStatus === 'confirmed' ? 'active' : ''}`}
+          onClick={() => setActiveStatus('confirmed')}
+        >
+          المنتهية <span>{completedOrders.length}</span>
+        </button>
+      </div>
+
       {loading ? (
         <div className="admin-loading">جاري التحميل...</div>
       ) : orders.length === 0 ? (
@@ -320,6 +373,10 @@ export default function Orders() {
             <path d="M16 10a4 4 0 0 1-8 0"/>
           </svg>
           <p>لا توجد طلبات بعد</p>
+        </div>
+      ) : visibleOrders.length === 0 ? (
+        <div className="orders-empty">
+          <p>{activeStatus === 'pending' ? 'لا توجد طلبات قيد الانتظار حاليًا' : 'لا توجد طلبات منتهية بعد'}</p>
         </div>
       ) : (
         <>
@@ -337,7 +394,7 @@ export default function Orders() {
                 </tr>
               </thead>
               <tbody>
-                {orders.map(order => {
+                {visibleOrders.map(order => {
                   const st = STATUS[order.status] || STATUS.pending;
                   return (
                     <tr key={order._id}>
@@ -406,7 +463,7 @@ export default function Orders() {
           </div>
 
           <div className="orders-cards-mobile">
-            {orders.map(order => {
+            {visibleOrders.map(order => {
               const st = STATUS[order.status] || STATUS.pending;
 
               return (

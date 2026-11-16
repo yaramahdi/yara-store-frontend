@@ -27,6 +27,7 @@ export default function OrderForm({
   const [discountError, setDiscountError] = useState('');
   const [appliedDiscount, setAppliedDiscount] = useState(null); // { code, percent }
   const redirectTimerRef = useRef(null);
+  const visibilityHandlerRef = useRef(null);
 
   const discountedTotal = appliedDiscount
     ? Math.round(totalPrice * (1 - appliedDiscount.percent / 100) * 100) / 100
@@ -70,6 +71,9 @@ export default function OrderForm({
     return () => {
       if (redirectTimerRef.current) {
         clearTimeout(redirectTimerRef.current);
+      }
+      if (visibilityHandlerRef.current) {
+        document.removeEventListener('visibilitychange', visibilityHandlerRef.current);
       }
     };
   }, []);
@@ -187,19 +191,40 @@ export default function OrderForm({
     }
 
     const num = formatWhatsappPhone(whatsappNumber);
-    const url = num
-      ? `https://api.whatsapp.com/send/?phone=${num}&text=${encodeURIComponent(msg)}&type=phone_number&app_absent=0`
-      : `https://api.whatsapp.com/send/?text=${encodeURIComponent(msg)}&app_absent=0`;
+    const encodedMessage = encodeURIComponent(msg);
+    const webUrl = num
+      ? `https://wa.me/${num}?text=${encodedMessage}`
+      : `https://wa.me/?text=${encodedMessage}`;
+    const appUrl = num
+      ? `whatsapp://send?phone=${num}&text=${encodedMessage}`
+      : `whatsapp://send?text=${encodedMessage}`;
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+      || navigator.userAgentData?.mobile === true;
 
     // إعلام الزبونة أن الطلب تم واننا سنحوّلها لواتساب قبل التحويل الفعلي
     setSubmitting(false);
     setRedirecting(true);
     onOrderComplete?.();
 
-    if (redirectTimerRef.current) clearTimeout(redirectTimerRef.current);
-    redirectTimerRef.current = setTimeout(() => {
-      window.location.href = url;
-    }, 1500);
+    if (isMobile) {
+      visibilityHandlerRef.current = () => {
+        if (document.hidden) {
+          clearTimeout(redirectTimerRef.current);
+          redirectTimerRef.current = null;
+          document.removeEventListener('visibilitychange', visibilityHandlerRef.current);
+          visibilityHandlerRef.current = null;
+        }
+      };
+      document.addEventListener('visibilitychange', visibilityHandlerRef.current);
+      redirectTimerRef.current = setTimeout(() => {
+        document.removeEventListener('visibilitychange', visibilityHandlerRef.current);
+        visibilityHandlerRef.current = null;
+        window.location.href = webUrl;
+      }, 2000);
+      window.location.href = appUrl;
+    } else {
+      window.location.href = webUrl;
+    }
   };
 
   const step1Valid = form.name.trim() && phoneValid && form.address.trim();
@@ -396,7 +421,9 @@ export default function OrderForm({
         {step === 3 && !redirecting && (
           <div className="of-body">
             <p className="of-title-sm">بيانات الدفع</p>
-            <p className="of-subtitle-sm">اختاري طريقة الدفع المناسبة:</p>
+            <p className="of-payment-note">
+              التحويل باسم يارا مهدي. يتم التحويل في حال زبطت القطعة، والترجيع مسموح.
+            </p>
 
             {paymentLoading ? (
               <p className="of-no-payment">جاري تحميل طرق الدفع...</p>
@@ -417,8 +444,6 @@ export default function OrderForm({
             ) : (
               paymentMethods.map(method => {
                 const theme = resolveCardTheme(method.logo);
-                const accountLabel = method.iban ? 'رقم الحساب:' : 'الرقم:';
-                const holderLabel = method.iban ? 'اسم الحساب:' : 'اسم المحفظة:';
 
                 return (
                   <div
@@ -435,8 +460,8 @@ export default function OrderForm({
                     </div>
 
                     {method.accountNumber && (
-                      <div className="of-payment-row">
-                        <span className="of-payment-row-label">{accountLabel}</span>
+                      <div className="of-payment-row of-payment-row--compact">
+                        <span className="of-payment-row-label">الرقم:</span>
                         <div className="of-payment-row-val">
                           <span dir="ltr">{method.accountNumber}</span>
                           <button
@@ -444,36 +469,6 @@ export default function OrderForm({
                             onClick={e => { e.stopPropagation(); handleCopy(method.accountNumber, `acc-${method._id}`); }}
                           >
                             {copied === `acc-${method._id}` ? '✓ تم' : 'نسخ'}
-                          </button>
-                        </div>
-                      </div>
-                    )}
-
-                    {method.iban && (
-                      <div className="of-payment-row">
-                        <span className="of-payment-row-label">IBAN:</span>
-                        <div className="of-payment-row-val">
-                          <span dir="ltr" className="of-iban-text">{method.iban}</span>
-                          <button
-                            className={`of-copy-btn ${copied === `iban-${method._id}` ? 'copied' : ''}`}
-                            onClick={e => { e.stopPropagation(); handleCopy(method.iban, `iban-${method._id}`); }}
-                          >
-                            {copied === `iban-${method._id}` ? '✓ تم' : 'نسخ'}
-                          </button>
-                        </div>
-                      </div>
-                    )}
-
-                    {method.accountHolderName && (
-                      <div className="of-payment-row">
-                        <span className="of-payment-row-label">{holderLabel}</span>
-                        <div className="of-payment-row-val">
-                          <span>{method.accountHolderName}</span>
-                          <button
-                            className={`of-copy-btn ${copied === `holder-${method._id}` ? 'copied' : ''}`}
-                            onClick={e => { e.stopPropagation(); handleCopy(method.accountHolderName, `holder-${method._id}`); }}
-                          >
-                            {copied === `holder-${method._id}` ? '✓ تم' : 'نسخ'}
                           </button>
                         </div>
                       </div>

@@ -268,19 +268,6 @@ export default function ProductPage() {
           ← {returnTo === '/' ? 'الرئيسية' : 'عودة'}
         </button>
 
-        {/* Breadcrumb */}
-        <div className="breadcrumb">
-          <Link to="/">الرئيسية</Link>
-          {product.category?.name && (
-            <>
-              <span className="bc-sep">/</span>
-              <span>{product.category.name}</span>
-            </>
-          )}
-          <span className="bc-sep">/</span>
-          <span className="bc-current">{product.name}</span>
-        </div>
-
         <div className="product-layout">
 
           {/* معرض الصور */}
@@ -351,9 +338,6 @@ export default function ProductPage() {
                 </button>
               </div>
 
-              {selectedSize && (
-                <span className="product-selected-size">{selectedSize.label}</span>
-              )}
             </div>
 
             <div className="price-section anim-item" style={{ '--delay': '0.05s' }}>
@@ -368,6 +352,33 @@ export default function ProductPage() {
               )}
             </div>
 
+            {/* المقاسات */}
+            {product.sizes?.length > 0 && (
+              <div className="option-section anim-item" style={{ '--delay': '0.1s' }}>
+                <p className="option-label">المقاس:</p>
+ 
+                <div className="size-options">
+                  {product.sizes.map((size) => {
+                    const soldOut = isSizeSoldOut(size);
+ 
+                    return (
+                      <div key={size._id || size.label} className="size-option-wrap">
+                        <button
+                          type="button"
+                          className={`size-option ${selectedSize?.label === size.label ? 'active' : ''} ${soldOut ? 'sold-out' : ''}`}
+                          onClick={() => !soldOut && setSelectedSize(size)}
+                          disabled={soldOut}
+                        >
+                          {size.label}
+                        </button>
+                        {soldOut && <span className="size-sold-label">نفدت</span>}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+ 
             {/* الألوان — colorName للمنتج الحالي + linkedColors كمنتجات مرتبطة */}
             {(product.colorName || hasLinkedColors) && (
               <div className="option-section anim-item" style={{ '--delay': '0.1s' }}>
@@ -420,33 +431,6 @@ export default function ProductPage() {
                         </button>
                       );
                     })}
-                </div>
-              </div>
-            )}
-
-            {/* المقاسات */}
-            {product.sizes?.length > 0 && (
-              <div className="option-section anim-item" style={{ '--delay': '0.15s' }}>
-                <p className="option-label">المقاس:</p>
-
-                <div className="size-options">
-                  {product.sizes.map((size) => {
-                    const soldOut = isSizeSoldOut(size);
-
-                    return (
-                      <div key={size._id || size.label} className="size-option-wrap">
-                        <button
-                          type="button"
-                          className={`size-option ${selectedSize?.label === size.label ? 'active' : ''} ${soldOut ? 'sold-out' : ''}`}
-                          onClick={() => !soldOut && setSelectedSize(size)}
-                          disabled={soldOut}
-                        >
-                          {size.label}
-                        </button>
-                        {soldOut && <span className="size-sold-label">نفدت</span>}
-                      </div>
-                    );
-                  })}
                 </div>
               </div>
             )}
