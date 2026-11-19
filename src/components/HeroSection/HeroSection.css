@@ -103,8 +103,16 @@
 }
 
 /* زر CTA */
-.hero-btn {
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
   margin-top: 8px;
+}
+
+.hero-btn {
+  margin-top: 0;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, 0.75);
   color: #ffffff;
@@ -116,6 +124,11 @@
   letter-spacing: 0.3px;
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.hero-btn--secondary {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.90);
 }
 
 .hero-btn:hover {
@@ -138,6 +151,23 @@
 }
 
 @media (max-width: 768px) {
+  .hero-actions {
+    width: 100%;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  .hero-actions .hero-btn {
+    flex: 1 1 0;
+    max-width: 145px;
+    min-width: 0;
+    padding-inline: 10px;
+  }
+
+  .hero-actions {
+    gap: 8px;
+  }
+
   .hero {
     height: clamp(360px, 54vw, 480px);
     min-height: 360px;
@@ -207,6 +237,16 @@
 }
 
 @media (max-width: 480px) {
+  .hero-actions {
+    gap: 6px;
+  }
+
+  .hero-actions .hero-btn {
+    max-width: 118px;
+    padding: 8px 6px;
+    font-size: 11px;
+  }
+
   .hero {
     height: clamp(340px, 64vw, 430px);
     min-height: 340px;

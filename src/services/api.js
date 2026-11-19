@@ -23,7 +23,7 @@ export const getSimilarProducts = (categoryId, excludeId, limit = 8, signal) =>
   api.get('/products', { params: { category: categoryId, excludeId, limit }, signal });
 export const getProductsStockStatus = (ids) => api.post('/products/stock-status', { ids });
 export const getProduct       = (id, signal) => api.get(`/products/${id}`, { signal });
-export const getCategories    = ()       => api.get('/categories');
+export const getCategories    = (department) => api.get('/categories', department ? { params: { department } } : undefined);
 export const getAnnouncements = ()       => api.get('/announcements');
 export const getSettings      = ()       => api.get('/settings');
 export const createOrder      = (data)   => api.post('/orders', data);

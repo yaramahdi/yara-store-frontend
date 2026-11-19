@@ -44,6 +44,11 @@ export default function App() {
             />
 
             <Route
+              path="/shoes"
+              element={<Home department="shoes" />}
+            />
+
+            <Route
               path="/search"
               element={<SearchPage />}
             />

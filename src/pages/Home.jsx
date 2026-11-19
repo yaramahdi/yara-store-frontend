@@ -10,14 +10,15 @@ import FeaturesBar        from '../components/FeaturesBar/FeaturesBar';
 import CartDrawer         from '../components/CartDrawer/CartDrawer';
 import WhatsAppBubble     from '../components/WhatsAppBubble/WhatsAppBubble';
 import Footer             from '../components/Footer/Footer';
-import { getSettings }    from '../services/api';
+import { getSettings, getCategories } from '../services/api';
 
-export default function Home() {
+export default function Home({ department = 'clothes' }) {
   const location = useLocation();
   const navigate = useNavigate();
   const [activeCategoryId,  setActiveCategoryId]  = useState(null);
   const [activeCollection,  setActiveCollection]   = useState(null);
   const [collections,       setCollections]        = useState([]);
+  const [shoeCategoryVisible, setShoeCategoryVisible] = useState(true);
   const productsRef = useRef(null);
   const favoritesOnly = new URLSearchParams(location.search).get('favorites') === '1';
 
@@ -26,6 +27,20 @@ export default function Home() {
       .then(res => setCollections(res.data?.collections || []))
       .catch(() => {});
   }, []);
+
+  useEffect(() => {
+    if (department !== 'shoes') return;
+    getCategories('shoes')
+      .then(res => {
+        const shoeCategory = (res.data || []).find(c => c.department === 'shoes');
+        setShoeCategoryVisible(shoeCategory?.isVisible !== false);
+        setActiveCategoryId(shoeCategory?._id || null);
+      })
+      .catch(() => {
+        setActiveCategoryId(null);
+        setShoeCategoryVisible(false);
+      });
+  }, [department]);
 
   useEffect(() => {
     const context = {
@@ -89,7 +104,11 @@ export default function Home() {
     <div>
       <AnnouncementBar />
       <Header />
-      <HeroSection onShopNow={scrollToProducts} />
+      <HeroSection
+        department={department}
+        onShopNow={scrollToProducts}
+        onBrowseShoes={() => navigate('/shoes')}
+      />
       <FeaturesBar />
 
       <div id="collection-banner">
@@ -101,18 +120,26 @@ export default function Home() {
 
       <CategorySection
         activeCategoryId={activeCategoryId}
+        department={department}
         onCategoryChange={id => { setActiveCategoryId(id); setActiveCollection(null); }}
       />
 
       <div ref={productsRef} id="products-section">
-        <ProductGrid
-          categoryId={activeCategoryId}
-          activeCollection={activeCollection}
-          collections={collections}
-          onClearCollection={() => setActiveCollection(null)}
-          favoritesOnly={favoritesOnly}
-          onExitFavorites={handleExitFavorites}
-        />
+        {department !== 'shoes' || shoeCategoryVisible ? (
+          <ProductGrid
+            categoryId={activeCategoryId}
+            department={department}
+            activeCollection={activeCollection}
+            collections={collections}
+            onClearCollection={() => setActiveCollection(null)}
+            favoritesOnly={favoritesOnly}
+            onExitFavorites={handleExitFavorites}
+          />
+        ) : (
+          <div className="no-products">
+            <p>قسم الهيلزات غير متاح حاليًا</p>
+          </div>
+        )}
       </div>
 
       <CartDrawer />

@@ -59,6 +59,7 @@ function ProductGridSkeleton() {
 
 export default function ProductGrid({
   categoryId,
+  department = 'clothes',
   searchQuery,
   activeCollection,
   favoritesOnly = false,
@@ -81,7 +82,7 @@ export default function ProductGrid({
 
   const buildParams = () => {
     const limit = favoritesOnly ? 200 : (activeCollection ? 100 : 12);
-    const params = { page, limit };
+    const params = { page, limit, department };
     if (categoryId) params.category = categoryId;
     if (searchQuery) params.search = searchQuery;
     return params;
@@ -115,13 +116,13 @@ export default function ProductGrid({
       setVisible(true);
     }, 200);
     return () => clearTimeout(t);
-  }, [categoryId, searchQuery, activeCollection]);
+  }, [categoryId, searchQuery, activeCollection, department]);
 
   useEffect(() => {
     const controller = new AbortController();
     fetchProducts(controller.signal);
     return () => controller.abort();
-  }, [categoryId, searchQuery, activeCollection, page]);
+  }, [categoryId, searchQuery, activeCollection, page, department]);
 
   useEffect(() => {
     const syncFavorites = () => setFavoriteIds(readFavIds());

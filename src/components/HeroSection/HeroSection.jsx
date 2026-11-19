@@ -2,7 +2,7 @@ import allGirlImg from '../../assets/images/allGirl.webp';
 import allGirlMobileImg from '../../assets/images/allGirl-mobile.webp';
 import './HeroSection.css';
 
-export default function HeroSection({ onShopNow }) {
+export default function HeroSection({ onShopNow, onBrowseShoes, department = 'clothes' }) {
   return (
     <section className="hero">
       <picture>
@@ -34,12 +34,22 @@ export default function HeroSection({ onShopNow }) {
           اكتشفي أجمل موديلاتنا المميزة بألوان مريحة وتصميم أنيق
         </p>
 
-        <button
-          className="hero-btn"
-          onClick={onShopNow}
-        >
-          تصفحي المنتجات
-        </button>
+        <div className="hero-actions">
+          <button
+            className="hero-btn"
+            onClick={onShopNow}
+          >
+            تصفحي المنتجات
+          </button>
+          {department === 'clothes' && onBrowseShoes && (
+            <button
+              className="hero-btn hero-btn--secondary"
+              onClick={onBrowseShoes}
+            >
+              تصفحي الهيلزات
+            </button>
+          )}
+        </div>
       </div>
     </section>
   );

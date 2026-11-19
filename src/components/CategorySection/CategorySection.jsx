@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 import { getCategories, imgUrl } from '../../services/api';
 import './CategorySection.css';
 
-export default function CategorySection({ activeCategoryId, onCategoryChange }) {
+export default function CategorySection({ activeCategoryId, onCategoryChange, department = 'clothes' }) {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    getCategories()
+    getCategories(department)
       .then(res => setCategories((res.data || []).filter(c => c.isVisible)))
       .catch(() => {});
-  }, []);
+  }, [department]);
 
   const handleCat = (catId) => {
     onCategoryChange(catId === activeCategoryId ? null : catId);
